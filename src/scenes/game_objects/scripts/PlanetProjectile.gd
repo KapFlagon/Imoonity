@@ -1,6 +1,6 @@
 extends Area2D
 
-export var projectileSpeed = 2
+export var projectileSpeed = 150
 
 export (PackedScene) var PlanetPlatform
 
@@ -11,7 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 #	TODO maybe worth discussing if this is the best way to fire projectiles?
-	position.x += projectileSpeed
+	position.x += projectileSpeed * delta
 	if Input.is_action_just_pressed("action_fire"):
 		spawnPlatform()
 
