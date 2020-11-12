@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var facing = 1
 export var gravity = 200
 export var ground_friction = 0.25
 export var air_friction = 0.02
@@ -7,7 +8,6 @@ export var base_movement_speed = 300
 export var max_movement_speed = 100
 export var jump_force = 150
 var velocity = Vector2(0, 0)
-var facing = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -58,6 +58,7 @@ func update_facing(horizontal_input: float) -> void:
 
 
 func update_player_vertical_velocity(delta: float, current_vertical_velocity: float) -> float: 
+	# TODO Need to redesing the jump and on floor logic, for smoother platforming. 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
 	if is_on_floor():
 		if Input.is_action_pressed("move_jump"):
