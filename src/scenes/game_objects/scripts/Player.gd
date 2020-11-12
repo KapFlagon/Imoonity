@@ -7,6 +7,7 @@ export var base_movement_speed = 300
 export var max_movement_speed = 100
 export var jump_force = 150
 var velocity = Vector2(0, 0)
+var facing = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,6 +41,13 @@ func update_player_horizontal_velocity() -> float:
 func get_horizontal_input() -> float:
 	return Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 
+
+func update_facing() -> void:
+	var direction_strength = get_horizontal_input()
+	if direction_strength > 0:
+		facing = 1
+	elif direction_strength < 0:
+		facing = -1
 
 func update_player_vertical_velocity(delta: float, current_vertical_velocity: float) -> float: 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
