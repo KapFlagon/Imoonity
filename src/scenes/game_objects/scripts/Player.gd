@@ -6,6 +6,7 @@ export var air_friction = 0.02
 export var base_movement_speed = 300
 export var max_movement_speed = 100
 export var jump_force = 150
+var last_horizontal_dir = 0
 var velocity = Vector2(0, 0)
 
 export (PackedScene) var PlanetProjectile
@@ -35,6 +36,7 @@ func update_player_horizontal_velocity() -> float:
 	var horizontal_velocity
 	var horizontal_input = get_horizontal_input()
 	if horizontal_input != 0:
+		last_horizontal_dir = horizontal_input
 		horizontal_velocity = horizontal_input * base_movement_speed 
 		horizontal_velocity = clamp(horizontal_velocity, -max_movement_speed, max_movement_speed)
 	else:
@@ -59,10 +61,10 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 	return vertical_velocity
 	
 func checkActionButtonPressed():
-	if get_node_or_null("/root/PlanetProjectile") == null && Input.is_action_just_pressed("action_fire"):
+	if get_parent().get_node_or_null("PlanetProjectile") == null && Input.is_action_just_pressed("action_fire"):
 		var projectileInstance = PlanetProjectile.instance()
 		#	Always adding to the parent scene, maybe not needed but can track it from there
-		get_tree().get_root().add_child(projectileInstance)
+		get_parent().add_child(projectileInstance)
 		projectileInstance.transform = self.global_transform.translated(Vector2(1,-20))
 	
 	

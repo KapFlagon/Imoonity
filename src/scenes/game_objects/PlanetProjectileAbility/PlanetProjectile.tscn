@@ -6,8 +6,10 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[node name="PlanetProjectile" type="Area2D"]
+[node name="PlanetProjectile" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
+collision_layer = 16
+collision_mask = 30
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

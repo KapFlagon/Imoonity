@@ -67,6 +67,7 @@ action_fire={
 2d_physics/layer_2="walls"
 2d_physics/layer_3="phase_material"
 2d_physics/layer_4="pushable_material"
+2d_physics/layer_5="projectile"
 
 [rendering]
 

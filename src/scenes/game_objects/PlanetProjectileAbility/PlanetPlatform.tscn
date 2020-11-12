@@ -3,12 +3,14 @@
 [ext_resource path="res://assets/images/sprites/Placeholder_RingPlat.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16.2182 )
+extents = Vector2( 16.0376, 16.3871 )
 
-[node name="PlanetPlatform" type="Sprite"]
+[node name="PlanetPlatform" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 31
+
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
