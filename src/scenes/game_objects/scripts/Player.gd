@@ -33,6 +33,7 @@ func update_player_horizontal_velocity() -> float:
 	if horizontal_input != 0:
 		horizontal_velocity = horizontal_input * base_movement_speed 
 		horizontal_velocity = clamp(horizontal_velocity, -max_movement_speed, max_movement_speed)
+		update_facing(horizontal_input)
 	else:
 		horizontal_velocity = 0
 	return horizontal_velocity
@@ -42,8 +43,8 @@ func get_horizontal_input() -> float:
 	return Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 
 
-func update_facing() -> void:
-	var direction_strength = get_horizontal_input()
+func update_facing(horizontal_input: float) -> void:
+	var direction_strength = horizontal_input
 	if direction_strength > 0:
 		facing = 1
 	elif direction_strength < 0:
