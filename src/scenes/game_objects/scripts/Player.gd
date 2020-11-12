@@ -78,9 +78,8 @@ func launch_dash(current_horizontal_velocity: float) -> float:
 	var dash_force = 2000
 	var input_dir = get_horizontal_input()
 	var output_horizontal_velocity
-	if input_dir >= 0:
+	if facing == 1:
 		output_horizontal_velocity = current_horizontal_velocity + dash_force
-	elif input_dir < 0: 
+	elif facing == -1:
 		output_horizontal_velocity = current_horizontal_velocity - dash_force
-	
 	return output_horizontal_velocity
