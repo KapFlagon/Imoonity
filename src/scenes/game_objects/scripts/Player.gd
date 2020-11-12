@@ -46,9 +46,16 @@ func get_horizontal_input() -> float:
 func update_facing(horizontal_input: float) -> void:
 	var direction_strength = horizontal_input
 	if direction_strength > 0:
-		facing = 1
+		# Only flips the sprite if the direction is new, accounts for starting positions
+		if facing != 1:
+			$Sprite.flip_h = false
+		facing = 1		
 	elif direction_strength < 0:
+		if facing != -1:
+			# Only flips the sprite if the direction is new, accounts for starting positions
+			$Sprite.flip_h = true
 		facing = -1
+
 
 func update_player_vertical_velocity(delta: float, current_vertical_velocity: float) -> float: 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
