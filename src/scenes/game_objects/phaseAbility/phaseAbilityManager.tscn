@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.gd" type="Script" id=1]
+
+[node name="phaseAbilityManager" type="Node"]
+script = ExtResource( 1 )
