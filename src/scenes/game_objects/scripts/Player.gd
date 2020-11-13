@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var facing = 1
 export var gravity = 200
 export var ground_friction = 0.25
 export var air_friction = 0.02
@@ -39,6 +40,7 @@ func update_player_horizontal_velocity() -> float:
 		last_horizontal_dir = horizontal_input
 		horizontal_velocity = horizontal_input * base_movement_speed 
 		horizontal_velocity = clamp(horizontal_velocity, -max_movement_speed, max_movement_speed)
+		update_facing(horizontal_input)
 	else:
 		horizontal_velocity = 0
 	return horizontal_velocity
@@ -48,7 +50,22 @@ func get_horizontal_input() -> float:
 	return Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 
 
+func update_facing(horizontal_input: float) -> void:
+	var direction_strength = horizontal_input
+	if direction_strength > 0:
+		# Only flips the sprite if the direction is new, accounts for starting positions
+		if facing != 1:
+			$Sprite.flip_h = false
+		facing = 1		
+	elif direction_strength < 0:
+		if facing != -1:
+			# Only flips the sprite if the direction is new, accounts for starting positions
+			$Sprite.flip_h = true
+		facing = -1
+
+
 func update_player_vertical_velocity(delta: float, current_vertical_velocity: float) -> float: 
+	# TODO Need to redesing the jump and on floor logic, for smoother platforming. 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
 	if is_on_floor():
 		if Input.is_action_pressed("move_jump"):
