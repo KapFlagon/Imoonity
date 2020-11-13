@@ -8,6 +8,9 @@ var particles
 func _ready():
 	playerScene = get_parent()
 	particles =  preload("res://src/scenes/game_objects/phaseAbility/PhasingParticle.tscn").instance()
+	playerScene.add_child(particles)
+	particles.set_emitting(false)
+	
 
 
 func checkActionButtonPressed():
@@ -20,7 +23,6 @@ func checkActionButtonPressed():
 			deactivateParticles()
 			
 func activateParticles():
-	playerScene.add_child(particles) # They have a very high Z position, so being buried would not be a problem
 	particles.set_emitting(true)
 
 func deactivateParticles():
