@@ -1,14 +1,17 @@
 extends KinematicBody2D
 
-export var facing = 1
-export var gravity = 200
-export var ground_friction = 0.25
-export var air_friction = 0.02
-export var base_movement_speed = 300
-export var max_movement_speed = 100
-export var jump_force = 150
-var dash_used = false
-var velocity = Vector2(0, 0)
+# Exported variables
+export var facing: int = 1
+export var gravity: int = 200
+export var ground_friction: int = 0.25
+export var air_friction: int = 0.02
+export var base_movement_speed: int = 300
+export var max_movement_speed: int = 100
+export var jump_force: int = 150
+
+# Additional variables
+var velocity: Vector2 = Vector2(0, 0)
+var current_state: int = Enums.PLAYER_STATE.IDLE
 
 
 # Called when the node enters the scene tree for the first time.
