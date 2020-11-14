@@ -11,7 +11,7 @@ export var jump_force: int = 150
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
-
+var current_state: int = Enums.PLAYER_STATE.IDLE
 
 
 # Called when the node enters the scene tree for the first time.
