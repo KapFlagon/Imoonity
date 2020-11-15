@@ -7,7 +7,7 @@ export var ground_friction: int = 0.25
 export var air_friction: int = 0.02
 export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
-export var jump_force: int = 150
+export var jump_force: int = 170
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 func update_player_velocity(delta: float) -> void:
 	velocity.x = update_player_horizontal_velocity()
 	velocity.y = update_player_vertical_velocity(delta, velocity.y) 
-	if Input.is_action_just_pressed("power_1") and !dash_used:
+	if Input.is_action_just_pressed("power_1"):
 		velocity.x = launch_dash(velocity.x)
 
 
