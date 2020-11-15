@@ -13,18 +13,27 @@ export var jump_force: int = 150
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
 
+var titanAbilityManager
+var phaseAbilityManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	titanAbilityManager = preload("res://src/scenes/game_objects/PlanetProjectileAbility/TitanAbilityManager.tscn").instance()
+	phaseAbilityManager = preload("res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.tscn").instance()
+	add_child(titanAbilityManager)
+	add_child(phaseAbilityManager)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update_player_velocity(delta)
 	
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2.UP)
-
+#	Place Holder for now
+	titanAbilityManager.checkActionButtonPressed()
+	phaseAbilityManager.checkActionButtonPressed()
+		
+	
 
 func update_player_velocity(delta: float) -> void:
 	velocity.x = update_player_horizontal_velocity()
@@ -73,3 +82,6 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 		if Input.is_action_just_released("move_jump") and current_vertical_velocity < (-jump_force/2):
 			vertical_velocity = current_vertical_velocity + (jump_force/2)
 	return vertical_velocity
+	
+	
+
