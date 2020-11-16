@@ -7,7 +7,7 @@ export var ground_friction: int = 0.25
 export var air_friction: int = 0.02
 export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
-export var jump_force: int = 170
+export var jump_force: int = 180
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
@@ -76,7 +76,7 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 	# TODO Need to redesing the jump and on floor logic, for smoother platforming. 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
 	if is_on_floor():
-		if Input.is_action_pressed("move_jump"):
+		if Input.is_action_just_pressed("move_jump"):
 			vertical_velocity = current_vertical_velocity - jump_force
 		else: 
 			vertical_velocity = lerp(current_vertical_velocity, 0, ground_friction)
