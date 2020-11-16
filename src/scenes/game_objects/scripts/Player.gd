@@ -12,11 +12,12 @@ export var jump_force: int = 180
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
+var spawn_location =  Vector2(30,170)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	position = spawn_location
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -91,3 +92,13 @@ func launch_dash(current_horizontal_velocity: float) -> float:
 		output_horizontal_velocity = current_horizontal_velocity - dash_force
 	return output_horizontal_velocity
 
+
+
+func _on_checkPoint_body_entered(body):
+	if body.name == "Player":
+		self.spawn_location = position
+
+
+func _on_Spikes_body_entered(body):
+	if body.name == "Player":
+		self.position = spawn_location
