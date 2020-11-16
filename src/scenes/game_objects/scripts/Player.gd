@@ -13,15 +13,10 @@ export var jump_force: int = 180
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
 
-var titanAbilityManager
-var phaseAbilityManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	titanAbilityManager = preload("res://src/scenes/game_objects/PlanetProjectileAbility/TitanAbilityManager.tscn").instance()
-	phaseAbilityManager = preload("res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.tscn").instance()
-	add_child(titanAbilityManager)
-	add_child(phaseAbilityManager)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -30,8 +25,8 @@ func _physics_process(delta: float) -> void:
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2.UP)
 #	Place Holder for now
-	titanAbilityManager.checkActionButtonPressed()
-	phaseAbilityManager.checkActionButtonPressed()
+	$TitanAbilityManager.checkActionButtonPressed()
+	$phaseAbilityManager.checkActionButtonPressed()
 		
 	
 
