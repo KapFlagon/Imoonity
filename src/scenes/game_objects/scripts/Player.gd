@@ -12,11 +12,12 @@ export var jump_force: int = 180
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
+var spawn_location =  Vector2(30,170)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	position = spawn_location
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -27,7 +28,10 @@ func _physics_process(delta: float) -> void:
 #	Place Holder for now
 	$TitanAbilityManager.checkActionButtonPressed()
 	$phaseAbilityManager.checkActionButtonPressed()
-		
+	
+#	Tilesets don't allow on body entered signals ? so have to loop over collision 
+#	of player with every Frame and check to see if it has hit...deadness?
+	_check_collision_with_death_stuff()
 	
 
 func update_player_velocity(delta: float) -> void:
@@ -91,3 +95,14 @@ func launch_dash(current_horizontal_velocity: float) -> float:
 		output_horizontal_velocity = current_horizontal_velocity - dash_force
 	return output_horizontal_velocity
 
+
+
+func _on_checkPoint_body_entered(body):
+	if body.name == self.name:
+		self.spawn_location = position
+		
+func _check_collision_with_death_stuff():
+	for i in get_slide_count():
+		var collisionTile = get_slide_collision(i)
+		if collisionTile.collider.name == "deathTileMap":
+			self.position = spawn_location
