@@ -28,7 +28,10 @@ func _physics_process(delta: float) -> void:
 #	Place Holder for now
 	$TitanAbilityManager.checkActionButtonPressed()
 	$phaseAbilityManager.checkActionButtonPressed()
-		
+	
+#	Tilesets don't allow on body entered signals ? so have to loop over collision 
+#	of player with every Frame and check to see if it has hit...deadness?
+	_check_collision_with_death_stuff()
 	
 
 func update_player_velocity(delta: float) -> void:
@@ -95,10 +98,11 @@ func launch_dash(current_horizontal_velocity: float) -> float:
 
 
 func _on_checkPoint_body_entered(body):
-	if body.name == "Player":
+	if body.name == self.name:
 		self.spawn_location = position
-
-
-func _on_Spikes_body_entered(body):
-	if body.name == "Player":
-		self.position = spawn_location
+		
+func _check_collision_with_death_stuff():
+	for i in get_slide_count():
+		var collisionTile = get_slide_collision(i)
+		if collisionTile.collider.name == "deathTileMap":
+			self.position = spawn_location
