@@ -10,8 +10,6 @@ func _ready():
 	particles =  preload("res://src/scenes/game_objects/phaseAbility/PhasingParticle.tscn").instance()
 	playerScene.call_deferred("add_child",particles)
 	particles.set_emitting(false)
-	
-
 
 func checkActionButtonPressed():
 	if Input.is_action_just_pressed("action_phase"):
