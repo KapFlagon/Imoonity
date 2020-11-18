@@ -1,0 +1,47 @@
+[gd_scene format=2]
+
+[node name="CreditsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 200.0
+color = Color( 0.101961, 0.176471, 0.309804, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 24.0
+margin_right = 320.0
+margin_bottom = 200.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 320.0
+margin_bottom = 68.0
+text = "Credits"
+align = 1
+valign = 1
+
+[node name="ProgrammingTitle" type="Label" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 320.0
+margin_bottom = 86.0
+text = "Programming"
+align = 1
+valign = 1
+
+[node name="AudioTitle" type="Label" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 320.0
+margin_bottom = 121.0
+text = "Audio
+"
+align = 1
+valign = 1
