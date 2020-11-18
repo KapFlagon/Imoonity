@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/screens/scripts/StartScreen.gd" type="Script" id=1]
+
+[node name="StartScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 200.0
+color = Color( 0.101961, 0.176471, 0.309804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 64.0
+margin_right = 256.0
+margin_bottom = 200.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HBoxContainer"]
+margin_left = 46.0
+margin_top = 21.0
+margin_right = 146.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "TBD Game Title"
+align = 1
+valign = 1
+
+[node name="PlayButton" type="Button" parent="HBoxContainer"]
+margin_top = 45.0
+margin_right = 192.0
+margin_bottom = 65.0
+text = "Play"
+
+[node name="HowToPlayButton" type="Button" parent="HBoxContainer"]
+margin_top = 75.0
+margin_right = 192.0
+margin_bottom = 95.0
+text = "How to play?"
+
+[node name="OptionsButton" type="Button" parent="HBoxContainer"]
+margin_top = 105.0
+margin_right = 192.0
+margin_bottom = 125.0
+text = "Options"
+
+[node name="Credits" type="Button" parent="HBoxContainer"]
+margin_top = 135.0
+margin_right = 192.0
+margin_bottom = 155.0
+text = "Credits"
+
+[node name="GithubLinkButton" type="LinkButton" parent="HBoxContainer"]
+margin_top = 165.0
+margin_right = 192.0
+margin_bottom = 179.0
+text = "Github project"
+[connection signal="button_up" from="HBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="HBoxContainer/GithubLinkButton" to="." method="_on_GithubLinkButton_button_up"]
