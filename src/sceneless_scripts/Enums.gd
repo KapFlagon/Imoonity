@@ -7,6 +7,7 @@ enum PLAYER_STATE{
 	RUNNING,
 	JUMPING,
 	FALLING,
+	LANDING,
 	DEAD,
 	FLOATING,	#Power-up states
 	DASHING,
