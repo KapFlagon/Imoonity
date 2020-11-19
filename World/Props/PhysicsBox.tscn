@@ -4,4 +4,5 @@
 [ext_resource path="res://World/Props/PhysicsBox.gd" type="Script" id=2]
 
 [node name="PhysicsBox" instance=ExtResource( 1 )]
+collision_layer = 8
 script = ExtResource( 2 )

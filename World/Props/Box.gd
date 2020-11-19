@@ -1,4 +1,5 @@
-extends KinematicBody2D
+extends KinematicBody2D # This is the original
+#extends RigidBody2D # Testing rigidbody
 
 class_name Box
 
