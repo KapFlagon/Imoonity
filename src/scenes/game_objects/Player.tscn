@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Player.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/game_objects/scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://src/scenes/game_objects/PlanetProjectileAbility/PlanetProjectile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.093, 12.2148 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-PlanetProjectile = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -16 )

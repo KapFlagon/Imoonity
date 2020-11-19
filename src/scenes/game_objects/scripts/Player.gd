@@ -8,6 +8,7 @@ export var air_friction: int = 0.02
 export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
 export var jump_force: int = 170
+export var push_speed : = 1
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
@@ -29,11 +30,15 @@ func _physics_process(delta: float) -> void:
 	
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2.UP)
+	
+	# Check if player is colliding with object
+	if get_slide_count() > 0:
+		check_box_collision(velocity)
+		
 #	Place Holder for now
 	titanAbilityManager.checkActionButtonPressed()
 	phaseAbilityManager.checkActionButtonPressed()
 		
-	
 
 func update_player_velocity(delta: float) -> void:
 	velocity.x = update_player_horizontal_velocity()
@@ -57,6 +62,10 @@ func update_player_horizontal_velocity() -> float:
 func get_horizontal_input() -> float:
 	return Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 
+func check_box_collision(velocity : Vector2) -> void:
+	var box : = get_slide_collision(0).collider as Box
+	if box:
+		box.push(push_speed * velocity)
 
 func update_facing(horizontal_input: float) -> void:
 	var direction_strength = horizontal_input
