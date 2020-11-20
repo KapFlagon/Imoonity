@@ -673,7 +673,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="checkPoint" parent="." instance=ExtResource( 5 )]
+[node name="CheckPoint" parent="." instance=ExtResource( 5 )]
 position = Vector2( 400, 176 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
@@ -683,4 +683,4 @@ collision_mask = 15
 [node name="Launcher" parent="." instance=ExtResource( 8 )]
 position = Vector2( 256, 144 )
 firing_interval = 2
-[connection signal="body_entered" from="checkPoint" to="Player" method="_on_checkPoint_body_entered"]
+[connection signal="body_entered" from="CheckPoint" to="Player" method="_on_checkPoint_body_entered"]
