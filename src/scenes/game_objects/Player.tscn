@@ -5,10 +5,10 @@
 [ext_resource path="res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/images/sprites/01/astro.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1.42586, 3.93022 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "falling"
 length = 0.1
 tracks/0/type = "value"
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "jumping"
 length = 0.1
 tracks/0/type = "value"
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "landing"
 length = 0.1
 tracks/0/type = "value"
@@ -71,8 +71,7 @@ tracks/0/keys = {
 "values": [ 9 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "running"
+[sub_resource type="Animation" id=6]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -99,7 +98,7 @@ frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.469152, -3.9161 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -12.2173 )
@@ -120,8 +119,15 @@ drag_margin_right = 0.0
 [node name="phaseAbilityManager" parent="." instance=ExtResource( 4 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/falling = SubResource( 5 )
+anims/falling = SubResource( 2 )
 anims/idle = SubResource( 3 )
-anims/jumping = SubResource( 6 )
-anims/landing = SubResource( 7 )
-anims/running = SubResource( 4 )
+anims/jumping = SubResource( 4 )
+anims/landing = SubResource( 5 )
+anims/running = SubResource( 6 )
+
+[node name="DeathDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetector"]
+position = Vector2( -0.469152, -3.9161 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="DeathDetector" to="." method="_on_DeathDetector_area_entered"]

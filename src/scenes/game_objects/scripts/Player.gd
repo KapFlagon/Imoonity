@@ -142,3 +142,8 @@ func update_animations(new_state: int) -> void:
 		Enums.PLAYER_STATE.LANDING: 
 			$AnimationPlayer.play("landing")
 
+
+
+func _on_DeathDetector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("lethal"):
+		_respawn_player()
