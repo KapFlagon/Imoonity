@@ -1,21 +1,27 @@
 extends Node2D
 
 
-onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
+enum PossibleOrientations {UP, RIGHT, DOWN, LEFT}
+
+
+export(PossibleOrientations) var orientation
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
-#	if !get_node("AnimationPlayer").is_playing():
-##		get_node("AnimationPlayer").play("flash")
-#		print("animation started")
-#	else:
-#		print("animation already playing")
+	rotate_for_orientation()
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	if !$AnimationPlayer.is_playing():
-#		$AnimationPlayer.play("flash")
+func rotate_for_orientation() -> void:
+	match orientation:
+		PossibleOrientations.UP:
+			set_rotation_degrees(0)
+		PossibleOrientations.RIGHT:
+			set_rotation_degrees(90)
+		PossibleOrientations.DOWN:
+			set_rotation_degrees(180)
+		PossibleOrientations.LEFT:
+			set_rotation_degrees(270)
+
