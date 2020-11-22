@@ -677,14 +677,6 @@ __meta__ = {
 position = Vector2( 16, 168 )
 collision_mask = 15
 
-[node name="Launcher" parent="." instance=ExtResource( 8 )]
-position = Vector2( 256, 144 )
-firing_interval = 2
-
-[node name="Launcher2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 240, 128 )
-firing_interval = 2
-
 [node name="SpikeContainer" type="Node" parent="."]
 
 [node name="Spike" parent="SpikeContainer" instance=ExtResource( 2 )]
@@ -698,3 +690,14 @@ position = Vector2( 484, 188 )
 
 [node name="Spike4" parent="SpikeContainer" instance=ExtResource( 2 )]
 position = Vector2( 492, 188 )
+
+[node name="Spike5" parent="SpikeContainer" instance=ExtResource( 2 )]
+position = Vector2( 144, 163.042 )
+
+[node name="Launcher" parent="." instance=ExtResource( 8 )]
+position = Vector2( 104, 144 )
+orientation = 3
+
+[node name="Launcher2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 112, 128 )
+firing_interval = 2

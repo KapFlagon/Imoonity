@@ -7,7 +7,6 @@ enum PossibleOrientations {UP, RIGHT, DOWN, LEFT}
 export(PossibleOrientations) var orientation
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotate_for_orientation()
