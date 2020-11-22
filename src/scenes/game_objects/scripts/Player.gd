@@ -103,11 +103,7 @@ func _respawn_player():
 	self.position = spawn_location
 	current_state = Enums.PLAYER_STATE.IDLE
 
-func _on_checkPoint_body_entered(body):
-	if body.name == self.name:
-		self.spawn_location = position
-		
-		
+
 func _check_collision_with_death_stuff():
 	for i in get_slide_count():
 		var collisionTile = get_slide_collision(i).collider.name
@@ -143,7 +139,9 @@ func update_animations(new_state: int) -> void:
 			$AnimationPlayer.play("landing")
 
 
-
 func _on_DeathDetector_area_entered(area: Area2D) -> void:
 	if area.is_in_group("lethal"):
 		_respawn_player()
+	elif area.is_in_group("checkpoint"):
+		spawn_location = area.get_position()
+
