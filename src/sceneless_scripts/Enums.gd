@@ -16,3 +16,10 @@ enum PLAYER_STATE{
 	PUSHING,
 	PULLING,
 }
+
+enum FIRING_DIRECTIONS{
+	UP, 
+	RIGHT, 
+	DOWN, 
+	LEFT,
+}
