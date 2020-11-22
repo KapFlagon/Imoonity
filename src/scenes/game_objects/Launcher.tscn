@@ -5,7 +5,7 @@
 [ext_resource path="res://src/scenes/game_objects/Launcher_projectile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 4.23351, 4.40923 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "firing"
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 5, 4 ]
+"values": [ 1, 0 ]
 }
 
 [node name="Launcher" type="Area2D"]
@@ -31,10 +31,8 @@ projectile = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="BaseElement" type="Sprite" parent="."]
-position = Vector2( -2.24746, 0 )
 texture = ExtResource( 2 )
 hframes = 8
-frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/firing = SubResource( 2 )

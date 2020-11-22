@@ -1,12 +1,10 @@
 extends Node2D
 
-enum PossibleFacings {UP, RIGHT, DOWN, LEFT}
-
 
 # Exported variables
 export (PackedScene) var projectile
 export var firing_interval: int = 1		# A variable to define how long the timer should last, in seconds.
-export(PossibleFacings) var facing
+export(Enums.FIRING_DIRECTIONS) var firing_direction
 
 
 # Non exported variables
@@ -22,6 +20,7 @@ func _ready():
 
 func fireNewProjectile():
 	projectile_instance = projectile.instance()
+	projectile_instance.set_firing_direction(firing_direction)
 	add_child(projectile_instance)
 
 
@@ -31,7 +30,6 @@ func _on_Timer_timeout() -> void:
 		get_node("AnimationPlayer").stop()
 		update_animation_speed()
 	get_node("AnimationPlayer").play("firing")
-		
 
 
 # Calculates playback speed for the firing animation based on the firing interval value
@@ -48,14 +46,25 @@ func update_animation_speed() -> void:
 
 
 func rotate_for_facing() -> void:
-	match facing:
-		PossibleFacings.UP:
-			set_rotation_degrees(0)
-		PossibleFacings.RIGHT:
-			set_rotation_degrees(90)
-		PossibleFacings.DOWN:
-			set_rotation_degrees(180)
-		PossibleFacings.LEFT:
-			set_rotation_degrees(270)
+	match firing_direction:
+		Enums.FIRING_DIRECTIONS.UP:
+			if is_rotation_mismatched(0):
+				set_rotation_degrees(0)
+		Enums.FIRING_DIRECTIONS.RIGHT:
+			if is_rotation_mismatched(90):
+				set_rotation_degrees(90)
+		Enums.FIRING_DIRECTIONS.DOWN:
+			if is_rotation_mismatched(180):
+				set_rotation_degrees(180)
+		Enums.FIRING_DIRECTIONS.LEFT:
+			if is_rotation_mismatched(270):
+				set_rotation_degrees(270)
 
 
+func is_rotation_mismatched(target_rotation: float) -> bool:
+	var update_rotation: bool = false
+	if get_rotation_degrees() == target_rotation:
+		update_rotation = false
+	else:
+		update_rotation = true
+	return update_rotation
