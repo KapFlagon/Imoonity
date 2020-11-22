@@ -40,7 +40,6 @@ func update_projectile_velocity(current_velocity: Vector2) -> Vector2:
 
 func set_firing_direction(new_firing_direction: int) -> void: 
 	firing_direction = new_firing_direction
-	print("projectile firing_direction: " + str(firing_direction))
 
 
 func get_firing_direction() -> int:
