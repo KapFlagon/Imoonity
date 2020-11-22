@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/images/sprites/01/pod.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/sprites/01/explosion2.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/game_objects/scripts/Spike.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.5599
+radius = 3.73148
 height = 0.0
 
 [sub_resource type="Animation" id=2]
@@ -26,6 +26,10 @@ tracks/0/keys = {
 "values": [ 5, 6, 7, 8, 7, 6 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 3.99426
+height = 0.0
+
 [node name="Spike" type="Area2D" groups=[
 "lethal",
 ]]
@@ -33,7 +37,7 @@ position = Vector2( 0, -3.60627 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -4.95851 )
+position = Vector2( 0, -7.53376 )
 shape = SubResource( 1 )
 
 [node name="Base" type="Sprite" parent="."]
@@ -47,8 +51,13 @@ position = Vector2( 0, -8 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 15
-frame = 5
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "flash"
 anims/flash = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 3 )

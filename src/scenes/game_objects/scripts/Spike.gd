@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 
 enum PossibleOrientations {UP, RIGHT, DOWN, LEFT}
@@ -11,7 +11,6 @@ export(PossibleOrientations) var orientation
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotate_for_orientation()
-	pass # Replace with function body.
 
 
 func rotate_for_orientation() -> void:
