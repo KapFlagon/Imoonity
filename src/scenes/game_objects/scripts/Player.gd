@@ -10,9 +10,11 @@ export var max_movement_speed: int = 100
 export var jump_force: int = 170
 export var push_speed : = 1
 
+
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
+var can_pick = true
 
 var titanAbilityManager
 var phaseAbilityManager
@@ -27,6 +29,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update_player_velocity(delta)
+	print(Position2D)
+	if can_pick == true:
+		pass #$Sprite.play("def")
 	
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2.UP)
@@ -35,12 +40,12 @@ func _physics_process(delta: float) -> void:
 	titanAbilityManager.checkActionButtonPressed()
 	phaseAbilityManager.checkActionButtonPressed()
 	
-	# Check if button pressed
+	# Check if phobos power button pressed
 	if Input.is_action_pressed("grab_object"): 
 			# Check if player is colliding with object
 		if get_slide_count() > 0:
 			check_box_collision(velocity)
-
+	
 
 func update_player_velocity(delta: float) -> void:
 	velocity.x = update_player_horizontal_velocity()

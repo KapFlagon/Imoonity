@@ -14,6 +14,7 @@ func _physics_process(delta):
 func push(velocity: Vector2) -> void:
 	move_and_slide(velocity, Vector2())
 
+
 func apply_gravity(delta) -> void:
 	motion.y = gravity*delta
 	var grav = Vector2(0,motion.y)
