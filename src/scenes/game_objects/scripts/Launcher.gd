@@ -1,12 +1,12 @@
 extends Node2D
 
-enum PossibleOrientations {UP, RIGHT, DOWN, LEFT}
+enum PossibleFacings {UP, RIGHT, DOWN, LEFT}
 
 
 # Exported variables
 export (PackedScene) var projectile
 export var firing_interval: int = 1		# A variable to define how long the timer should last, in seconds.
-export(PossibleOrientations) var orientation
+export(PossibleFacings) var facing
 
 
 # Non exported variables
@@ -16,6 +16,7 @@ var projectile_instance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Timer").wait_time = firing_interval
+	rotate_for_facing()
 	update_animation_speed()
 
 
@@ -44,4 +45,17 @@ func calculate_animation_speed_scale(firing_interval: int) -> float:
 func update_animation_speed() -> void: 
 	var animation_time_scaling = calculate_animation_speed_scale(firing_interval)
 	get_node("AnimationPlayer").set_speed_scale(animation_time_scaling)
+
+
+func rotate_for_facing() -> void:
+	match facing:
+		PossibleFacings.UP:
+			set_rotation_degrees(0)
+		PossibleFacings.RIGHT:
+			set_rotation_degrees(90)
+		PossibleFacings.DOWN:
+			set_rotation_degrees(180)
+		PossibleFacings.LEFT:
+			set_rotation_degrees(270)
+
 
