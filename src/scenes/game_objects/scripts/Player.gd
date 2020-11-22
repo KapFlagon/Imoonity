@@ -31,14 +31,16 @@ func _physics_process(delta: float) -> void:
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2.UP)
 	
-	# Check if player is colliding with object
-	if get_slide_count() > 0:
-		check_box_collision(velocity)
-		
 #	Place Holder for now
 	titanAbilityManager.checkActionButtonPressed()
 	phaseAbilityManager.checkActionButtonPressed()
-		
+	
+	# Check if button pressed
+	if Input.is_action_pressed("grab_object"): 
+			# Check if player is colliding with object
+		if get_slide_count() > 0:
+			check_box_collision(velocity)
+
 
 func update_player_velocity(delta: float) -> void:
 	velocity.x = update_player_horizontal_velocity()
