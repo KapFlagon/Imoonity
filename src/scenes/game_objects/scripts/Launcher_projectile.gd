@@ -23,7 +23,7 @@ func _physics_process(delta):
 			queue_free()
 
 
-# TODO Calculate the velocity based on intended direction of the projectile.
+# Calculate the velocity based on intended direction of the projectile.
 func update_projectile_velocity(current_velocity: Vector2) -> Vector2:
 	var projectile_velocity: Vector2 = current_velocity
 	match firing_direction:
