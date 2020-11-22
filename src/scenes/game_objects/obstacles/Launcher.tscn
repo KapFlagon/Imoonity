@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/scenes/game_objects/scripts/Launcher.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/game_objects/obstacles/scripts/Launcher.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/sprites/01/beamsocket.png" type="Texture" id=2]
-[ext_resource path="res://src/scenes/game_objects/Launcher_projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Launcher_projectile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.23351, 4.40923 )
