@@ -12,7 +12,7 @@ length = 0.5
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("ProjectileSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -32,7 +32,7 @@ collision_layer = 16
 collision_mask = 31
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="ProjectileSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 18
 
