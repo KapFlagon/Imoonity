@@ -29,9 +29,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update_player_velocity(delta)
-	print(Position2D)
-	if can_pick == true:
-		pass #$Sprite.play("def")
+	#print(self.get_position())
+	#if can_pick == true: 
+	#	pass #$Sprite.play("def")
 	
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity, Vector2.UP)

@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/sprites/Placeholder_Wall.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/images/sprites/Placeholder_PhasingMaterial.png" type="Texture" id=4]
 [ext_resource path="res://World/Props/PhysicsBox.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/images/sprites/Placeholder_RingPlat.png" type="Texture" id=6]
-[ext_resource path="res://src/scenes/levels/prototypes/object1.gd" type="Script" id=7]
+[ext_resource path="res://World/Props/GrabbyBox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -60,12 +59,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 13.7089, 13.4347 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 21.7196, 22.471 )
-
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 7.33231, 13.3075 )
 
@@ -76,6 +69,7 @@ margin_left = -6.25
 margin_top = -41.5
 margin_right = 409.75
 margin_bottom = 222.5
+rect_scale = Vector2( 1.01577, 1.12313 )
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -104,29 +98,12 @@ tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -65537, 0, 0, -131072, 0
 position = Vector2( 155.5, 126.5 )
 collision_mask = 15
 
-[node name="object1" type="RigidBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="object1"]
-position = Vector2( 75.9615, 150.682 )
-shape = SubResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="object1"]
-position = Vector2( 74.96, 150.214 )
-scale = Vector2( 0.8741, 0.841823 )
-texture = ExtResource( 6 )
-
-[node name="Detector" type="Area2D" parent="object1"]
-position = Vector2( -0.25, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="object1/Detector"]
-position = Vector2( 76.3416, 150.514 )
-shape = SubResource( 6 )
+[node name="GrabbyBox" parent="." instance=ExtResource( 6 )]
+position = Vector2( 71.2192, 150.909 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160.75, 107.25 )
+jump_force = 244
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, -12.8345 )
