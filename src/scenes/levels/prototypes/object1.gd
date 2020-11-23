@@ -1,14 +1,20 @@
 extends RigidBody2D
 
 var picked = false
-var myvar = 0
+var oldspeed
+
+func _ready():
+	oldspeed = get_node("../Player").base_movement_speed
 
 func _physics_process(delta):
 	if picked == true:
+		#self.position = get_node("../Player/Position2D").global_position
 		self.position = get_node("../Player/Position2D").global_position
+		get_node("../Player").base_movement_speed = oldspeed/6
 		sleeping = true
 	else:
 		sleeping = false
+		get_node("../Player").base_movement_speed = oldspeed
 
 func _input(event):
 	if Input.is_action_just_pressed("pickup"):
