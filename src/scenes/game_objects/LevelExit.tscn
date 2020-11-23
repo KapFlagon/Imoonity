@@ -1,38 +1,49 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/images/sprites/01/crate2_open.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/sprites/01/crate2.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/game_objects/scripts/LevelExit.gd" type="Script" id=3]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": false,
 "name": "close",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": false,
 "name": "open",
-"speed": 5.0
+"speed": 2.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.33908, 6.8221 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.4751, 19.5706 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.30746, 6.83786 )
 
 [node name="LevelExit" type="Node2D"]
 rotation = 4.71239
 script = ExtResource( 3 )
 
 [node name="LevelExitSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "close"
-frame = 1
-playing = true
+scale = Vector2( 1.4, 1.4 )
+frames = SubResource( 1 )
+animation = "open"
+speed_scale = 5.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AnimationSensor" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.250282, 0.417137 )
-shape = SubResource( 1 )
-[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[node name="AnmSnsrColliShape2D" type="CollisionShape2D" parent="AnimationSensor"]
+position = Vector2( 0.583991, 1.00113 )
+shape = SubResource( 2 )
+
+[node name="LevelExitSensor" type="Area2D" parent="."]
+
+[node name="LvlExtCollShape2D" type="CollisionShape2D" parent="LevelExitSensor"]
+position = Vector2( 0.668929, 1.26353 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="AnimationSensor" to="." method="_on_AnimationSensor_area_entered"]
+[connection signal="area_exited" from="AnimationSensor" to="." method="_on_AnimationSensor_area_exited"]
+[connection signal="area_entered" from="LevelExitSensor" to="." method="_on_LevelExitSensor_area_entered"]
