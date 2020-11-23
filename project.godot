@@ -24,6 +24,10 @@ config/name="GHGO2020"
 run/main_scene="res://src/scenes/levels/prototypes/TemplateLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ScreenManager="*res://src/sceneless_scripts/autoload/ScreenManager.gd"
+
 [display]
 
 window/size/width=320
