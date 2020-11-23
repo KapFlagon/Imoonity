@@ -18,6 +18,7 @@ var spawn_location: Vector2 =  Vector2(30,170)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position = spawn_location
+	update_animations(current_state)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -35,8 +36,11 @@ func _physics_process(delta: float) -> void:
 	
 
 func update_player_velocity(delta: float) -> void:
+	var old_y = velocity.y
 	velocity.x = update_player_horizontal_velocity()
 	velocity.y = update_player_vertical_velocity(delta, velocity.y) 
+	update_state(velocity.x, old_y, velocity.y)
+	update_animations(current_state)
 	if Input.is_action_just_pressed("power_1"):
 		velocity.x = launch_dash(velocity.x)
 
@@ -99,15 +103,45 @@ func _respawn_player():
 	self.position = spawn_location
 	current_state = Enums.PLAYER_STATE.IDLE
 
-func _on_checkPoint_body_entered(body):
-	if body.name == self.name:
-		self.spawn_location = position
-		
-		
+
 func _check_collision_with_death_stuff():
 	for i in get_slide_count():
 		var collisionTile = get_slide_collision(i).collider.name
 		if collisionTile == "deathTileMap" || "Launcher_projectile" in collisionTile:
 			current_state = Enums.PLAYER_STATE.DEAD
 			_respawn_player()
+
+
+func update_state(velocity_x: float, old_y: float, new_y: float) -> void: 
+#	print("old_x: " + str(old_x) + " new_y: " + str(new_x) + " old_y: " + str(old_y) + " new_y: " + str(new_y))
+	var temp_y = old_y - (new_y * -1)
+	if is_on_floor() and velocity_x == 0:
+		current_state = Enums.PLAYER_STATE.IDLE
+	elif is_on_floor() and velocity_x != 0:
+		current_state = Enums.PLAYER_STATE.RUNNING
+	elif !is_on_floor() and temp_y < 0: 
+		current_state = Enums.PLAYER_STATE.JUMPING
+	elif !is_on_floor() and temp_y > 0:
+		current_state = Enums.PLAYER_STATE.FALLING
+
+
+func update_animations(new_state: int) -> void:
+	match new_state: 
+		Enums.PLAYER_STATE.IDLE:
+			$AnimationPlayer.play("idle")
+		Enums.PLAYER_STATE.RUNNING:
+			$AnimationPlayer.play("running")
+		Enums.PLAYER_STATE.JUMPING:
+			$AnimationPlayer.play("jumping")
+		Enums.PLAYER_STATE.FALLING: 
+			$AnimationPlayer.play("falling")
+		Enums.PLAYER_STATE.LANDING: 
+			$AnimationPlayer.play("landing")
+
+
+func _on_DeathDetector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("lethal"):
+		_respawn_player()
+	elif area.is_in_group("checkpoint"):
+		spawn_location = area.get_position()
 
