@@ -729,6 +729,7 @@ z_index = 10
 [node name="PhysicsBox" parent="." instance=ExtResource( 12 )]
 position = Vector2( 256.599, 166.713 )
 
-[node name="Button" parent="." instance=ExtResource( 13 )]
+[node name="Button1" parent="." instance=ExtResource( 13 )]
 position = Vector2( 303.919, 175.411 )
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]
+[connection signal="pressed" from="Button1" to="PhysicsBox" method="_on_Button_pressed"]
