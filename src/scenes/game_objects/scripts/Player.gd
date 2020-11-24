@@ -82,7 +82,6 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_jump"):
 			vertical_velocity = -jump_force
-			print("vertical_velocity: " + str(vertical_velocity))
 		else: 
 			vertical_velocity = lerp(current_vertical_velocity, 0, ground_friction)
 	else:
