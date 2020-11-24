@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/images/sprites/New Piskel (2).png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.8179, 2.14361 )
+extents = Vector2( 8.1941, 10.5134 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -21,12 +21,14 @@ animations = [ {
 } ]
 
 [node name="Button" type="Area2D"]
+collision_layer = 32
+collision_mask = 29
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 1, 0.125 )
+scale = Vector2( 0.5, 0.0625 )
 frames = SubResource( 2 )
 animation = "Off"
