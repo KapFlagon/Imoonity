@@ -1,8 +1,15 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/scenes/ui/themes/H2_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scenes/ui/themes/H4_Theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=3]
+[ext_resource path="res://src/scenes/ui/themes/H3_Theme.tres" type="Theme" id=4]
+[ext_resource path="res://src/scenes/screens/scripts/CreditsScreen.gd" type="Script" id=5]
 
 [node name="CreditsScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -12,36 +19,318 @@ margin_right = 320.0
 margin_bottom = 200.0
 color = Color( 0.101961, 0.176471, 0.309804, 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_top = 24.0
+[node name="TopVBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 320.0
-margin_bottom = 200.0
+margin_bottom = 168.0
+theme = ExtResource( 3 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = 54.0
+[node name="Title" type="Label" parent="TopVBoxContainer"]
+margin_top = 73.0
 margin_right = 320.0
-margin_bottom = 68.0
+margin_bottom = 95.0
+theme = ExtResource( 1 )
 text = "Credits"
 align = 1
 valign = 1
 
-[node name="ProgrammingTitle" type="Label" parent="VBoxContainer"]
-margin_top = 72.0
+[node name="ProgrammersTitle" type="Label" parent="TopVBoxContainer"]
+visible = false
+margin_top = 36.0
 margin_right = 320.0
-margin_bottom = 86.0
-text = "Programming"
+margin_bottom = 54.0
+theme = ExtResource( 4 )
+text = "Programmers"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgrammersVBox" type="VBoxContainer" parent="TopVBoxContainer"]
+visible = false
+margin_top = 47.0
+margin_right = 320.0
+margin_bottom = 95.0
+
+[node name="UserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+margin_right = 320.0
+margin_bottom = 9.0
+alignment = 1
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox"]
+margin_left = 103.0
+margin_right = 148.0
+margin_bottom = 9.0
+text = "KapFlagon"
+
+[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox"]
+margin_left = 152.0
+margin_right = 180.0
+margin_bottom = 9.0
+text = "GitHub"
+
+[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox"]
+margin_left = 184.0
+margin_right = 216.0
+margin_bottom = 9.0
+text = "Itch.io"
+
+[node name="UserEntryHBox2" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+margin_top = 13.0
+margin_right = 320.0
+margin_bottom = 22.0
+alignment = 1
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox2"]
+margin_left = 108.0
+margin_right = 143.0
+margin_bottom = 9.0
+text = "JibblyC"
+
+[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox2"]
+margin_left = 147.0
+margin_right = 175.0
+margin_bottom = 9.0
+text = "GitHub"
+
+[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox2"]
+margin_left = 179.0
+margin_right = 211.0
+margin_bottom = 9.0
+text = "Itch.io"
+
+[node name="UserEntryHBox3" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+margin_top = 26.0
+margin_right = 320.0
+margin_bottom = 35.0
+alignment = 1
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox3"]
+margin_left = 90.0
+margin_right = 162.0
+margin_bottom = 9.0
+text = "GiantSpaceRobot"
+
+[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox3"]
+margin_left = 166.0
+margin_right = 194.0
+margin_bottom = 9.0
+text = "GitHub"
+
+[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox3"]
+margin_left = 198.0
+margin_right = 230.0
+margin_bottom = 9.0
+text = "Itch.io"
+
+[node name="UserEntryHBox4" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+margin_top = 39.0
+margin_right = 320.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox4"]
+margin_left = 110.0
+margin_right = 141.0
+margin_bottom = 9.0
+text = "Dexyod"
+
+[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox4"]
+margin_left = 145.0
+margin_right = 173.0
+margin_bottom = 9.0
+text = "GitHub"
+
+[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox4"]
+margin_left = 177.0
+margin_right = 209.0
+margin_bottom = 9.0
+text = "Itch.io"
+
+[node name="AudioAndMusicTitle" type="Label" parent="TopVBoxContainer"]
+visible = false
+margin_top = 86.0
+margin_right = 320.0
+margin_bottom = 104.0
+theme = ExtResource( 4 )
+text = "Audio"
 align = 1
 valign = 1
 
-[node name="AudioTitle" type="Label" parent="VBoxContainer"]
-margin_top = 90.0
+[node name="AudioAndMusicVBox" type="VBoxContainer" parent="TopVBoxContainer"]
+visible = false
+margin_top = 95.0
 margin_right = 320.0
-margin_bottom = 121.0
-text = "Audio
-"
+margin_bottom = 117.0
+
+[node name="UserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/AudioAndMusicVBox"]
+margin_right = 320.0
+margin_bottom = 9.0
+alignment = 1
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox"]
+margin_left = 97.0
+margin_right = 169.0
+margin_bottom = 9.0
+text = "GiantSpaceRobot"
+
+[node name="SoundcloudLinkBtn" type="LinkButton" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox"]
+margin_left = 173.0
+margin_right = 223.0
+margin_bottom = 9.0
+text = "Soundcloud"
+
+[node name="UserEntryHBox2" type="HBoxContainer" parent="TopVBoxContainer/AudioAndMusicVBox"]
+margin_top = 13.0
+margin_right = 320.0
+margin_bottom = 22.0
+alignment = 1
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox2"]
+margin_left = 113.0
+margin_right = 153.0
+margin_bottom = 9.0
+text = "KenCoder"
+
+[node name="SoundcloudLinkBtn" type="LinkButton" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox2"]
+margin_left = 157.0
+margin_right = 207.0
+margin_bottom = 9.0
+text = "Soundcloud"
+
+[node name="HonourableMentionsTitle" type="Label" parent="TopVBoxContainer"]
+visible = false
+margin_top = 97.0
+margin_right = 320.0
+margin_bottom = 115.0
+theme = ExtResource( 4 )
+text = "Honourable Mentions"
 align = 1
 valign = 1
+
+[node name="HonourableMentionsSubTitle" type="Label" parent="TopVBoxContainer"]
+visible = false
+margin_top = 108.0
+margin_right = 320.0
+margin_bottom = 122.0
+theme = ExtResource( 2 )
+text = "Free & Open source assets"
+align = 1
+valign = 1
+
+[node name="HonourableMentionsVBox" type="VBoxContainer" parent="TopVBoxContainer"]
+visible = false
+margin_top = 117.0
+margin_right = 320.0
+margin_bottom = 152.0
+
+[node name="UserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
+margin_right = 320.0
+margin_bottom = 9.0
+alignment = 1
+
+[node name="RoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox"]
+margin_left = 88.0
+margin_right = 141.0
+margin_bottom = 9.0
+text = "Art Assets:"
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox"]
+margin_left = 145.0
+margin_right = 195.0
+margin_bottom = 9.0
+text = "adamatomic"
+
+[node name="SrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox"]
+margin_left = 199.0
+margin_right = 231.0
+margin_bottom = 9.0
+text = "Itch.io"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserEntryHBox2" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
+margin_top = 13.0
+margin_right = 320.0
+margin_bottom = 22.0
+alignment = 1
+
+[node name="RoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox2"]
+margin_left = 82.0
+margin_right = 111.0
+margin_bottom = 9.0
+text = "Fonts:"
+
+[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox2"]
+margin_left = 115.0
+margin_right = 169.0
+margin_bottom = 9.0
+text = "Pixel Sagas"
+
+[node name="SrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox2"]
+margin_left = 173.0
+margin_right = 238.0
+margin_bottom = 9.0
+text = "fontspace.com"
+
+[node name="UserEntryHBox3" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
+margin_top = 26.0
+margin_right = 320.0
+margin_bottom = 35.0
+alignment = 1
+
+[node name="RoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox3"]
+margin_left = 62.0
+margin_right = 164.0
+margin_bottom = 9.0
+text = "SyndiBox text engine:"
+
+[node name="UserNameLbl2" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox3"]
+margin_left = 168.0
+margin_right = 226.0
+margin_bottom = 9.0
+text = "Sudospective"
+
+[node name="SrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox3"]
+margin_left = 230.0
+margin_right = 258.0
+margin_bottom = 9.0
+text = "GitHub"
+
+[node name="BtnHBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 176.0
+margin_right = 288.0
+margin_bottom = 192.0
+theme = ExtResource( 3 )
+custom_constants/separation = 6
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="Button" parent="BtnHBoxContainer"]
+margin_left = 61.0
+margin_right = 93.0
+margin_bottom = 16.0
+text = "Back"
+
+[node name="MainMenuBtn" type="Button" parent="BtnHBoxContainer"]
+margin_left = 99.0
+margin_right = 157.0
+margin_bottom = 16.0
+text = "Main Menu"
+
+[node name="NextBtn" type="Button" parent="BtnHBoxContainer"]
+margin_left = 163.0
+margin_right = 194.0
+margin_bottom = 16.0
+text = "Next"
+[connection signal="button_up" from="BtnHBoxContainer/BackBtn" to="." method="_on_BackBtn_button_up"]
+[connection signal="button_up" from="BtnHBoxContainer/MainMenuBtn" to="." method="_on_MainMenuBtn_button_up"]
+[connection signal="button_up" from="BtnHBoxContainer/NextBtn" to="." method="_on_NextBtn_button_up"]
