@@ -7,7 +7,8 @@ export var ground_friction: int = 0.25
 export var air_friction: int = 0.02
 export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
-export var jump_force: int = 180
+export var jump_force: int = 100
+
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
@@ -80,7 +81,8 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_jump"):
-			vertical_velocity = current_vertical_velocity - jump_force
+			vertical_velocity = -jump_force
+			print("vertical_velocity: " + str(vertical_velocity))
 		else: 
 			vertical_velocity = lerp(current_vertical_velocity, 0, ground_friction)
 	else:
