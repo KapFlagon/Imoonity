@@ -7,24 +7,19 @@ export var ground_friction: int = 0.25
 export var air_friction: int = 0.02
 export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
-export var jump_force: int = 170
 export var push_speed : = 1
-
+export var jump_force: int = 180
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
 var can_pick = true
+var spawn_location: Vector2 =  Vector2(30,170)
 
-var titanAbilityManager
-var phaseAbilityManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	titanAbilityManager = preload("res://src/scenes/game_objects/PlanetProjectileAbility/TitanAbilityManager.tscn").instance()
-	phaseAbilityManager = preload("res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.tscn").instance()
-	add_child(titanAbilityManager)
-	add_child(phaseAbilityManager)
+	position = spawn_location
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -37,14 +32,18 @@ func _physics_process(delta: float) -> void:
 	move_and_slide(velocity, Vector2.UP)
 	
 #	Place Holder for now
-	titanAbilityManager.checkActionButtonPressed()
-	phaseAbilityManager.checkActionButtonPressed()
-	
+	$TitanAbilityManager.checkActionButtonPressed()
+	$phaseAbilityManager.checkActionButtonPressed()
+
 	# Check if phobos power button pressed
 	if Input.is_action_pressed("grab_object"): 
 			# Check if player is colliding with object
 		if get_slide_count() > 0:
 			check_box_collision(velocity)
+		
+#	Tilesets don't allow on body entered signals ? so have to loop over collision 
+#	of player with every Frame and check to see if it has hit...deadness?
+	_check_collision_with_death_stuff()
 	
 
 func update_player_velocity(delta: float) -> void:
@@ -92,7 +91,7 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 	# TODO Need to redesing the jump and on floor logic, for smoother platforming. 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
 	if is_on_floor():
-		if Input.is_action_pressed("move_jump"):
+		if Input.is_action_just_pressed("move_jump"):
 			vertical_velocity = current_vertical_velocity - jump_force
 		else: 
 			vertical_velocity = lerp(current_vertical_velocity, 0, ground_friction)
@@ -111,4 +110,20 @@ func launch_dash(current_horizontal_velocity: float) -> float:
 	elif facing == -1:
 		output_horizontal_velocity = current_horizontal_velocity - dash_force
 	return output_horizontal_velocity
+
+func _respawn_player():
+	self.position = spawn_location
+	current_state = Enums.PLAYER_STATE.IDLE
+
+func _on_checkPoint_body_entered(body):
+	if body.name == self.name:
+		self.spawn_location = position
+		
+		
+func _check_collision_with_death_stuff():
+	for i in get_slide_count():
+		var collisionTile = get_slide_collision(i).collider.name
+		if collisionTile == "deathTileMap" || "Launcher_projectile" in collisionTile:
+			current_state = Enums.PLAYER_STATE.DEAD
+			_respawn_player()
 
