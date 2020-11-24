@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/images/sprites/01/tiles.png" type="Texture" id=9]
 [ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Props/GrabbyBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Props/PhysicsBox.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -635,6 +637,12 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 position = Vector2( 536.097, 155.783 )
 rotation = -1.5708
 
+[node name="GrabbyBox" parent="." instance=ExtResource( 11 )]
+position = Vector2( 636.101, 173.09 )
+
+[node name="GrabbyBox2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 210.528, 165.933 )
+
 [node name="TileMapContainer" type="Node" parent="."]
 
 [node name="BackgroundsTileMap" type="TileMap" parent="TileMapContainer"]
@@ -716,4 +724,7 @@ position = Vector2( 106.855, 116 )
 [node name="Transitions" parent="." instance=ExtResource( 10 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
+
+[node name="PhysicsBox" parent="." instance=ExtResource( 12 )]
+position = Vector2( 256.599, 166.713 )
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]
