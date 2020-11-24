@@ -9,7 +9,7 @@ func _ready():
 func _physics_process(delta):
 	if picked == true:
 		#self.position = get_node("../Player/Position2D").global_position
-		self.position = get_node("../Player/Position2D").global_position
+		self.position = get_node("../Player").global_position
 		get_node("../Player").base_movement_speed = oldspeed/6
 		sleeping = true
 	else:
