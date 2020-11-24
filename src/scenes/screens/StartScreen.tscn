@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/scenes/screens/scripts/StartScreen.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/ui/themes/H2_Theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/scenes/ui/themes/TitleTheme.tres" type="Theme" id=3]
+[ext_resource path="res://src/scenes/ui/themes/H4_Theme.tres" type="Theme" id=4]
 
 [node name="StartScreen" type="Control"]
 anchor_right = 1.0
@@ -18,55 +21,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 64.0
-margin_right = 256.0
-margin_bottom = 200.0
+[node name="TopHBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 32.0
+margin_right = 288.0
+margin_bottom = 64.0
+theme = ExtResource( 2 )
 custom_constants/separation = 10
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="HBoxContainer"]
-margin_left = 46.0
-margin_top = 21.0
-margin_right = 146.0
-margin_bottom = 35.0
+[node name="Title" type="Label" parent="TopHBoxContainer"]
+margin_left = 14.0
+margin_top = 16.0
+margin_right = 242.0
+margin_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 text = "TBD Game Title"
 align = 1
 valign = 1
 
-[node name="PlayButton" type="Button" parent="HBoxContainer"]
-margin_top = 45.0
-margin_right = 192.0
-margin_bottom = 65.0
+[node name="SubHBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 72.0
+margin_top = 80.0
+margin_right = 248.0
+margin_bottom = 184.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="SubHBoxContainer"]
+margin_right = 176.0
+margin_bottom = 28.0
 text = "Play"
 
-[node name="HowToPlayButton" type="Button" parent="HBoxContainer"]
-margin_top = 75.0
-margin_right = 192.0
-margin_bottom = 95.0
+[node name="HowToPlayButton" type="Button" parent="SubHBoxContainer"]
+visible = false
+margin_top = 32.0
+margin_right = 176.0
+margin_bottom = 60.0
 text = "How to play?"
 
-[node name="OptionsButton" type="Button" parent="HBoxContainer"]
-margin_top = 105.0
+[node name="OptionsButton" type="Button" parent="SubHBoxContainer"]
+visible = false
+margin_top = 54.0
 margin_right = 192.0
-margin_bottom = 125.0
+margin_bottom = 82.0
 text = "Options"
 
-[node name="Credits" type="Button" parent="HBoxContainer"]
-margin_top = 135.0
-margin_right = 192.0
-margin_bottom = 155.0
+[node name="Credits" type="Button" parent="SubHBoxContainer"]
+margin_top = 32.0
+margin_right = 176.0
+margin_bottom = 60.0
 text = "Credits"
 
-[node name="GithubLinkButton" type="LinkButton" parent="HBoxContainer"]
-margin_top = 165.0
-margin_right = 192.0
-margin_bottom = 179.0
+[node name="GithubLinkButton" type="LinkButton" parent="SubHBoxContainer"]
+margin_top = 64.0
+margin_right = 176.0
+margin_bottom = 78.0
+theme = ExtResource( 4 )
 text = "Github project"
-[connection signal="button_up" from="HBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
-[connection signal="button_up" from="HBoxContainer/GithubLinkButton" to="." method="_on_GithubLinkButton_button_up"]
+[connection signal="button_up" from="SubHBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="SubHBoxContainer/GithubLinkButton" to="." method="_on_GithubLinkButton_button_up"]
