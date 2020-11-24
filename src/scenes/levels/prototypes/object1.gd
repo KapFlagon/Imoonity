@@ -1,20 +1,24 @@
 extends RigidBody2D
 
 var picked = false
-var oldspeed
+var originalspeed
+var originaljump
 
 func _ready():
-	oldspeed = get_node("../Player").base_movement_speed
+	originalspeed = get_node("../Player").base_movement_speed
+	originaljump = get_node("../Player").jump_force
 
 func _physics_process(delta):
 	if picked == true:
 		#self.position = get_node("../Player/Position2D").global_position
-		self.position = get_node("../Player").global_position
-		get_node("../Player").base_movement_speed = oldspeed/6
+		self.position = get_node("../Player/Position2D").global_position
+		get_node("../Player").base_movement_speed = originalspeed/6  # Slow down due to box
+		get_node("../Player").jump_force = originaljump/1.5  # Jump reduction due to box
 		sleeping = true
 	else:
 		sleeping = false
-		get_node("../Player").base_movement_speed = oldspeed
+		get_node("../Player").base_movement_speed = originalspeed
+		get_node("../Player").jump_force = originaljump
 
 func _input(event):
 	if Input.is_action_just_pressed("pickup"):
