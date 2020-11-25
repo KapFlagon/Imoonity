@@ -14,7 +14,8 @@ export var push_speed : = 1
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
 var can_pick = true
-var spawn_location: Vector2 =  Vector2(30,170)
+#var spawn_location: Vector2 =  Vector2(30,170)
+var spawn_location: Vector2 =  Vector2(230,60)
 
 
 # Called when the node enters the scene tree for the first time.
