@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/SyndiBox/syndibox.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/screens/scripts/IntroCutSceneScreen.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=3]
+
+[node name="IntroCutSceneScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkipButton" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 67.0
+margin_bottom = 24.0
+theme = ExtResource( 3 )
+text = "Skip Intro"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SyndiBox" type="ReferenceRect" parent="."]
+margin_left = 16.0
+margin_top = 88.0
+margin_right = 304.0
+margin_bottom = 184.0
+border_color = Color( 0.545098, 0.0509804, 0.0509804, 1 )
+editor_only = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "[*3]......
+The last clone is awake, splendid! 
+It's time to leave this planet.
+We need another pair of hands to operate the rocket.
+The mainframe computer network is completely down. 
+We can`t access a [`e]cloning station[`r] closer to the [`4]launchpad[`r] to flash clone you nearby. 
+You`ll need to navigate through the base by yourself to reach the [`4]launchpad[`r]. 
+We also can`t disable the [`d]base defenses[`0] without the mainframe computer network. 
+But there`s some [`a]good news[`r]!
+Some of the [`3]moon-shot[`r] power injections are still left in their canisters. 
+Collect them and you`ll be able to get past all of the [`d]base defenses[`r] with ease.
+You can activate the [`e]cloning stations[`r] in the base so you can auto-flash clone if you[*5]... [*3]expire.
+We`re waiting for you, good luck! "
+CHARACTER_PROFILE = "res://assets/images/sprites/01/portrait.png"
+FONT = "res://src/scenes/ui/themes/PixelFont.tres"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+[connection signal="button_up" from="SkipButton" to="." method="_on_SkipButton_button_up"]
+[connection signal="text_finished" from="SyndiBox" to="." method="_on_SyndiBox_text_finished"]
