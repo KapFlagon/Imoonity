@@ -41,10 +41,6 @@ func _physics_process(delta: float) -> void:
 			# Check if player is colliding with object
 		if get_slide_count() > 0:
 			check_box_collision(velocity)
-		
-#	Tilesets don't allow on body entered signals ? so have to loop over collision 
-#	of player with every Frame and check to see if it has hit...deadness?
-	_check_collision_with_death_stuff()
 	
 
 func update_player_velocity(delta: float) -> void:
