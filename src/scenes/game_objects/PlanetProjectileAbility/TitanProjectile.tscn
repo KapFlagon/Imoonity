@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/scenes/game_objects/PlanetProjectileAbility/PlanetProjectile.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/sprites/Placeholder_RingPlat.png" type="Texture" id=3]
+[ext_resource path="res://src/scenes/game_objects/PlanetProjectileAbility/TitanProjectile.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/sprites/01/battery.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.0769, 15.9633 )
+extents = Vector2( 5.00608, 4.70676 )
 
 [node name="PlanetProjectile" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
@@ -17,7 +17,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.3, 0.3 )

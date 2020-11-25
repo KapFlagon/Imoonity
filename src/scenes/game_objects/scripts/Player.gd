@@ -120,14 +120,6 @@ func _respawn_player():
 	current_state = Enums.PLAYER_STATE.IDLE
 
 
-func _check_collision_with_death_stuff():
-	for i in get_slide_count():
-		var collisionTile = get_slide_collision(i).collider.name
-		if collisionTile == "deathTileMap" || "Launcher_projectile" in collisionTile:
-			current_state = Enums.PLAYER_STATE.DEAD
-			_respawn_player()
-
-
 func update_state(velocity_x: float, old_y: float, new_y: float) -> void: 
 #	print("old_x: " + str(old_x) + " new_y: " + str(new_x) + " old_y: " + str(old_y) + " new_y: " + str(new_y))
 	var temp_y = old_y - (new_y * -1)
