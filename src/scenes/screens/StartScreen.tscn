@@ -86,4 +86,5 @@ margin_bottom = 78.0
 theme = ExtResource( 4 )
 text = "Github project"
 [connection signal="button_up" from="SubHBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="SubHBoxContainer/Credits" to="." method="_on_Credits_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/GithubLinkButton" to="." method="_on_GithubLinkButton_button_up"]
