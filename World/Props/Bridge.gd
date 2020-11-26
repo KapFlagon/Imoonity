@@ -4,36 +4,24 @@ enum Positions {UP, RIGHT, DOWN, LEFT,}
 
 export(Positions) var closedPosition
 export(Positions) var openedPosition
+export var isOpen = true
 var animPlayer
-var rotateBridgeAnim
+var animation_open
+var animation_close
 
 func _ready():
-	buildDynamicAnimationPlayer()
-	#buildDynamicAnimationPlayer(0,90)
+	var openedDegrees = position_to_degrees(openedPosition)
+	var closedDegrees = position_to_degrees(closedPosition)
+	buildDynamicAnimationPlayer(closedDegrees,openedDegrees)
+	set_initial_position()
 
-func closeBridge() -> void:
-	rotateBridge(closedPosition)
-
-func openBridge() -> void:
-	rotateBridge(openedPosition)
-
-func rotateBridge(newPosition: int) -> void:
-	match newPosition: 
-		Positions.UP: 
-			if isValidRotation(0):
-				set_rotation_degrees(0)
-		Positions.RIGHT: 
-			if isValidRotation(90):
-				animPlayer.play("rotateBridgeAnim")
-				#$AnimationPlayer.play("UP-to-RIGHT")
-				#set_rotation_degrees(90)
-		Positions.DOWN: 
-			if isValidRotation(180):
-				$AnimationPlayer.play("RIGHT-to-DOWN")
-				#set_rotation_degrees(180)
-		Positions.LEFT: 
-			if isValidRotation(270):
-				set_rotation_degrees(270)
+func rotateBridge() -> void:
+	if isOpen:
+		animPlayer.play("close")
+		isOpen = false
+	elif !isOpen:
+		animPlayer.play("open")
+		isOpen = true
 
 func isValidRotation(newRotation: int) -> bool:
 	var validRotation = false
@@ -41,24 +29,51 @@ func isValidRotation(newRotation: int) -> bool:
 		validRotation = true
 	return validRotation
 
-
 func _on_BridgeButton_pressed():
-	rotateBridge(Positions.RIGHT)
-	#print("Hello")
+	if !animPlayer.is_playing():
+		rotateBridge()
 
-#func buildDynamicAnimationPlayer(degreesStart, degreesEnd) -> void:
-func buildDynamicAnimationPlayer() -> void:
+func buildDynamicAnimationPlayer(degreesClose, degreesOpen) -> void:
 	animPlayer = AnimationPlayer.new()
 	add_child(animPlayer)
-	rotateBridgeAnim = Animation.new()
-	animPlayer.add_animation( "rotateBridgeAnim", rotateBridgeAnim)
-	rotateBridgeAnim.add_track(0)
-	rotateBridgeAnim.length = 3
+	animation_open = Animation.new()
+	animation_close = Animation.new()
+	buildAnimationTrack("open", degreesClose, degreesOpen, animation_open)
+	buildAnimationTrack("close", degreesOpen, degreesClose, animation_close)
+
+func buildAnimationTrack(animTitle, startKey, endKey, animation_object) -> void:
+	animPlayer.add_animation( animTitle, animation_object)
+	var trackCount = animation_object.get_track_count()
+	animation_object.add_track(trackCount)
+	animation_object.length = 3
 	var path = String(self.get_path())
 	path = path + ":rotation_degrees"
-	#print(path)
-	rotateBridgeAnim.track_set_path(0, path)
-	rotateBridgeAnim.track_insert_key(0, 0.0, 0)
-	rotateBridgeAnim.track_insert_key(0, 3, 90)
-	#rotateBridgeAnim.track_insert_key(0, 0.0, degreesStart)
-	#rotateBridgeAnim.track_insert_key(0, 3, degreesEnd)
+	animation_object.track_set_path(trackCount, path)
+	animation_object.track_insert_key(trackCount, 0.0, startKey)
+	animation_object.track_insert_key(trackCount, 3, endKey)
+
+func position_to_degrees(newPosition: int) -> int:
+	var degreeOutput
+	match newPosition: 
+		Positions.UP: 
+			if isValidRotation(0):
+				degreeOutput = 0
+		Positions.RIGHT: 
+			if isValidRotation(90):
+				degreeOutput = 90
+		Positions.DOWN: 
+			if isValidRotation(180):
+				degreeOutput = 180
+		Positions.LEFT: 
+			if isValidRotation(270):
+				degreeOutput = 270
+	return degreeOutput
+
+func set_initial_position() -> void:
+	var rotation
+	if isOpen:
+		rotation = position_to_degrees(openedPosition)
+	else:
+		rotation = position_to_degrees(closedPosition)
+	set_rotation_degrees(rotation)
+	
