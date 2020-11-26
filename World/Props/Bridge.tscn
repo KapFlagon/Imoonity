@@ -62,6 +62,6 @@ texture = ExtResource( 2 )
 position = Vector2( -1.90735e-06, -32 )
 shape = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayerOG" type="AnimationPlayer" parent="."]
 anims/RIGHT-to-DOWN = SubResource( 4 )
 anims/UP-to-RIGHT = SubResource( 3 )

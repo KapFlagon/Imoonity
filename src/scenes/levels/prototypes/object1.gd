@@ -4,6 +4,7 @@ var picked = false
 var originalspeed
 var originaljump
 
+
 func _ready():
 	originalspeed = get_node("../Player").base_movement_speed
 	originaljump = get_node("../Player").jump_force
