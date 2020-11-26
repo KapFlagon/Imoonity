@@ -1,12 +1,11 @@
 extends BaseScreen
 
 
-var current_page: int
+var current_page: int = 1
 
 
 func _ready() -> void:
 	poll_screen_manager(Enums.SCREENS.CREDITS)
-	current_page = 1
 	update_page()
 
 
@@ -18,21 +17,21 @@ func update_page() -> void:
 func update_display() -> void:
 	match current_page:
 		1:
-			$TopVBoxContainer/ProgrammersTitle.show()
-			$TopVBoxContainer/ProgrammersVBox.show()
-			$TopVBoxContainer/AudioAndMusicTitle.show()
-			$TopVBoxContainer/AudioAndMusicVBox.show()
-			$TopVBoxContainer/HonourableMentionsTitle.hide()
-			$TopVBoxContainer/HonourableMentionsSubTitle.hide()
-			$TopVBoxContainer/HonourableMentionsVBox.hide()
+			$SubVBoxContainer/ProgrammersTitle.show()
+			$SubVBoxContainer/ProgrammersVBox.show()
+			$SubVBoxContainer/AudioAndMusicTitle.show()
+			$SubVBoxContainer/AudioAndMusicVBox.show()
+			$SubVBoxContainer/HonourableMentionsTitle.hide()
+			$SubVBoxContainer/HonourableMentionsSubTitle.hide()
+			$SubVBoxContainer/HonourableMentionsVBox.hide()
 		2:
-			$TopVBoxContainer/ProgrammersTitle.hide()
-			$TopVBoxContainer/ProgrammersVBox.hide()
-			$TopVBoxContainer/AudioAndMusicTitle.hide()
-			$TopVBoxContainer/AudioAndMusicVBox.hide()
-			$TopVBoxContainer/HonourableMentionsTitle.show()
-			$TopVBoxContainer/HonourableMentionsSubTitle.show()
-			$TopVBoxContainer/HonourableMentionsVBox.show()
+			$SubVBoxContainer/ProgrammersTitle.hide()
+			$SubVBoxContainer/ProgrammersVBox.hide()
+			$SubVBoxContainer/AudioAndMusicTitle.hide()
+			$SubVBoxContainer/AudioAndMusicVBox.hide()
+			$SubVBoxContainer/HonourableMentionsTitle.show()
+			$SubVBoxContainer/HonourableMentionsSubTitle.show()
+			$SubVBoxContainer/HonourableMentionsVBox.show()
 
 
 func update_buttons() -> void:
