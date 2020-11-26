@@ -18,3 +18,6 @@ func _on_PlayButton_button_up() -> void:
 func _on_Credits_button_up() -> void:
 	ScreenManager.next_screen(Enums.SCREENS.CREDITS)
 
+
+func _on_HowToPlayButton_button_up() -> void:
+	ScreenManager.next_screen(Enums.SCREENS.HOWTOPLAY)

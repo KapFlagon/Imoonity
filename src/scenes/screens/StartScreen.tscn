@@ -60,7 +60,6 @@ margin_bottom = 28.0
 text = "Play"
 
 [node name="HowToPlayButton" type="Button" parent="SubHBoxContainer"]
-visible = false
 margin_top = 32.0
 margin_right = 176.0
 margin_bottom = 60.0
@@ -74,17 +73,18 @@ margin_bottom = 82.0
 text = "Options"
 
 [node name="Credits" type="Button" parent="SubHBoxContainer"]
-margin_top = 32.0
+margin_top = 64.0
 margin_right = 176.0
-margin_bottom = 60.0
+margin_bottom = 92.0
 text = "Credits"
 
 [node name="GithubLinkButton" type="LinkButton" parent="SubHBoxContainer"]
-margin_top = 64.0
+margin_top = 96.0
 margin_right = 176.0
-margin_bottom = 78.0
+margin_bottom = 110.0
 theme = ExtResource( 4 )
 text = "Github project"
 [connection signal="button_up" from="SubHBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="SubHBoxContainer/HowToPlayButton" to="." method="_on_HowToPlayButton_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/Credits" to="." method="_on_Credits_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/GithubLinkButton" to="." method="_on_GithubLinkButton_button_up"]
