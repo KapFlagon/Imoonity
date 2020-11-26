@@ -33,6 +33,10 @@ func _on_BridgeButton_pressed():
 	if !animPlayer.is_playing():
 		rotateBridge()
 
+func _on_BridgeButton2_pressed():
+	if !animPlayer.is_playing():
+		rotateBridge()
+
 func buildDynamicAnimationPlayer(degreesClose, degreesOpen) -> void:
 	animPlayer = AnimationPlayer.new()
 	add_child(animPlayer)
@@ -76,4 +80,4 @@ func set_initial_position() -> void:
 	else:
 		rotation = position_to_degrees(closedPosition)
 	set_rotation_degrees(rotation)
-	
+
