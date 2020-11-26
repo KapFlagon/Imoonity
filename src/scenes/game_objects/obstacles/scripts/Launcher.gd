@@ -10,6 +10,10 @@ export(Enums.FIRING_DIRECTIONS) var firing_direction
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initialise_launcher()
+
+
+func initialise_launcher() -> void:
 	get_node("Timer").wait_time = firing_interval
 	rotate_for_facing()
 	update_animation_speed()
@@ -65,3 +69,14 @@ func is_rotation_mismatched(target_rotation: float) -> bool:
 	else:
 		update_rotation = true
 	return update_rotation
+
+
+func _on_VisibilityEnabler2D_screen_entered() -> void:
+	print("visibility enabler entered")
+	get_node("Timer").start()
+	
+
+
+func _on_VisibilityEnabler2D_screen_exited() -> void:
+	print("visibility enabler exited")
+	get_node("Timer").stop()
