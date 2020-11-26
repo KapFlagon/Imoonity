@@ -1,10 +1,11 @@
-extends Control
+extends BaseScreen
 
 
 var current_page: int
 
 
 func _ready() -> void:
+	poll_screen_manager(Enums.SCREENS.CREDITS)
 	current_page = 1
 	update_page()
 
@@ -55,5 +56,5 @@ func _on_BackBtn_button_up() -> void:
 
 
 func _on_MainMenuBtn_button_up() -> void:
-	# TODO Return to main menu via Scene manager
-	pass # Replace with function body.
+	ScreenManager.next_screen(Enums.SCREENS.MAIN_MENU)
+
