@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://src/scenes/game_objects/PuckAbility/Puck_Dash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/game_objects/scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://src/scenes/game_objects/PlanetProjectileAbility/TitanAbilityManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.tscn" type="PackedScene" id=4]
@@ -114,6 +115,9 @@ smoothing_enabled = true
 drag_margin_left = 0.0
 drag_margin_right = 0.0
 
+[node name="Puck_Dash" parent="." instance=ExtResource( 1 )]
+cooldown = 2
+
 [node name="TitanAbilityManager" parent="." instance=ExtResource( 3 )]
 
 [node name="phaseAbilityManager" parent="." instance=ExtResource( 4 )]
@@ -126,11 +130,11 @@ anims/landing = SubResource( 5 )
 anims/running = SubResource( 6 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0, -4 )
+position = Vector2( 0, -11.982 )
 
 [node name="AreaDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2( -0.469152, -3.9161 )
+position = Vector2( -0.451178, -3.89813 )
 shape = SubResource( 1 )
 [connection signal="area_entered" from="AreaDetector" to="." method="_on_DeathDetector_area_entered"]
