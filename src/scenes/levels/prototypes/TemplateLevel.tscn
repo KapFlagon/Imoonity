@@ -659,7 +659,6 @@ position = Vector2( 95.8949, 103.626 )
 firing_direction = 3
 
 [node name="Transitions" parent="." instance=ExtResource( 10 )]
-visible = false
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
 
