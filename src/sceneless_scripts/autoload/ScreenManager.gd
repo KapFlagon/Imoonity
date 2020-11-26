@@ -52,10 +52,8 @@ func _deferred_goto_scene(path):
 func next_screen(target_screen = null) -> void: 
 	var next_scene_path: String = ""
 	if target_screen != null:
-		print("has passed variabled")
 		next_scene_path = select_next_screen(target_screen)
 	else:
-		print("no passed variabled") 
 		next_scene_path = determine_next_screen()
 	goto_scene(next_scene_path)
 
@@ -64,14 +62,10 @@ func determine_next_screen() -> String:
 	var new_level_path: String = ""
 	match current_screen:
 		Enums.SCREENS.MAIN_MENU: 
-			current_screen = Enums.SCREENS.INTRO
 			new_level_path = "res://src/scenes/screens/IntroCutSceneScreen.tscn"
 		Enums.SCREENS.INTRO: 
-			print("in intro, going to template")
-			current_screen = Enums.SCREENS.TEMPLATE
 			new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
 		Enums.SCREENS.TEMPLATE: 
-			current_screen = Enums.SCREENS.TEMPLATE
 			new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
 	return new_level_path
 
@@ -81,16 +75,14 @@ func select_next_screen(target_screen: int) -> String:
 	if is_valid_passed_screen(target_screen):
 		match target_screen:
 			Enums.SCREENS.MAIN_MENU: 
-				current_screen = Enums.SCREENS.MAIN_MENU
 				new_level_path = "res://src/scenes/screens/StartScreen.tscn"
 			Enums.SCREENS.INTRO: 
-				current_screen = Enums.SCREENS.INTRO
 				new_level_path = "res://src/scenes/screens/IntroCutSceneScreen.tscn"
 			Enums.SCREENS.CREDITS:
-				current_screen = Enums.SCREENS.CREDITS
 				new_level_path = "res://src/scenes/screens/CreditsScreen.tscn"
+			Enums.SCREENS.HOWTOPLAY:
+				new_level_path = "res://src/scenes/screens/HowToPlayScreen.tscn"
 			Enums.SCREENS.TEMPLATE: 
-				current_screen = Enums.SCREENS.TEMPLATE
 				new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
 	return new_level_path
 
