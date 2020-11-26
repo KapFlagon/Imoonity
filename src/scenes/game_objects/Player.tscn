@@ -94,7 +94,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -5 )
 texture = ExtResource( 5 )
 hframes = 15
-frame = 7
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.469152, -3.9161 )
@@ -124,6 +124,9 @@ anims/idle = SubResource( 3 )
 anims/jumping = SubResource( 4 )
 anims/landing = SubResource( 5 )
 anims/running = SubResource( 6 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, -4 )
 
 [node name="AreaDetector" type="Area2D" parent="."]
 
