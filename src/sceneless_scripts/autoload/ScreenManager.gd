@@ -1,13 +1,7 @@
 extends Node
 
-enum Screens{
-	START,
-	INTRO_CUTSCENE,
-	LEVEL_TEMPLATE,
-	END,
-}
 
-var current_screen: int
+var current_screen: int = -1 setget set_current_screen, get_current_screen
 var current_screen_scene = null
 
 
@@ -16,6 +10,14 @@ func _ready() -> void:
 	var root = get_tree().get_root()
 	current_screen_scene = root.get_child(root.get_child_count() - 1)
 
+
+func get_current_screen() -> int:
+	return current_screen
+
+
+func set_current_screen(new_current_screen: int) -> void:
+	if is_valid_passed_screen(new_current_screen):
+		current_screen = new_current_screen
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -47,12 +49,56 @@ func _deferred_goto_scene(path):
 	get_tree().set_current_scene(current_screen_scene)
 
 
-func level_ended() -> void: 
-	determine_next_screen(current_screen)
-	goto_scene("res://src/scenes/levels/prototypes/TemplateLevel.tscn")
+func next_screen(target_screen = null) -> void: 
+	var next_scene_path: String = ""
+	if target_screen != null:
+		print("has passed variabled")
+		next_scene_path = select_next_screen(target_screen)
+	else:
+		print("no passed variabled") 
+		next_scene_path = determine_next_screen()
+	goto_scene(next_scene_path)
 
 
-func determine_next_screen(current_screen: int) -> void:
+func determine_next_screen() -> String:
+	var new_level_path: String = ""
 	match current_screen:
-		Screens.LEVEL_TEMPLATE: 
-			current_screen = Screens.LEVEL_TEMPLATE
+		Enums.SCREENS.MAIN_MENU: 
+			current_screen = Enums.SCREENS.INTRO
+			new_level_path = "res://src/scenes/screens/IntroCutSceneScreen.tscn"
+		Enums.SCREENS.INTRO: 
+			print("in intro, going to template")
+			current_screen = Enums.SCREENS.TEMPLATE
+			new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
+		Enums.SCREENS.TEMPLATE: 
+			current_screen = Enums.SCREENS.TEMPLATE
+			new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
+	return new_level_path
+
+
+func select_next_screen(target_screen: int) -> String: 
+	var new_level_path: String = ""
+	if is_valid_passed_screen(target_screen):
+		match target_screen:
+			Enums.SCREENS.MAIN_MENU: 
+				current_screen = Enums.SCREENS.MAIN_MENU
+				new_level_path = "res://src/scenes/screens/StartScreen.tscn"
+			Enums.SCREENS.INTRO: 
+				current_screen = Enums.SCREENS.INTRO
+				new_level_path = "res://src/scenes/screens/IntroCutSceneScreen.tscn"
+			Enums.SCREENS.CREDITS:
+				current_screen = Enums.SCREENS.CREDITS
+				new_level_path = "res://src/scenes/screens/CreditsScreen.tscn"
+			Enums.SCREENS.TEMPLATE: 
+				current_screen = Enums.SCREENS.TEMPLATE
+				new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
+	return new_level_path
+
+
+func is_valid_passed_screen(passed_screen: int) -> bool:
+	var is_valid_passed_screen = false
+	for screen in Enums.SCREENS:
+		if passed_screen == Enums.SCREENS[screen]:
+			is_valid_passed_screen = true
+			break
+	return is_valid_passed_screen
