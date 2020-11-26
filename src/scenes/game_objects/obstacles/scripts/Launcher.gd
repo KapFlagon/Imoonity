@@ -72,11 +72,9 @@ func is_rotation_mismatched(target_rotation: float) -> bool:
 
 
 func _on_VisibilityEnabler2D_screen_entered() -> void:
-	print("visibility enabler entered")
 	get_node("Timer").start()
-	
 
 
 func _on_VisibilityEnabler2D_screen_exited() -> void:
-	print("visibility enabler exited")
 	get_node("Timer").stop()
+
