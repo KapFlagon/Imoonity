@@ -4,7 +4,6 @@ var picked = false
 var originalspeed
 var originaljump
 
-
 func _ready():
 	originalspeed = get_node("../Player").base_movement_speed
 	originaljump = get_node("../Player").jump_force
@@ -23,15 +22,13 @@ func _physics_process(delta):
 
 func _input(event):
 	if Input.is_action_just_pressed("pickup"):
-		#print("Hello")
-		var bodies = $Detector.get_overlapping_bodies()
+		var bodies = $Detector.get_overlapping_bodies()  # BUG HERE! Press 'e' away from object to trigger
 		for b in bodies:
 			#if b.name == "Player" and get_node("../Player").can_pick == true:
 			if b.name == "Player":
 				picked = true
 				#get_node("../Player").can_pick = false
 	if Input.is_action_just_pressed("drop") and picked == true:
-		#print("drop")
 		picked = false
 		#get_node("../Player").can_pick = true
 	if Input.is_action_just_pressed("throw") and picked == true:
