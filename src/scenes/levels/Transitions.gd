@@ -18,7 +18,7 @@ func play_fade_out() -> void:
 	update_position()
 	get_node("TransitionAnimPlayer").play("fade_out") 
 	yield(get_node("TransitionAnimPlayer"), "animation_finished")
-	ScreenManager.level_ended()
+	ScreenManager.next_screen()
 
 
 func update_position() -> void: 

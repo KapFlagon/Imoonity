@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "BaseScreen",
+"language": "GDScript",
+"path": "res://src/scenes/screens/scripts/BaseScreen.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Box",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://World/Props/PhysicsBox.gd"
 } ]
 _global_script_class_icons={
+"BaseScreen": "",
 "Box": "",
 "Enums": "",
 "PhysicsBox": ""
@@ -33,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GHGO2020"
-run/main_scene="res://src/scenes/levels/prototypes/TemplateLevel.tscn"
+run/main_scene="res://src/scenes/screens/StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

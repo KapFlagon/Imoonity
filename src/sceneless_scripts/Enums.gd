@@ -1,6 +1,8 @@
 extends Node
 
+
 class_name Enums
+
 
 enum PLAYER_STATE{
 	IDLE,		# Regular states
@@ -17,9 +19,20 @@ enum PLAYER_STATE{
 	PULLING,
 }
 
+
 enum FIRING_DIRECTIONS{
 	UP, 
 	RIGHT, 
 	DOWN, 
 	LEFT,
+}
+
+
+enum SCREENS{
+	MAIN_MENU,
+	HOWTOPLAY,
+	CREDITS,
+	TEMPLATE,
+	INTRO,
+	END,
 }
