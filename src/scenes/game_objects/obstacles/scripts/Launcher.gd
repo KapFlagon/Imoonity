@@ -7,9 +7,6 @@ export var firing_interval: int = 1		# A variable to define how long the timer s
 export(Enums.FIRING_DIRECTIONS) var firing_direction
 
 
-# Non exported variables
-var projectile_instance
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +16,7 @@ func _ready():
 
 
 func fireNewProjectile():
-	projectile_instance = projectile.instance()
+	var projectile_instance = projectile.instance()
 	projectile_instance.set_firing_direction(firing_direction)
 	add_child(projectile_instance)
 

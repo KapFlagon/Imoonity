@@ -1,7 +1,7 @@
 extends Node
 
-export (PackedScene) var PlanetProjectile
-export (PackedScene) var PlanetPlatform
+export (PackedScene) var TitanProjectile
+export (PackedScene) var TitanPlatform
 
 
 var playerScene 
@@ -21,13 +21,13 @@ func checkActionButtonPressed():
 			spawnPlatform()
 	
 func fireNewProjectile():
-	projectileInstance = PlanetProjectile.instance()
+	projectileInstance = TitanProjectile.instance()
 	projectileInstance.setprojectileDirection(playerScene.facing)
 	add_child(projectileInstance)
-	projectileInstance.transform = playerScene.global_transform.translated(Vector2(1,-20))
+	projectileInstance.transform = playerScene.global_transform.translated(Vector2(1,-8))
 
 func spawnPlatform():
-	var platformInstance = PlanetPlatform.instance()
+	var platformInstance = TitanPlatform.instance()
 	add_child(platformInstance)
 	platformInstance.transform = projectileInstance.global_transform
 	projectileInstance.queue_free()

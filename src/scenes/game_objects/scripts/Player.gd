@@ -42,10 +42,6 @@ func _physics_process(delta: float) -> void:
 			# Check if player is colliding with object
 		if get_slide_count() > 0:
 			check_box_collision(velocity)
-		
-#	Tilesets don't allow on body entered signals ? so have to loop over collision 
-#	of player with every Frame and check to see if it has hit...deadness?
-	_check_collision_with_death_stuff()
 	
 
 func update_player_velocity(delta: float) -> void:
@@ -119,14 +115,6 @@ func launch_dash(current_horizontal_velocity: float) -> float:
 func _respawn_player():
 	self.position = spawn_location
 	current_state = Enums.PLAYER_STATE.IDLE
-
-
-func _check_collision_with_death_stuff():
-	for i in get_slide_count():
-		var collisionTile = get_slide_collision(i).collider.name
-		if collisionTile == "deathTileMap" || "Launcher_projectile" in collisionTile:
-			current_state = Enums.PLAYER_STATE.DEAD
-			_respawn_player()
 
 
 func update_state(velocity_x: float, old_y: float, new_y: float) -> void: 
