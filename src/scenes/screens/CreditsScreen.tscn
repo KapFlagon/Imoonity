@@ -39,9 +39,9 @@ valign = 1
 
 [node name="ProgrammersTitle" type="Label" parent="TopVBoxContainer"]
 visible = false
-margin_top = 36.0
+margin_top = 88.0
 margin_right = 320.0
-margin_bottom = 54.0
+margin_bottom = 106.0
 theme = ExtResource( 4 )
 text = "Programmers"
 align = 1
@@ -52,100 +52,100 @@ __meta__ = {
 
 [node name="ProgrammersVBox" type="VBoxContainer" parent="TopVBoxContainer"]
 visible = false
-margin_top = 47.0
+margin_top = 73.0
 margin_right = 320.0
-margin_bottom = 95.0
+margin_bottom = 121.0
 
-[node name="UserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+[node name="KapFlagonUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
 margin_right = 320.0
 margin_bottom = 9.0
 alignment = 1
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox"]
+[node name="KapFlagonUserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/KapFlagonUserEntryHBox"]
 margin_left = 103.0
 margin_right = 148.0
 margin_bottom = 9.0
 text = "KapFlagon"
 
-[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox"]
+[node name="KapFlagonGitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/KapFlagonUserEntryHBox"]
 margin_left = 152.0
 margin_right = 180.0
 margin_bottom = 9.0
 text = "GitHub"
 
-[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox"]
+[node name="KapFlagonItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/KapFlagonUserEntryHBox"]
 margin_left = 184.0
 margin_right = 216.0
 margin_bottom = 9.0
 text = "Itch.io"
 
-[node name="UserEntryHBox2" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+[node name="JibblyCUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
 margin_top = 13.0
 margin_right = 320.0
 margin_bottom = 22.0
 alignment = 1
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox2"]
+[node name="JibblyCUserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/JibblyCUserEntryHBox"]
 margin_left = 108.0
 margin_right = 143.0
 margin_bottom = 9.0
 text = "JibblyC"
 
-[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox2"]
+[node name="JibblyCGitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/JibblyCUserEntryHBox"]
 margin_left = 147.0
 margin_right = 175.0
 margin_bottom = 9.0
 text = "GitHub"
 
-[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox2"]
+[node name="JibblyCItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/JibblyCUserEntryHBox"]
 margin_left = 179.0
 margin_right = 211.0
 margin_bottom = 9.0
 text = "Itch.io"
 
-[node name="UserEntryHBox3" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+[node name="GiantSpaceRobotUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
 margin_top = 26.0
 margin_right = 320.0
 margin_bottom = 35.0
 alignment = 1
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox3"]
+[node name="GiantSpaceRobotUserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/GiantSpaceRobotUserEntryHBox"]
 margin_left = 90.0
 margin_right = 162.0
 margin_bottom = 9.0
 text = "GiantSpaceRobot"
 
-[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox3"]
+[node name="GiantSpaceRobotGitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/GiantSpaceRobotUserEntryHBox"]
 margin_left = 166.0
 margin_right = 194.0
 margin_bottom = 9.0
 text = "GitHub"
 
-[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox3"]
+[node name="GiantSpaceRobotItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/GiantSpaceRobotUserEntryHBox"]
 margin_left = 198.0
 margin_right = 230.0
 margin_bottom = 9.0
 text = "Itch.io"
 
-[node name="UserEntryHBox4" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
+[node name="DexyodUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/ProgrammersVBox"]
 margin_top = 39.0
 margin_right = 320.0
 margin_bottom = 48.0
 alignment = 1
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox4"]
+[node name="DexyodUserNameLbl" type="Label" parent="TopVBoxContainer/ProgrammersVBox/DexyodUserEntryHBox"]
 margin_left = 110.0
 margin_right = 141.0
 margin_bottom = 9.0
 text = "Dexyod"
 
-[node name="GitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox4"]
+[node name="DexyodGitHubLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/DexyodUserEntryHBox"]
 margin_left = 145.0
 margin_right = 173.0
 margin_bottom = 9.0
 text = "GitHub"
 
-[node name="ItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/UserEntryHBox4"]
+[node name="DexyodItchLinkBtn" type="LinkButton" parent="TopVBoxContainer/ProgrammersVBox/DexyodUserEntryHBox"]
 margin_left = 177.0
 margin_right = 209.0
 margin_bottom = 9.0
@@ -163,40 +163,40 @@ valign = 1
 
 [node name="AudioAndMusicVBox" type="VBoxContainer" parent="TopVBoxContainer"]
 visible = false
-margin_top = 95.0
+margin_top = 86.0
 margin_right = 320.0
-margin_bottom = 117.0
+margin_bottom = 108.0
 
-[node name="UserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/AudioAndMusicVBox"]
+[node name="GiantSpaceRobotUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/AudioAndMusicVBox"]
 margin_right = 320.0
 margin_bottom = 9.0
 alignment = 1
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox"]
+[node name="GiantSpaceRobotUserNameLbl" type="Label" parent="TopVBoxContainer/AudioAndMusicVBox/GiantSpaceRobotUserEntryHBox"]
 margin_left = 97.0
 margin_right = 169.0
 margin_bottom = 9.0
 text = "GiantSpaceRobot"
 
-[node name="SoundcloudLinkBtn" type="LinkButton" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox"]
+[node name="GiantSpaceRobotSoundcloudLinkBtn" type="LinkButton" parent="TopVBoxContainer/AudioAndMusicVBox/GiantSpaceRobotUserEntryHBox"]
 margin_left = 173.0
 margin_right = 223.0
 margin_bottom = 9.0
 text = "Soundcloud"
 
-[node name="UserEntryHBox2" type="HBoxContainer" parent="TopVBoxContainer/AudioAndMusicVBox"]
+[node name="KenCoderUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/AudioAndMusicVBox"]
 margin_top = 13.0
 margin_right = 320.0
 margin_bottom = 22.0
 alignment = 1
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox2"]
+[node name="KenCoderUserNameLbl" type="Label" parent="TopVBoxContainer/AudioAndMusicVBox/KenCoderUserEntryHBox"]
 margin_left = 113.0
 margin_right = 153.0
 margin_bottom = 9.0
 text = "KenCoder"
 
-[node name="SoundcloudLinkBtn" type="LinkButton" parent="TopVBoxContainer/AudioAndMusicVBox/UserEntryHBox2"]
+[node name="KenCoderSoundcloudLinkBtn" type="LinkButton" parent="TopVBoxContainer/AudioAndMusicVBox/KenCoderUserEntryHBox"]
 margin_left = 157.0
 margin_right = 207.0
 margin_bottom = 9.0
@@ -214,9 +214,9 @@ valign = 1
 
 [node name="HonourableMentionsSubTitle" type="Label" parent="TopVBoxContainer"]
 visible = false
-margin_top = 108.0
+margin_top = 70.0
 margin_right = 320.0
-margin_bottom = 122.0
+margin_bottom = 84.0
 theme = ExtResource( 2 )
 text = "Free & Open source assets"
 align = 1
@@ -224,28 +224,28 @@ valign = 1
 
 [node name="HonourableMentionsVBox" type="VBoxContainer" parent="TopVBoxContainer"]
 visible = false
-margin_top = 117.0
+margin_top = 79.0
 margin_right = 320.0
-margin_bottom = 152.0
+margin_bottom = 114.0
 
-[node name="UserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
+[node name="AdamAtomicUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
 margin_right = 320.0
 margin_bottom = 9.0
 alignment = 1
 
-[node name="RoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox"]
+[node name="AdamAtomicRoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox"]
 margin_left = 88.0
 margin_right = 141.0
 margin_bottom = 9.0
 text = "Art Assets:"
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox"]
+[node name="AdamAtomicUserNameLbl" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox"]
 margin_left = 145.0
 margin_right = 195.0
 margin_bottom = 9.0
 text = "adamatomic"
 
-[node name="SrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox"]
+[node name="AdamAtomicSrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox"]
 margin_left = 199.0
 margin_right = 231.0
 margin_bottom = 9.0
@@ -254,49 +254,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UserEntryHBox2" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
+[node name="PixelSagasUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
 margin_top = 13.0
 margin_right = 320.0
 margin_bottom = 22.0
 alignment = 1
 
-[node name="RoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox2"]
+[node name="PixelSagasRoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
 margin_left = 82.0
 margin_right = 111.0
 margin_bottom = 9.0
 text = "Fonts:"
 
-[node name="UserNameLbl" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox2"]
+[node name="PixelSagasUserNameLbl" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
 margin_left = 115.0
 margin_right = 169.0
 margin_bottom = 9.0
 text = "Pixel Sagas"
 
-[node name="SrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox2"]
+[node name="PixelSagasSrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
 margin_left = 173.0
 margin_right = 238.0
 margin_bottom = 9.0
 text = "fontspace.com"
 
-[node name="UserEntryHBox3" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
+[node name="SudospectiveUserEntryHBox" type="HBoxContainer" parent="TopVBoxContainer/HonourableMentionsVBox"]
 margin_top = 26.0
 margin_right = 320.0
 margin_bottom = 35.0
 alignment = 1
 
-[node name="RoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox3"]
+[node name="SudospectiveRoleLabel" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
 margin_left = 62.0
 margin_right = 164.0
 margin_bottom = 9.0
 text = "SyndiBox text engine:"
 
-[node name="UserNameLbl2" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox3"]
+[node name="SudospectiveUserNameLbl2" type="Label" parent="TopVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
 margin_left = 168.0
 margin_right = 226.0
 margin_bottom = 9.0
 text = "Sudospective"
 
-[node name="SrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/UserEntryHBox3"]
+[node name="SudospectiveSrcLnkBtn" type="LinkButton" parent="TopVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
 margin_left = 230.0
 margin_right = 258.0
 margin_bottom = 9.0
@@ -331,6 +331,19 @@ margin_left = 163.0
 margin_right = 194.0
 margin_bottom = 16.0
 text = "Next"
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/KapFlagonUserEntryHBox/KapFlagonGitHubLinkBtn" to="." method="_on_KapFlagonGitHubLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/KapFlagonUserEntryHBox/KapFlagonItchLinkBtn" to="." method="_on_KapFlagonItchLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/JibblyCUserEntryHBox/JibblyCGitHubLinkBtn" to="." method="_on_JibblyCGitHubLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/JibblyCUserEntryHBox/JibblyCItchLinkBtn" to="." method="_on_JibblyCItchLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/GiantSpaceRobotUserEntryHBox/GiantSpaceRobotGitHubLinkBtn" to="." method="_on_GiantSpaceRobotGitHubLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/GiantSpaceRobotUserEntryHBox/GiantSpaceRobotItchLinkBtn" to="." method="_on_GiantSpaceRobotItchLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/DexyodUserEntryHBox/DexyodGitHubLinkBtn" to="." method="_on_DexyodGitHubLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/ProgrammersVBox/DexyodUserEntryHBox/DexyodItchLinkBtn" to="." method="_on_DexyodItchLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/AudioAndMusicVBox/GiantSpaceRobotUserEntryHBox/GiantSpaceRobotSoundcloudLinkBtn" to="." method="_on_GiantSpaceRobotSoundcloudLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/AudioAndMusicVBox/KenCoderUserEntryHBox/KenCoderSoundcloudLinkBtn" to="." method="_on_KenCoderSoundcloudLinkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox/AdamAtomicSrcLnkBtn" to="." method="_on_AdamAtomicSrcLnkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox/PixelSagasSrcLnkBtn" to="." method="_on_PixelSagasSrcLnkBtn_button_up"]
+[connection signal="button_up" from="TopVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox/SudospectiveSrcLnkBtn" to="." method="_on_SudospectiveSrcLnkBtn_button_up"]
 [connection signal="button_up" from="BtnHBoxContainer/BackBtn" to="." method="_on_BackBtn_button_up"]
 [connection signal="button_up" from="BtnHBoxContainer/MainMenuBtn" to="." method="_on_MainMenuBtn_button_up"]
 [connection signal="button_up" from="BtnHBoxContainer/NextBtn" to="." method="_on_NextBtn_button_up"]
