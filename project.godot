@@ -9,19 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "BaseScreen",
+"language": "GDScript",
+"path": "res://src/scenes/screens/scripts/BaseScreen.gd"
+}, {
 "base": "Node",
 "class": "Enums",
 "language": "GDScript",
 "path": "res://src/sceneless_scripts/Enums.gd"
 } ]
 _global_script_class_icons={
+"BaseScreen": "",
 "Enums": ""
 }
 
 [application]
 
 config/name="GHGO2020"
-run/main_scene="res://src/scenes/levels/prototypes/TemplateLevel.tscn"
+run/main_scene="res://src/scenes/screens/StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
