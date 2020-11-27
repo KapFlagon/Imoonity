@@ -23,6 +23,7 @@ func _ready() -> void:
 	position = spawn_location
 	update_animations(current_state)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update_player_velocity(delta)
