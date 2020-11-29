@@ -16,7 +16,7 @@ func _ready():
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if moving :
-		var player = get_tree().get_root().get_node("TemplateLevel/Player")
+		var player = get_node("../../../Player")
 		velocity = global_position.direction_to(player.global_position) * projectileSpeed
 		move_and_slide(velocity)
 		
