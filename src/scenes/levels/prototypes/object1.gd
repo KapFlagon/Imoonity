@@ -23,29 +23,30 @@ func _physics_process(delta):
 
 func _input(event):
 	if is_visible_by_player():
-		if Input.is_action_just_pressed("phobosInteract") and picked == false:
-			var bodies = $Detector.get_overlapping_bodies() 
-			for b in bodies:
-				if b.name == "Player":
-					picked = true
-		elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_down") and picked == true:
-			### Drop object/rock
-			picked = false
-			if get_node("../Player/Sprite").flip_h == false:
-				apply_impulse(Vector2(), Vector2(20, 0))
-			else:
-				apply_impulse(Vector2(), Vector2(-20, 0))
-		elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_up") and picked == true:
-			### Throw object/rock upwards
-			picked = false
-			apply_impulse(Vector2(), Vector2(0, -100))
-		elif Input.is_action_just_pressed("phobosInteract") and picked == true:
-			### Throw object/rock left or right
-			picked = false
-			if get_node("../Player/Sprite").flip_h == false:
-				apply_impulse(Vector2(), Vector2(200, -50))
-			else:
-				apply_impulse(Vector2(), Vector2(-200, -50))
+		if PowerManager.is_phobos_equipped():
+			if Input.is_action_just_pressed("phobosInteract") and picked == false:
+				var bodies = $Detector.get_overlapping_bodies() 
+				for b in bodies:
+					if b.name == "Player":
+						picked = true
+			elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_down") and picked == true:
+				### Drop object/rock
+				picked = false
+				if get_node("../Player/Sprite").flip_h == false:
+					apply_impulse(Vector2(), Vector2(20, 0))
+				else:
+					apply_impulse(Vector2(), Vector2(-20, 0))
+			elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_up") and picked == true:
+				### Throw object/rock upwards
+				picked = false
+				apply_impulse(Vector2(), Vector2(0, -100))
+			elif Input.is_action_just_pressed("phobosInteract") and picked == true:
+				### Throw object/rock left or right
+				picked = false
+				if get_node("../Player/Sprite").flip_h == false:
+					apply_impulse(Vector2(), Vector2(200, -50))
+				else:
+					apply_impulse(Vector2(), Vector2(-200, -50))
 
 #func _input(event):
 #	if Input.is_action_just_pressed("phobosInteract"):
