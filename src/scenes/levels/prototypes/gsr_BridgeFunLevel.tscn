@@ -678,7 +678,7 @@ tile_data = PoolIntArray( 65580, 0, 0, 65581, 0, 0, 131116, 0, 0, 196652, 0, 0, 
 tile_set = SubResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 720946, 0, 0 )
+tile_data = PoolIntArray( 720946, 0, 0, 851979, 1, 0, 851981, 1, 0 )
 
 [node name="wallsTileMap" type="TileMap" parent="TileMapContainer"]
 tile_set = SubResource( 62 )
