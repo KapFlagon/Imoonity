@@ -10,7 +10,7 @@ func _ready():
 	originaljump = get_node("../Player").jump_force
 
 func _physics_process(delta):
-	if is_visible_in_tree():
+	if is_visible_by_player():
 		if picked == true:
 			self.position = get_node("../Player/Position2D").global_position
 			get_node("../Player").base_movement_speed = originalspeed/6  # Slow down due to box
@@ -22,7 +22,7 @@ func _physics_process(delta):
 			get_node("../Player").jump_force = originaljump
 
 func _input(event):
-	if is_visible_in_tree():
+	if is_visible_by_player():
 		if Input.is_action_just_pressed("phobosInteract") and picked == false:
 			var bodies = $Detector.get_overlapping_bodies()
 			for b in bodies:
