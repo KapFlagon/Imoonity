@@ -23,6 +23,7 @@ func _ready() -> void:
 	position = spawn_location
 	update_animations(current_state)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update_player_velocity(delta)
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide(velocity, Vector2.UP)
 	
 #	Place Holder for now
+	$Puck_Dash.checkActionButtonPressed()
 	$TitanAbilityManager.checkActionButtonPressed()
 	$phaseAbilityManager.checkActionButtonPressed()
 
@@ -47,8 +49,6 @@ func update_player_velocity(delta: float) -> void:
 	velocity.y = update_player_vertical_velocity(delta, velocity.y) 
 	update_state(velocity.x, old_y, velocity.y)
 	update_animations(current_state)
-	if Input.is_action_just_pressed("power_1"):
-		velocity.x = launch_dash(velocity.x)
 
 
 func update_player_horizontal_velocity() -> float:
@@ -97,17 +97,7 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 		if Input.is_action_just_released("move_jump") and current_vertical_velocity < (-jump_force/2):
 			vertical_velocity = current_vertical_velocity + (jump_force/2)
 	return vertical_velocity
-
-
-func launch_dash(current_horizontal_velocity: float) -> float: 
-	var dash_force = 2000
-	var input_dir = get_horizontal_input()
-	var output_horizontal_velocity
-	if facing == 1:
-		output_horizontal_velocity = current_horizontal_velocity + dash_force
-	elif facing == -1:
-		output_horizontal_velocity = current_horizontal_velocity - dash_force
-	return output_horizontal_velocity
+	
 
 func _respawn_player():
 	self.position = spawn_location
