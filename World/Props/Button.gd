@@ -13,9 +13,11 @@ func _ready() -> void:
 	connect("body_exited", self, "_on_body_exited")
 	
 func _on_body_entered(body: PhysicsBody2D) -> void:
+	# Check if a body already there
 	animated_sprite.play("On")
 	emit_signal("pressed")
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
+	### Is there still a body touching it?
 	animated_sprite.play("Off")
 	emit_signal("unpressed")
