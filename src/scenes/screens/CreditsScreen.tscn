@@ -234,9 +234,9 @@ valign = 1
 
 [node name="HonourableMentionsVBox" type="VBoxContainer" parent="SubVBoxContainer"]
 visible = false
-margin_top = 79.0
+margin_top = 40.0
 margin_right = 320.0
-margin_bottom = 114.0
+margin_bottom = 88.0
 
 [node name="AdamAtomicUserEntryHBox" type="HBoxContainer" parent="SubVBoxContainer/HonourableMentionsVBox"]
 margin_right = 320.0
@@ -244,20 +244,35 @@ margin_bottom = 9.0
 alignment = 1
 
 [node name="AdamAtomicRoleLabel" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox"]
-margin_left = 88.0
-margin_right = 141.0
+margin_left = 72.0
+margin_right = 211.0
 margin_bottom = 9.0
-text = "Art Assets:"
-
-[node name="AdamAtomicUserNameLbl" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox"]
-margin_left = 145.0
-margin_right = 195.0
-margin_bottom = 9.0
-text = "adamatomic"
+text = "Art Asset pack by adamatomic"
 
 [node name="AdamAtomicSrcLnkBtn" type="LinkButton" parent="SubVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox"]
-margin_left = 199.0
-margin_right = 231.0
+margin_left = 215.0
+margin_right = 247.0
+margin_bottom = 9.0
+text = "Itch.io"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelianthusGamesUserEntryHBox2" type="HBoxContainer" parent="SubVBoxContainer/HonourableMentionsVBox"]
+margin_top = 13.0
+margin_right = 320.0
+margin_bottom = 22.0
+alignment = 1
+
+[node name="HelianthusGamesRoleLabel" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/HelianthusGamesUserEntryHBox2"]
+margin_left = 55.0
+margin_right = 228.0
+margin_bottom = 9.0
+text = "Art Asset pack by Helianthus Games:"
+
+[node name="HelianthusGamesSrcLnkBtn" type="LinkButton" parent="SubVBoxContainer/HonourableMentionsVBox/HelianthusGamesUserEntryHBox2"]
+margin_left = 232.0
+margin_right = 264.0
 margin_bottom = 9.0
 text = "Itch.io"
 __meta__ = {
@@ -265,50 +280,38 @@ __meta__ = {
 }
 
 [node name="PixelSagasUserEntryHBox" type="HBoxContainer" parent="SubVBoxContainer/HonourableMentionsVBox"]
-margin_top = 13.0
-margin_right = 320.0
-margin_bottom = 22.0
-alignment = 1
-
-[node name="PixelSagasRoleLabel" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
-margin_left = 82.0
-margin_right = 111.0
-margin_bottom = 9.0
-text = "Fonts:"
-
-[node name="PixelSagasUserNameLbl" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
-margin_left = 115.0
-margin_right = 169.0
-margin_bottom = 9.0
-text = "Pixel Sagas"
-
-[node name="PixelSagasSrcLnkBtn" type="LinkButton" parent="SubVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
-margin_left = 173.0
-margin_right = 238.0
-margin_bottom = 9.0
-text = "fontspace.com"
-
-[node name="SudospectiveUserEntryHBox" type="HBoxContainer" parent="SubVBoxContainer/HonourableMentionsVBox"]
 margin_top = 26.0
 margin_right = 320.0
 margin_bottom = 35.0
 alignment = 1
 
-[node name="SudospectiveRoleLabel" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
-margin_left = 62.0
-margin_right = 164.0
+[node name="PixelSagasRoleLabel" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
+margin_left = 73.0
+margin_right = 177.0
 margin_bottom = 9.0
-text = "SyndiBox text engine:"
+text = "Font by Pixel Sagas::"
 
-[node name="SudospectiveUserNameLbl2" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
-margin_left = 168.0
-margin_right = 226.0
+[node name="PixelSagasSrcLnkBtn" type="LinkButton" parent="SubVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox"]
+margin_left = 181.0
+margin_right = 246.0
 margin_bottom = 9.0
-text = "Sudospective"
+text = "fontspace.com"
+
+[node name="SudospectiveUserEntryHBox" type="HBoxContainer" parent="SubVBoxContainer/HonourableMentionsVBox"]
+margin_top = 39.0
+margin_right = 320.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="SudospectiveRoleLabel" type="Label" parent="SubVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
+margin_left = 53.0
+margin_right = 234.0
+margin_bottom = 9.0
+text = "SyndiBox text engine by Sudospective:"
 
 [node name="SudospectiveSrcLnkBtn" type="LinkButton" parent="SubVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox"]
-margin_left = 230.0
-margin_right = 258.0
+margin_left = 238.0
+margin_right = 266.0
 margin_bottom = 9.0
 text = "GitHub"
 
@@ -352,6 +355,7 @@ text = "Next"
 [connection signal="button_up" from="SubVBoxContainer/AudioAndMusicVBox/GiantSpaceRobotUserEntryHBox/GiantSpaceRobotSoundcloudLinkBtn" to="." method="_on_GiantSpaceRobotSoundcloudLinkBtn_button_up"]
 [connection signal="button_up" from="SubVBoxContainer/AudioAndMusicVBox/KenCoderUserEntryHBox/KenCoderSoundcloudLinkBtn" to="." method="_on_KenCoderSoundcloudLinkBtn_button_up"]
 [connection signal="button_up" from="SubVBoxContainer/HonourableMentionsVBox/AdamAtomicUserEntryHBox/AdamAtomicSrcLnkBtn" to="." method="_on_AdamAtomicSrcLnkBtn_button_up"]
+[connection signal="button_up" from="SubVBoxContainer/HonourableMentionsVBox/HelianthusGamesUserEntryHBox2/HelianthusGamesSrcLnkBtn" to="." method="_on_HelianthusGamesSrcLnkBtn_button_up"]
 [connection signal="button_up" from="SubVBoxContainer/HonourableMentionsVBox/PixelSagasUserEntryHBox/PixelSagasSrcLnkBtn" to="." method="_on_PixelSagasSrcLnkBtn_button_up"]
 [connection signal="button_up" from="SubVBoxContainer/HonourableMentionsVBox/SudospectiveUserEntryHBox/SudospectiveSrcLnkBtn" to="." method="_on_SudospectiveSrcLnkBtn_button_up"]
 [connection signal="button_up" from="BtnHBoxContainer/BackBtn" to="." method="_on_BackBtn_button_up"]
