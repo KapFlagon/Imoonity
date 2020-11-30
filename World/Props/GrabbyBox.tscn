@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/scenes/levels/prototypes/object1.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/sprites/Placeholder_RingPlat.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/sprites/01/rocks.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.05858, 4.06901 )
+extents = Vector2( 2.46259, 2.42936 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7.9721, 7.9644 )
@@ -16,8 +16,12 @@ collision_mask = 63
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.253613, 0.249136 )
+position = Vector2( 2.38419e-07, -2.38419e-07 )
+scale = Vector2( 0.976515, 0.944837 )
 texture = ExtResource( 2 )
+vframes = 3
+hframes = 8
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -4.76837e-07 )
