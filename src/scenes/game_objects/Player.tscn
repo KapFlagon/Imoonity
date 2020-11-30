@@ -140,4 +140,5 @@ position = Vector2( 0, -11.982 )
 position = Vector2( -0.451178, -3.89813 )
 shape = SubResource( 1 )
 [connection signal="puck_timer_elapsing" from="Puck_Dash" to="Camera2D/PlayerHud" method="_on_Puck_Dash_puck_timer_elapsing"]
+[connection signal="power_triggered" from="phaseAbilityManager" to="Camera2D/PlayerHud" method="_on_phaseAbilityManager_power_triggered"]
 [connection signal="area_entered" from="AreaDetector" to="." method="_on_DeathDetector_area_entered"]
