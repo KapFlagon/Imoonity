@@ -45,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ScreenManager="*res://src/sceneless_scripts/autoload/ScreenManager.gd"
+PowerManager="*res://src/sceneless_scripts/autoload/PowerManager.gd"
 
 [display]
 
