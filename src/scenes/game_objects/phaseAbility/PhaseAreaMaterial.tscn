@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/sprites/01/tiles.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/game_objects/scripts/PhaseAreaMaterial.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 3.9375 )
+
+[node name="phasingMaterial" type="Area2D" groups=[
+"lethal",
+"phasingMaterial",
+]]
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 4.0625 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3.9375, 4.03125 )
+scale = Vector2( 0.984375, 0.992188 )
+texture = ExtResource( 1 )
+vframes = 20
+hframes = 20
+frame = 322

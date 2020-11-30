@@ -15,4 +15,11 @@ func initialize_hud() -> void:
 
 func _on_Puck_Dash_puck_timer_elapsing(percentage_elapsed) -> void:
 	update_puck_dash_progress(percentage_elapsed)
+	
+func _on_phaseAbilityManager_phase_ability_on(activated) -> void:
+	if(activated):
+		$TopHBoxContainer/PowersHBoxContainer/phaseAbility.modulate.a = 0.5
+	else :
+		$TopHBoxContainer/PowersHBoxContainer/phaseAbility.modulate.a = 1
+		
 
