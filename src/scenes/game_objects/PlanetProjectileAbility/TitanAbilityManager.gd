@@ -14,7 +14,7 @@ func _ready():
 	playerScene = get_parent()
 	
 func checkActionButtonPressed():
-	if Input.is_action_just_pressed("action_fire"):
+	if PowerManager.is_titan_equipped() and Input.is_action_just_pressed("action_fire"):
 		if get_node_or_null("PlanetProjectile") == null:
 			fireNewProjectile()
 		else:
@@ -34,11 +34,4 @@ func spawnPlatform():
 	platformArray.push_back(platformInstance)
 	if(platformArray.size() > 3):
 		platformArray.pop_front().queue_free()
-		
-		
-
-
-
-
-	
 
