@@ -7,17 +7,23 @@ signal unpressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#animated_sprite.play("Off")
-	#emit_signal("unpressed")
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 	
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	# Check if a body already there
-	animated_sprite.play("On")
-	emit_signal("pressed")
+	var bodies = $Detector.get_overlapping_bodies()
+	if len(bodies) > 1:
+		pass
+	else:
+		animated_sprite.play("On")
+		emit_signal("pressed")
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
 	### Is there still a body touching it?
-	animated_sprite.play("Off")
-	emit_signal("unpressed")
+	var bodies = $Detector.get_overlapping_bodies()
+	if len(bodies) > 0:
+		pass
+	else:
+		animated_sprite.play("Off")
+		emit_signal("unpressed")
