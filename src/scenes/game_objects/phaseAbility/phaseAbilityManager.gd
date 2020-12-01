@@ -5,8 +5,6 @@ signal power_triggered(power_active)
 var playerScene 
 var power_active: bool = false setget set_power_active, is_power_active
 
-var isCurrentlyPhasing = false
-
 signal phase_ability_on(activated)
 
 
@@ -17,8 +15,8 @@ func _ready():
 
 func checkActionButtonPressed():
 	if PowerManager.is_io_equipped() and Input.is_action_just_pressed("action_phase"):
-		if(playerScene.get_collision_mask_bit(2)):
-			playerScene.set_collision_mask_bit(2,false)
+		if(!power_active):
+			get_tree().call_group("phasingMaterial","_remove_from_lethal_group")
 			playerScene.find_node("Sprite").self_modulate = Color(0.44, 0.5, 0.56, 0.5 )
 			set_power_active(true)
 		else:
