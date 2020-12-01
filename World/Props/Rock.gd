@@ -29,17 +29,21 @@ func _input(event):
 				for b in bodies:
 					if b.name == "Player":
 						picked = true
+						get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(true)
 			elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_down") and picked == true:
 				picked = false
+				get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(false)
 				if get_node("../Player/Sprite").flip_h == false:
 					apply_impulse(Vector2(), Vector2(50, 0))
 				else:
 					apply_impulse(Vector2(), Vector2(-50, 0))
 			elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_up") and picked == true:
 				picked = false
+				get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(false)
 				apply_impulse(Vector2(), Vector2(0, -100))
 			elif Input.is_action_just_pressed("phobosInteract") and picked == true:
 				picked = false
+				get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(false)
 				if get_node("../Player/Sprite").flip_h == false:
 					apply_impulse(Vector2(), Vector2(200, -50))
 				else:

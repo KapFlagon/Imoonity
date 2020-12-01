@@ -63,7 +63,7 @@ align = 1
 valign = 1
 
 [node name="PowersHBoxContainer" type="HBoxContainer" parent="TopHBoxContainer"]
-margin_right = 36.0
+margin_right = 56.0
 margin_bottom = 24.0
 alignment = 1
 
@@ -78,6 +78,15 @@ fill_mode = 4
 [node name="Io_Phase" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
 margin_left = 20.0
 margin_right = 36.0
+margin_bottom = 24.0
+value = 100.0
+rounded = true
+texture_progress = ExtResource( 4 )
+fill_mode = 4
+
+[node name="Phobos" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 40.0
+margin_right = 56.0
 margin_bottom = 24.0
 value = 100.0
 rounded = true
