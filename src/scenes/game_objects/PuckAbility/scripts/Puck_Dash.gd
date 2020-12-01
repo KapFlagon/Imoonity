@@ -10,7 +10,6 @@ export (float) var cooldown_time_seconds = 1
 
 var player_scene = null
 var dash_available: bool = true
-var ability_active: bool = true setget set_ability_active, get_ability_active
 var action_button: String setget set_action_button, get_action_button
 
 
@@ -24,14 +23,6 @@ func _process(delta) -> void:
 	broadcast_elapsed_time_percentage()
 
 
-func set_ability_active(ability_state: bool) -> void:
-	ability_active = ability_state
-
-
-func get_ability_active() -> bool: 
-	return ability_active
-
-
 func set_action_button(new_action_button: String):
 	action_button = new_action_button
 
@@ -41,7 +32,7 @@ func get_action_button() -> String:
 
 
 func checkActionButtonPressed():
-	if Input.is_action_just_pressed(action_button) and dash_available:
+	if PowerManager.is_puck_equipped() and Input.is_action_just_pressed(action_button) and dash_available:
 		launch_dash(player_scene.velocity)
 		dash_available = false
 		$Timer.start()

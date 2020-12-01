@@ -33,3 +33,9 @@ position = Vector2( -0.25, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 position = Vector2( 0.25, -4.76837e-07 )
 shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -5.72205e-06, -1.90735e-06 )
+scale = Vector2( 6.37768, 6.37152 )
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

@@ -4,3 +4,9 @@
 
 [node name="phaseAbilityManager" type="Node"]
 script = ExtResource( 1 )
+
+[node name="ActiveTimer" type="Timer" parent="."]
+
+[node name="CoolDownTimer" type="Timer" parent="."]
+[connection signal="timeout" from="ActiveTimer" to="." method="_on_ActiveTimer_timeout"]
+[connection signal="timeout" from="CoolDownTimer" to="." method="_on_CoolDownTimer_timeout"]
