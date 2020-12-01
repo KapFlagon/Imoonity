@@ -7,6 +7,9 @@ func _ready() -> void:
 
 func update_puck_dash_progress(progress_value: float) -> void:
 	$TopHBoxContainer/PowersHBoxContainer/PuckDash.set_value(progress_value)
+	
+func update_phase_progress(progress_value: float) -> void:
+	$TopHBoxContainer/PowersHBoxContainer/Io_Phase.set_value(progress_value)
 
 
 func update_Io_status_icon(power_active: bool) -> void: 
@@ -19,18 +22,14 @@ func update_Io_status_icon(power_active: bool) -> void:
 func initialize_hud() -> void:
 	update_puck_dash_progress(100)
 	update_Io_status_icon(false)
+	update_phase_progress(100)
 
 
 func _on_Puck_Dash_puck_timer_elapsing(percentage_elapsed) -> void:
 	update_puck_dash_progress(percentage_elapsed)
-	
-func _on_phaseAbilityManager_phase_ability_on(activated) -> void:
-	if(activated):
-		$TopHBoxContainer/PowersHBoxContainer/phaseAbility.modulate.a = 0.5
-	else :
-		$TopHBoxContainer/PowersHBoxContainer/phaseAbility.modulate.a = 1
-		
-
 
 func _on_phaseAbilityManager_power_triggered(power_active: bool) -> void:
 	update_Io_status_icon(power_active)
+
+func _on_phaseAbilityManager_phase_timer_elapsing(percentage_elapsed):
+	update_phase_progress(percentage_elapsed)
