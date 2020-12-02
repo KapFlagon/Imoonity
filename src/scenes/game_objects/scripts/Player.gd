@@ -142,7 +142,6 @@ func _respawn_player():
 	$DeathAnimation.global_transform = global_transform.translated(Vector2(1,-6))
 	$DeathAnimation.emitting = true
 	$DeathAnimation/DeathAudio.play()
-	get_tree().reload_current_scene()  # Reset level
 	$Sprite.visible=false
 	movementEnabled = false
 	yield(get_tree().create_timer(respawnTime), "timeout")
@@ -150,4 +149,5 @@ func _respawn_player():
 	$Sprite.visible=true
 	movementEnabled = true
 	$DeathAnimation/DeathAudio.stop()
+	get_tree().reload_current_scene()  # Reset level
 
