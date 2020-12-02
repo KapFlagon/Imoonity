@@ -23,6 +23,7 @@ func fireNewProjectile():
 	var projectile_instance = projectile.instance()
 	projectile_instance.set_firing_direction(firing_direction)
 	add_child(projectile_instance)
+	$launcherAudio.play()
 
 
 func _on_Timer_timeout() -> void:

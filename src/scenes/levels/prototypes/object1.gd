@@ -30,10 +30,12 @@ func _input(event):
 					if b.name == "Player":
 						picked = true
 						get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(true)
+						$rockPickUp.play()
 			elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_down") and picked == true:
 				### Drop object/rock
 				picked = false
 				get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(false)
+				$rockDrop.play()
 				if get_node("../Player/Sprite").flip_h == false:
 					apply_impulse(Vector2(), Vector2(20, 0))
 				else:
@@ -41,12 +43,14 @@ func _input(event):
 			elif Input.is_action_just_pressed("phobosInteract") and Input.is_action_pressed("ui_up") and picked == true:
 				### Throw object/rock upwards
 				picked = false
+				$rockThrow.play()
 				get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(false)
 				apply_impulse(Vector2(), Vector2(0, -100))
 			elif Input.is_action_just_pressed("phobosInteract") and picked == true:
 				### Throw object/rock left or right
 				picked = false
 				get_node("../Player/Camera2D/PlayerHud")._on_phobosAbilityManager_power_triggered(false)
+				$rockThrow.play()
 				if get_node("../Player/Sprite").flip_h == false:
 					apply_impulse(Vector2(), Vector2(200, -50))
 				else:

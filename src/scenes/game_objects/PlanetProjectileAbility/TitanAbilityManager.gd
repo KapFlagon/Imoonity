@@ -25,6 +25,7 @@ func fireNewProjectile():
 	projectileInstance.setprojectileDirection(playerScene.facing)
 	add_child(projectileInstance)
 	projectileInstance.transform = playerScene.global_transform.translated(Vector2(1,-8))
+	$shootTitanAudio.play()
 
 func spawnPlatform():
 	var platformInstance = TitanPlatform.instance()
@@ -32,6 +33,7 @@ func spawnPlatform():
 	platformInstance.transform = projectileInstance.global_transform
 	projectileInstance.queue_free()
 	platformArray.push_back(platformInstance)
+	$planetPopUpAudio.play()
 	if(platformArray.size() > 3):
 		platformArray.pop_front().queue_free()
 

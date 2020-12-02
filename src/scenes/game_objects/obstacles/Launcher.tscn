@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/obstacles/scripts/Launcher.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/sprites/01/beamsocket.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Launcher_projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Launcher.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.23351, 4.05503 )
@@ -47,6 +48,10 @@ position = Vector2( 1.90735e-06, 0 )
 scale = Vector2( 4.8, 4 )
 process_parent = true
 physics_process_parent = true
+
+[node name="launcherAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -18.367
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
