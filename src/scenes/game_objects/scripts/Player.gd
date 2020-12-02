@@ -9,12 +9,14 @@ export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
 export var jump_force: int = 100
 export var push_speed : = 1
+export var respawnTime : = 1.0
 
 # Additional variables
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
 var can_pick = true
 var spawn_location: Vector2 =  Vector2(30,170)
+var movementEnabled = true
 #var spawn_location: Vector2 =  Vector2(230,60)  # For testing
 
 
@@ -26,21 +28,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	update_player_velocity(delta)
-	
-# warning-ignore:return_value_discarded
-	move_and_slide(velocity, Vector2.UP)
-	
-#	Place Holder for now
-	$Puck_Dash.checkActionButtonPressed()
-	$TitanAbilityManager.checkActionButtonPressed()
-	$phaseAbilityManager.checkActionButtonPressed()
+	if(movementEnabled):
+		update_player_velocity(delta)
+		
+	# warning-ignore:return_value_discarded
+		move_and_slide(velocity, Vector2.UP)
+		
+	#	Place Holder for now
+		$Puck_Dash.checkActionButtonPressed()
+		$TitanAbilityManager.checkActionButtonPressed()
+		$phaseAbilityManager.checkActionButtonPressed()
 
-	# Check if phobos power button pressed
-	if Input.is_action_pressed("grab_object"): 
-		# Check if player is colliding with object
-		if get_slide_count() > 0:
-			check_box_collision(velocity)
+		# Check if phobos power button pressed
+		if Input.is_action_pressed("grab_object"): 
+			# Check if player is colliding with object
+			if get_slide_count() > 0:
+				check_box_collision(velocity)
 	
 
 func update_player_velocity(delta: float) -> void:
@@ -97,11 +100,6 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 		if Input.is_action_just_released("move_jump") and current_vertical_velocity < (-jump_force/2):
 			vertical_velocity = current_vertical_velocity + (jump_force/2)
 	return vertical_velocity
-	
-
-func _respawn_player():
-	self.position = spawn_location
-	current_state = Enums.PLAYER_STATE.IDLE
 
 
 func update_state(velocity_x: float, old_y: float, new_y: float) -> void: 
@@ -136,4 +134,16 @@ func _on_DeathDetector_area_entered(area: Area2D) -> void:
 		_respawn_player()
 	elif area.is_in_group("checkpoint"):
 		spawn_location = area.get_position()
+		
+func _respawn_player():
+	$DeathAnimation.global_transform = global_transform.translated(Vector2(1,-6))
+	$DeathAnimation.emitting = true
+	$DeathAnimation/DeathAudio.play()
+	$Sprite.visible=false
+	movementEnabled = false
+	yield(get_tree().create_timer(respawnTime), "timeout")
+	self.position = spawn_location
+	$Sprite.visible=true
+	movementEnabled = true
+	$DeathAnimation/DeathAudio.stop()
 
