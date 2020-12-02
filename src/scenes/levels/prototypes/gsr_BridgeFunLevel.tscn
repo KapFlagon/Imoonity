@@ -72,7 +72,7 @@ points = PoolVector2Array( 32, 16, 0, 16, 8, 8, 24, 8 )
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=63]
+[sub_resource type="OccluderPolygon2D" id=6]
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=7]
@@ -110,7 +110,7 @@ polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/region = Rect2( 0, 0, 32, 32 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
-1/occluder = SubResource( 63 )
+1/occluder = SubResource( 6 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -766,7 +766,7 @@ position = Vector2( 352, 121.858 )
 rotation = 1.5708
 
 [node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 5 )]
-position = Vector2( 42.5213, 292.801 )
+position = Vector2( 83.848, 150.948 )
 rotation = -1.5708
 
 [node name="Bridge2" parent="." instance=ExtResource( 16 )]
