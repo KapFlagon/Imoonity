@@ -34,6 +34,9 @@ func get_action_button() -> String:
 func checkActionButtonPressed():
 	if PowerManager.is_puck_equipped() and Input.is_action_just_pressed(action_button) and dash_available:
 		launch_dash(player_scene.velocity)
+		#$PlayerSFX/DashAudio.play()
+		#get_node("../").$PlayerSFX/DashAudio.play()
+		#get_node("../../").$PlayerSFX/DashAudio.play()
 		dash_available = false
 		$Timer.start()
 

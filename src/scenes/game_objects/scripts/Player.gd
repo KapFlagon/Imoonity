@@ -94,11 +94,14 @@ func update_player_vertical_velocity(delta: float, current_vertical_velocity: fl
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_jump"):
 			vertical_velocity = -jump_force
+			$PlayerSFX/JumpAudio.play()
+			#$PlayerSFX/JumpAudio.stop()
 		else: 
 			vertical_velocity = lerp(current_vertical_velocity, 0, ground_friction)
 	else:
 		if Input.is_action_just_released("move_jump") and current_vertical_velocity < (-jump_force/2):
 			vertical_velocity = current_vertical_velocity + (jump_force/2)
+	#$PlayerSFX/JumpAudio.stop()
 	return vertical_velocity
 
 
