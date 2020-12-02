@@ -752,24 +752,24 @@ position = Vector2( 206.191, 107.891 )
 scale = Vector2( 0.752625, 0.753353 )
 hint_text = "...cause you're gonna die a lot"
 
-[node name="pathFollowObstacle" parent="." instance=ExtResource( 13 )]
-position = Vector2( 140.177, 4.07864 )
-
-[node name="HomingObstacle" parent="." instance=ExtResource( 15 )]
-position = Vector2( 482.445, -124.981 )
-
 [node name="CheckPoint" parent="." instance=ExtResource( 18 )]
 position = Vector2( 328.331, -34.6684 )
 
-[node name="Node" type="Node" parent="."]
+[node name="Obstacles" type="Node" parent="."]
 
-[node name="Launcher" parent="Node" instance=ExtResource( 9 )]
+[node name="Launcher" parent="Obstacles" instance=ExtResource( 9 )]
 position = Vector2( 354.323, 145.683 )
 firing_direction = 0
 
-[node name="Launcher2" parent="Node" instance=ExtResource( 9 )]
+[node name="Launcher2" parent="Obstacles" instance=ExtResource( 9 )]
 position = Vector2( 259.519, 144.147 )
 firing_interval = 3
+
+[node name="pathFollowObstacle" parent="Obstacles" instance=ExtResource( 13 )]
+position = Vector2( 140.177, 4.07864 )
+
+[node name="HomingObstacle" parent="Obstacles" instance=ExtResource( 15 )]
+position = Vector2( 482.445, -124.981 )
 
 [node name="DeadZone" parent="." instance=ExtResource( 5 )]
 position = Vector2( 465.32, 209.644 )
