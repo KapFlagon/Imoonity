@@ -52,6 +52,7 @@ physics_process_parent = true
 [node name="launcherAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -18.367
+attenuation = 16.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

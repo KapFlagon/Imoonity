@@ -137,6 +137,7 @@ func _on_DeathDetector_area_entered(area: Area2D) -> void:
 		_respawn_player()
 	elif area.is_in_group("checkpoint"):
 		spawn_location = area.get_position()
+		$PlayerSFX/checkpointAudio.play()
 		
 func _respawn_player():
 	$DeathAnimation.global_transform = global_transform.translated(Vector2(1,-6))

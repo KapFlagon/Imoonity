@@ -18,6 +18,7 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 	else:
 		animated_sprite.play("On")
 		emit_signal("pressed")
+		$buttonAudio.play()
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
 	### Is there still a body touching it?

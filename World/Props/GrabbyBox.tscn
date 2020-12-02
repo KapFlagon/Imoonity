@@ -3,7 +3,7 @@
 [ext_resource path="res://src/scenes/levels/prototypes/object1.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/sprites/01/rocks.png" type="Texture" id=2]
 [ext_resource path="res://assets/sfx/GodotGame_SFX_Grab - Put down.ogg" type="AudioStream" id=3]
-[ext_resource path="res://assets/sfx/GodotGame_SFX_Planet projectile shoot.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Rock throw.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/sfx/GodotGame_SFX_Grab - Pick up.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -49,6 +49,6 @@ stream = ExtResource( 3 )
 
 [node name="rockThrow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-pitch_scale = 2.14
+volume_db = -13.109
 [connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
