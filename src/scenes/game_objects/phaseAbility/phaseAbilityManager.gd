@@ -28,11 +28,13 @@ func checkActionButtonPressed():
 			playerScene.find_node("Sprite").self_modulate = Color(0.44, 0.5, 0.56, 0.5 )
 			set_power_active(true)
 			power_available = false
+			$io_phaseOnAudio.play()
 
 func _on_ActiveTimer_timeout():
 	$ActiveTimer.stop()
 	get_tree().call_group("phasingMaterial","_add_to_lethal_group")
 	playerScene.find_node("Sprite").self_modulate = Color(1,1,1,1)
+	$io_phaseOffAudio.play()
 	set_power_active(false)
 	$CoolDownTimer.start()
 	

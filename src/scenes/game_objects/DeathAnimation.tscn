@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Death sound.ogg" type="AudioStream" id=1]
+
+[node name="DeathAnimation" type="CPUParticles2D"]
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+scale_amount = 0.8
+color = Color( 0.854902, 0.117647, 0.117647, 1 )
+
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/scenes/levels/prototypes/object1.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/sprites/01/rocks.png" type="Texture" id=2]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Grab - Put down.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Rock throw.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Grab - Pick up.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.46259, 2.42936 )
@@ -38,5 +41,15 @@ shape = SubResource( 2 )
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 position = Vector2( -5.72205e-06, -1.90735e-06 )
 scale = Vector2( 6.37768, 6.37152 )
+
+[node name="rockPickUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="rockDrop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="rockThrow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -13.109
 [connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

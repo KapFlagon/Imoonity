@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/PuckAbility/Puck_Dash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/game_objects/scripts/Player.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/images/sprites/01/astro.png" type="Texture" id=5]
 [ext_resource path="res://src/scenes/ui/PlayerHud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/game_objects/DeathAnimation.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/SFX/PlayerSFX.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1.42586, 3.93022 )
@@ -110,6 +112,7 @@ current = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 190
+zoom = Vector2( 0.8, 0.8 )
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -140,7 +143,12 @@ position = Vector2( 0, -11.982 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
 position = Vector2( -0.451178, -3.89813 )
 shape = SubResource( 1 )
+
+[node name="DeathAnimation" parent="." instance=ExtResource( 7 )]
+
+[node name="PlayerSFX" parent="." instance=ExtResource( 8 )]
 [connection signal="puck_timer_elapsing" from="Puck_Dash" to="Camera2D/PlayerHud" method="_on_Puck_Dash_puck_timer_elapsing"]
+[connection signal="current_projectile" from="TitanAbilityManager" to="Camera2D/PlayerHud" method="_on_TitanAbilityManager_current_projectile"]
 [connection signal="phase_timer_elapsing" from="phaseAbilityManager" to="Camera2D/PlayerHud" method="_on_phaseAbilityManager_phase_timer_elapsing"]
 [connection signal="power_triggered" from="phaseAbilityManager" to="Camera2D/PlayerHud" method="_on_phaseAbilityManager_power_triggered"]
 [connection signal="area_entered" from="AreaDetector" to="." method="_on_DeathDetector_area_entered"]
