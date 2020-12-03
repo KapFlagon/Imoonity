@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GodotGame_SFX_Launcher.ogg-f426da49d4f28ed1876dd9815dc10b57.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/GodotGame_SFX_Launcher.ogg"
+dest_files=[ "res://.import/GodotGame_SFX_Launcher.ogg-f426da49d4f28ed1876dd9815dc10b57.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
