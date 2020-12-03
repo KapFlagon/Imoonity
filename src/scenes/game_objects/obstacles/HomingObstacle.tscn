@@ -31,6 +31,7 @@ extents = Vector2( 3.45302, 3.00187 )
 extents = Vector2( 3.96407, 4.22002 )
 
 [node name="HomingObstacle" type="Area2D"]
+pause_mode = 1
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
