@@ -4,10 +4,14 @@ var picked = false
 var originalspeed
 var originaljump
 var visible_by_player: bool = false setget set_visible_by_player, is_visible_by_player
+var originalposition
+#var movementEnabled = true
+export var respawnTime : = 1.0
 
 func _ready():
 	originalspeed = get_node("../Player").base_movement_speed
 	originaljump = get_node("../Player").jump_force
+	originalposition = self.get_position()
 
 func _physics_process(delta):
 	if is_visible_by_player():
@@ -100,4 +104,19 @@ func _on_VisibilityEnabler2D_screen_entered() -> void:
 
 func _on_VisibilityEnabler2D_screen_exited() -> void:
 	set_visible_by_player(true)
+
+
+func _on_Detector_area_entered(area):
+	if area.is_in_group("special_lethal"):
+		print("Yes")
+		_respawn_rock()
+
+
+func _respawn_rock():
+	$Sprite.visible=false
+	#movementEnabled = false
+	yield(get_tree().create_timer(respawnTime), "timeout")
+	self.position = originalposition
+	$Sprite.visible=true
+	#movementEnabled = true
 

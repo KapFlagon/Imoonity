@@ -50,5 +50,6 @@ stream = ExtResource( 3 )
 [node name="rockThrow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -13.109
+[connection signal="area_entered" from="Detector" to="." method="_on_Detector_area_entered"]
 [connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
