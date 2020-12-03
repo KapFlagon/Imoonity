@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/images/sprites/02/Baren_16x16.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/ui/scripts/PlayerHud.gd" type="Script" id=3]
 [ext_resource path="res://assets/images/sprites/02/Terran_16x16.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/sprites/02/Lava_16x16.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/sprites/02/Ice_16x16.png" type="Texture" id=6]
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -63,7 +65,7 @@ align = 1
 valign = 1
 
 [node name="PowersHBoxContainer" type="HBoxContainer" parent="TopHBoxContainer"]
-margin_right = 56.0
+margin_right = 76.0
 margin_bottom = 24.0
 alignment = 1
 
@@ -81,7 +83,7 @@ margin_right = 36.0
 margin_bottom = 24.0
 value = 100.0
 rounded = true
-texture_progress = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
 fill_mode = 4
 
 [node name="Phobos" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
@@ -91,4 +93,14 @@ margin_bottom = 24.0
 value = 100.0
 rounded = true
 texture_progress = ExtResource( 4 )
+fill_mode = 4
+
+[node name="Titan" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 24.0
+max_value = 3.0
+value = 3.0
+rounded = true
+texture_progress = ExtResource( 6 )
 fill_mode = 4

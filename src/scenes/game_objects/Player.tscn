@@ -143,6 +143,7 @@ shape = SubResource( 1 )
 
 [node name="PlayerSFX" parent="." instance=ExtResource( 8 )]
 [connection signal="puck_timer_elapsing" from="Puck_Dash" to="Camera2D/PlayerHud" method="_on_Puck_Dash_puck_timer_elapsing"]
+[connection signal="current_projectile" from="TitanAbilityManager" to="Camera2D/PlayerHud" method="_on_TitanAbilityManager_current_projectile"]
 [connection signal="phase_timer_elapsing" from="phaseAbilityManager" to="Camera2D/PlayerHud" method="_on_phaseAbilityManager_phase_timer_elapsing"]
 [connection signal="power_triggered" from="phaseAbilityManager" to="Camera2D/PlayerHud" method="_on_phaseAbilityManager_power_triggered"]
 [connection signal="area_entered" from="AreaDetector" to="." method="_on_DeathDetector_area_entered"]
