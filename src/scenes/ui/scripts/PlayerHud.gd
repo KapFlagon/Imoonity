@@ -22,6 +22,10 @@ func update_phobos_status_icon(power_active: bool) -> void:
 		$TopHBoxContainer/PowersHBoxContainer/Phobos.set_modulate(Color(0.93,15.7,100))
 	else: 
 		$TopHBoxContainer/PowersHBoxContainer/Phobos.set_modulate(Color(0.93,0.4,0.26))
+		
+func update_titan_status_icon(currentAmmo: int) -> void:
+	$TopHBoxContainer/PowersHBoxContainer/Titan.set_value(currentAmmo)
+	
 
 
 func initialize_hud() -> void:
@@ -43,3 +47,5 @@ func _on_phaseAbilityManager_phase_timer_elapsing(percentage_elapsed):
 func _on_phobosAbilityManager_power_triggered(power_active: bool) -> void:
 	update_phobos_status_icon(power_active)
 
+func _on_TitanAbilityManager_current_projectile(count):
+	update_titan_status_icon(count)
