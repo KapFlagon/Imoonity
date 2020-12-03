@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://World/Props/GrabbyBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scenes/game_objects/phaseAbility/PhaseAreaMaterial.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/Props/Button.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=14]
+[ext_resource path="res://src/scenes/levels/prototypes/TemplateLevel.gd" type="Script" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -548,6 +550,7 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 1/z_index = 0
 
 [node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 15 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 536.097, 155.783 )
@@ -646,4 +649,7 @@ position = Vector2( 64.2825, 168 )
 
 [node name="phasingMaterial3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 64.2825, 152 )
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource( 14 )
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]
