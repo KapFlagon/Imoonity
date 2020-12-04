@@ -15,9 +15,9 @@ export var respawnTime : = 1.0
 var velocity: Vector2 = Vector2(0, 0)
 var current_state: int = Enums.PLAYER_STATE.IDLE
 var can_pick = true
-var spawn_location: Vector2 =  Vector2(30,170)
+#var spawn_location: Vector2 =  Vector2(30,170)
 var movementEnabled = true
-#var spawn_location: Vector2 =  Vector2(650,150)  # For testing
+var spawn_location: Vector2 =  Vector2(145,160)  # For testing
 
 
 # Called when the node enters the scene tree for the first time.

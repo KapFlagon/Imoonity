@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GodotGame_SFX_Grab - Pick up.ogg-48b0f7a84a9be392e1e39cc70aecaa33.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/GodotGame_SFX_Grab - Pick up.ogg"
+dest_files=[ "res://.import/GodotGame_SFX_Grab - Pick up.ogg-48b0f7a84a9be392e1e39cc70aecaa33.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
