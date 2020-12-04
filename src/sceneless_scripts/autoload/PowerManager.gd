@@ -10,10 +10,7 @@ var titan_equipped: bool = false setget set_titan_equipped, is_titan_equipped
 
 
 func _ready() -> void:
-	set_puck_equipped(true)
-	set_phobos_equipped(true)
-	set_io_equipped(true)
-	set_titan_equipped(true)
+	level_development(true)
 
 
 func set_power_slot_01(new_value: int) -> void:
@@ -89,3 +86,10 @@ func set_titan_equipped(new_value: bool) -> void:
 func is_titan_equipped() -> bool: 
 	return titan_equipped
 
+
+func level_development(value: bool) -> void:
+	if value: 
+		set_puck_equipped(true)
+		set_io_equipped(true)
+		set_phobos_equipped(true)
+		set_titan_equipped(true)
