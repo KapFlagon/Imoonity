@@ -3,6 +3,7 @@ extends Node
 
 var current_screen: int = -1 setget set_current_screen, get_current_screen
 var current_screen_scene = null
+var player_start_coordinates: Vector2 = Vector2.ZERO setget set_player_start_coordinates, get_player_start_coordinates
 
 
 # Called when the node enters the scene tree for the first time.
@@ -94,3 +95,11 @@ func is_valid_passed_screen(passed_screen: int) -> bool:
 			is_valid_passed_screen = true
 			break
 	return is_valid_passed_screen
+
+
+func set_player_start_coordinates(new_value: Vector2) -> void:
+	player_start_coordinates = new_value
+
+
+func get_player_start_coordinates() -> Vector2: 
+	return player_start_coordinates
