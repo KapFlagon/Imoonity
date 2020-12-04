@@ -137,7 +137,7 @@ valign = 1
 margin_top = 22.0
 margin_right = 55.0
 margin_bottom = 38.0
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="PowerDesc" type="Label" parent="PowersHBox/PhobosStrengthVBox"]
@@ -172,7 +172,7 @@ valign = 1
 margin_top = 22.0
 margin_right = 62.0
 margin_bottom = 38.0
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="PowerDesc" type="Label" parent="PowersHBox/TitanPlatformVBox"]
