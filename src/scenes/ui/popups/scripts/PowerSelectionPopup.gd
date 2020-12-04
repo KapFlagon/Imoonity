@@ -3,6 +3,7 @@ extends PopupDialog
 
 export var max_active_powers = 2
 var active_power_count = 0
+var signals_established: bool = false
 var show_puck_dash: bool setget set_show_puck_dash
 var show_io_phase: bool setget set_show_io_phase
 var show_phobos_strength: bool setget set_show_phobos_strength
@@ -21,14 +22,13 @@ onready var titan_checkbox = get_node("PowersHBox/TitanPlatformVBox/CheckBox")
 
 
 func _ready() -> void:
-	puck_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
-	io_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
-	phobos_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
-	titan_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
+	pass
 
 
 func _on_PowerSelectionPopup_about_to_show() -> void:
-	pass
+	if !signals_established:
+		connect_signals()
+		signals_established = true
 
 
 func _on_AcceptBtn_button_up() -> void:
@@ -59,6 +59,7 @@ func update_puck_display() -> void:
 func update_puck_values() -> void: 
 	if PowerManager.is_puck_equipped():
 		puck_checkbox.set_pressed(true)
+		active_power_count += 1
 	elif !PowerManager.is_puck_equipped():
 		puck_checkbox.set_pressed(false)
 
@@ -78,6 +79,7 @@ func update_io_display():
 func update_io_values() -> void: 
 	if PowerManager.is_io_equipped():
 		io_checkbox.set_pressed(true)
+		active_power_count += 1
 	elif !PowerManager.is_io_equipped():
 		io_checkbox.set_pressed(false)
 
@@ -97,6 +99,7 @@ func update_phobos_display() -> void:
 func update_phobos_values() -> void: 
 	if PowerManager.is_phobos_equipped():
 		phobos_checkbox.set_pressed(true)
+		active_power_count += 1
 	elif !PowerManager.is_phobos_equipped():
 		phobos_checkbox.set_pressed(false)
 
@@ -116,6 +119,7 @@ func update_titan_display() -> void:
 func update_titan_values() -> void: 
 	if PowerManager.is_titan_equipped():
 		titan_checkbox.set_pressed(true)
+		active_power_count += 1
 	elif !PowerManager.is_titan_equipped():
 		titan_checkbox.set_pressed(false)
 
@@ -128,9 +132,19 @@ func update_titan_visibility() -> void:
 
 
 func _on_CheckBox_toggled(button_pressed: bool) -> void:
-	# TODO Disable and enable buttons (checkboxes) based on max number of allowed powers
-	pass # Replace with function body.
-
+	upcate_active_power_count(button_pressed)
+	
+	if active_power_count < max_active_powers:
+		enable_all_checkboxes()
+	else:
+		if !puck_checkbox.is_pressed():
+			puck_checkbox.set_disabled(true)
+		if !io_checkbox.is_pressed():
+			io_checkbox.set_disabled(true)
+		if !phobos_checkbox.is_pressed():
+			phobos_checkbox.set_disabled(true)
+		if !titan_checkbox.is_pressed():
+			titan_checkbox.set_disabled(true)
 
 
 func unpause() -> void:
@@ -169,3 +183,23 @@ func set_show_phobos_strength(new_value: bool) -> void:
 func set_show_titan_plat(new_value: bool) -> void: 
 	show_titan_plat = new_value
 
+
+func connect_signals() -> void:
+	puck_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
+	io_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
+	phobos_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
+	titan_checkbox.connect("toggled", self, "_on_CheckBox_toggled")
+
+
+func upcate_active_power_count(button_pressed: bool):
+	if button_pressed:
+		active_power_count += 1
+	else:
+		active_power_count -= 1
+
+
+func enable_all_checkboxes() -> void:
+	puck_checkbox.set_disabled(false)
+	io_checkbox.set_disabled(false)
+	phobos_checkbox.set_disabled(false)
+	titan_checkbox.set_disabled(false)

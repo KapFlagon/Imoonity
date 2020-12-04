@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "BaseLevel",
+"language": "GDScript",
+"path": "res://src/scenes/levels/scripts/sceneless_scripts/BaseLevel.gd"
+}, {
 "base": "Control",
 "class": "BaseScreen",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://World/Props/PhysicsBox.gd"
 } ]
 _global_script_class_icons={
+"BaseLevel": "",
 "BaseScreen": "",
 "Box": "",
 "Enums": "",

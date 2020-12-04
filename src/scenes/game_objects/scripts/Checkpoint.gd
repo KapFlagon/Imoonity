@@ -6,15 +6,14 @@ signal powers_updated
 
 
 # Export variables
-export var puck_dash_available: bool
-export var phobos_strength_available: bool
-export var io_phasing_available: bool
-export var titan_platforms_available: bool
+export var puck_dash_available: bool = true
+export var phobos_strength_available: bool = true
+export var io_phasing_available: bool = true
+export var titan_platforms_available: bool = true
 
 
 # Other variables
 var player_overlap: bool = false
-var player_ref
 
 
 func _ready() -> void:
@@ -38,6 +37,7 @@ func check_for_input() -> void:
 func _on_CheckPoint_body_entered(body: Node) -> void:
 	if body.get_name() == "Player":
 		player_overlap = true
+		ScreenManager.set_player_start_coordinates(get_position())
 
 
 func _on_CheckPoint_body_exited(body: Node) -> void:

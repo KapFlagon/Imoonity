@@ -6,16 +6,19 @@ var camera_center
 
 func _ready() -> void:
 	play_fade_in()
-	pass
+
+
+func _process(delta: float) -> void:
+	if get_node("TransitionAnimPlayer").is_playing():
+		update_position()
 
 
 func play_fade_in() -> void:
-	update_position()
 	get_node("TransitionAnimPlayer").play("fade_in")
+	yield(get_node("TransitionAnimPlayer"), "animation_finished")
 
 
 func play_fade_out() -> void:
-	update_position()
 	get_node("TransitionAnimPlayer").play("fade_out") 
 	yield(get_node("TransitionAnimPlayer"), "animation_finished")
 	ScreenManager.next_screen()
@@ -28,6 +31,3 @@ func update_position() -> void:
 	new_position.y = camera_center.y - 150
 	set_global_position(new_position)
 
-
-#func _on_LevelExit_level_ended() -> void:
-#	fade_out()
