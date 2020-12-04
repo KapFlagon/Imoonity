@@ -34,6 +34,7 @@ height = 0.0
 [node name="Spike" type="Area2D" groups=[
 "lethal",
 ]]
+pause_mode = 1
 position = Vector2( 0, -3.60627 )
 script = ExtResource( 3 )
 

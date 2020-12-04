@@ -9,13 +9,6 @@ var io_equipped: bool = false setget set_io_equipped, is_io_equipped
 var titan_equipped: bool = false setget set_titan_equipped, is_titan_equipped
 
 
-func _ready() -> void:
-	set_puck_equipped(true)
-	set_phobos_equipped(true)
-	set_io_equipped(true)
-	set_titan_equipped(true)
-
-
 func set_power_slot_01(new_value: int) -> void:
 	power_slot_01 = new_value
 	update_equipment_states()

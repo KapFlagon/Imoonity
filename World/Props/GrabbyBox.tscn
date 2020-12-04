@@ -13,6 +13,7 @@ extents = Vector2( 2.46259, 2.42936 )
 extents = Vector2( 7.9721, 7.9644 )
 
 [node name="GrabbyBox" type="RigidBody2D"]
+pause_mode = 1
 scale = Vector2( 1.0035, 1.00447 )
 collision_layer = 8
 collision_mask = 63

@@ -25,6 +25,7 @@ tracks/0/keys = {
 }
 
 [node name="Launcher" type="Area2D"]
+pause_mode = 1
 script = ExtResource( 1 )
 projectile = ExtResource( 3 )
 firing_direction = 3
