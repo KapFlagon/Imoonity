@@ -37,6 +37,7 @@ func check_for_input() -> void:
 func _on_CheckPoint_body_entered(body: Node) -> void:
 	if body.get_name() == "Player":
 		player_overlap = true
+		ScreenManager.set_player_start_coordinates(get_position())
 
 
 func _on_CheckPoint_body_exited(body: Node) -> void:
