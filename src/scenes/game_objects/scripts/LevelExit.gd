@@ -23,4 +23,6 @@ func _on_AnimationSensor_area_exited(area: Area2D) -> void:
 
 func _on_LevelExitSensor_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "Player":
+		ScreenManager.set_player_start_coordinates(Vector2.ZERO)
 		emit_signal("level_ended")
+
