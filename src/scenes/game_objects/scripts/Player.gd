@@ -17,12 +17,12 @@ var current_state: int = Enums.PLAYER_STATE.IDLE
 var can_pick = true
 #var spawn_location: Vector2 =  Vector2(30,170)
 var movementEnabled = true
-var spawn_location: Vector2 =  Vector2(145,160)  # For testing
+#var spawn_location: Vector2 =  Vector2(145,160)  # For testing
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position = spawn_location
+#	position = spawn_location
 	update_animations(current_state)
 
 
@@ -136,7 +136,7 @@ func _on_DeathDetector_area_entered(area: Area2D) -> void:
 	if area.is_in_group("lethal"):
 		_respawn_player()
 	elif area.is_in_group("checkpoint"):
-		spawn_location = area.get_position()
+#		spawn_location = area.get_position()
 		$PlayerSFX/checkpointAudio.play()
 		
 func _respawn_player():
@@ -146,7 +146,7 @@ func _respawn_player():
 	$Sprite.visible=false
 	movementEnabled = false
 	yield(get_tree().create_timer(respawnTime), "timeout")
-	self.position = spawn_location
+#	self.position = spawn_location
 	$Sprite.visible=true
 	movementEnabled = true
 	$DeathAnimation/DeathAudio.stop()
