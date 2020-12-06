@@ -28,17 +28,30 @@ func get_level_screen_value() -> int:
 	return level_screen_value
 
 
-func push_data_to_screen_manager() -> void:
+func initialize_level() -> void:
+	push_level_data_to_screen_manager()
+	pull_player_start_coords_from_level()
+	update_player_coords_from_screen_manager()
+
+
+func pull_player_start_coords_from_level() -> void:
+	set_player_spawn_coordinates(get_node("Player").get_position())
+
+
+func push_level_data_to_screen_manager() -> void:
 	if ScreenManager.get_current_screen() == -1:
 		ScreenManager.set_current_screen(level_screen_value)
 
 
-func push_player_coords_to_screen_manager() -> void:
-	if get_player_spawn_coordinates() != Vector2.ZERO:
-		get_node("Player").set_position(player_spawn_coordinates)
+func update_player_coords_from_screen_manager() -> void:
+	var screen_manager_spawn_coordinates = ScreenManager.get_player_start_coordinates()
+	if screen_manager_spawn_coordinates == Vector2.ZERO:
+		ScreenManager.set_player_start_coordinates(player_spawn_coordinates)
+		push_start_coords_to_player()
+	else: 
+		set_player_spawn_coordinates(screen_manager_spawn_coordinates)
+		push_start_coords_to_player()
 
 
-func initialize_level() -> void:
-	push_data_to_screen_manager()
-	set_player_spawn_coordinates(ScreenManager.get_player_start_coordinates())
-	push_player_coords_to_screen_manager()
+func push_start_coords_to_player() -> void:
+	get_node("Player").set_position(player_spawn_coordinates)
