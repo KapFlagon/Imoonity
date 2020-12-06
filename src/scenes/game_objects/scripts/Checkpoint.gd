@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 func check_for_input() -> void:
 	if player_overlap and Input.is_action_just_released("checkpoint_action"):
-		var camera_center = get_parent().get_node("Player").get_node("Camera2D").get_camera_screen_center()
+		var camera_center = get_parent().get_parent().get_node("Player").get_node("Camera2D").get_camera_screen_center()
 		$PowerSelectionPopup.ready_interface(camera_center)
 
 
