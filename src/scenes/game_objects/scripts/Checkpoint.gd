@@ -17,7 +17,7 @@ var player_overlap: bool = false
 
 
 func _ready() -> void:
-	connect("powers_updated", get_parent().get_node("Player/Camera2D/PlayerHud"), "update_all_hud_icons")
+	connect("powers_updated", get_parent().get_parent().get_node("Player/Camera2D/PlayerHud"), "update_all_hud_icons")
 	$PowerSelectionPopup.set_show_puck_dash(puck_dash_available)
 	$PowerSelectionPopup.set_show_io_phase(io_phasing_available)
 	$PowerSelectionPopup.set_show_phobos_strength(phobos_strength_available)

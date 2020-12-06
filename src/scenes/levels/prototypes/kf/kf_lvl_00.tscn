@@ -9,7 +9,7 @@
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
 
-[node name="TemplateLevel" type="Node2D"]
+[node name="kf_lvl_00" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="MusicManager" type="Node" parent="."]
@@ -39,7 +39,19 @@ __meta__ = {
 
 [node name="ButtonContainer" type="Node" parent="."]
 
-[node name="ObstaclesContainer" type="Node" parent="."]
+[node name="BridgeContainer" type="Node" parent="."]
+
+[node name="HomingObstContainer" type="Node" parent="."]
+
+[node name="PathObstContainer" type="Node" parent="."]
+
+[node name="GrabableObjsContainer" type="Node" parent="."]
+
+[node name="PhaseObstContainer" type="Node" parent="."]
+
+[node name="HintBoxContainer" type="Node" parent="."]
+
+[node name="DeadZoneContainer" type="Node" parent="."]
 
 [node name="CheckpointContainer" type="Node" parent="."]
 
