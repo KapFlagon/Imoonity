@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 231.22, 8.72401 )
+extents = Vector2( 790.106, 47.2083 )
 
 [node name="DeadZone" type="Node2D" groups=[
 "lethal",

@@ -29,17 +29,17 @@ func isValidRotation(newRotation: int) -> bool:
 		validRotation = true
 	return validRotation
 
-func _on_BridgeButton_pressed():
-	if !animPlayer.is_playing():
-		rotateBridge()
+#func _on_BridgeButton_pressed():
+#	if !animPlayer.is_playing():
+#		rotateBridge()
+#
+#func _on_BridgeButton2_pressed():
+#	if !animPlayer.is_playing():
+#		rotateBridge()
 
-func _on_BridgeButton2_pressed():
-	if !animPlayer.is_playing():
-		rotateBridge()
-
-func _on_BridgeButton3_pressed():
-	if !animPlayer.is_playing():
-		rotateBridge()
+#func _on_BridgeButton3_pressed():
+#	if !animPlayer.is_playing():
+#		rotateBridge()
 
 func buildDynamicAnimationPlayer(degreesClose, degreesOpen) -> void:
 	animPlayer = AnimationPlayer.new()
