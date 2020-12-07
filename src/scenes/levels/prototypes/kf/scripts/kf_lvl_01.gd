@@ -1,5 +1,8 @@
 extends BaseLevel
 
 
-#func _ready():
-#	set_level_screen_value(Enums.SCREENS.TEMPLATE)
+func _on_Button_pressed() -> void:
+	var bridge = get_node("BridgeContainer/Bridge")
+	if !bridge.animPlayer.is_playing():
+		bridge.rotateBridge()
+

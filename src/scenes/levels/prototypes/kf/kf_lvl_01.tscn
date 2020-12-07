@@ -1,18 +1,27 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
 [ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
-[ext_resource path="res://src/scenes/levels/prototypes/kf/scripts/kf_lvl_01.gd" type="Script" id=3]
+[ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/scenes/game_objects/BackgroundsTileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scenes/game_objects/LevelExit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/scenes/game_objects/obstacles/pathFollowObstacle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scenes/game_objects/phaseAbility/PhaseAreaMaterial.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/scenes/game_objects/HintBox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/Props/GrabbyBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/Props/Button.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/scenes/levels/prototypes/kf/scripts/kf_lvl_01.gd" type="Script" id=19]
 
 [node name="kf_lvl_01" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 19 )
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -32,40 +41,80 @@ __meta__ = {
 }
 
 [node name="BackgroundsTileMap" parent="TileMapContainer" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 655360, 0, 4, 655361, 0, 4, 655362, 0, 4, 655363, 0, 4, 655364, 0, 4, 655365, 0, 4, 655366, 0, 4, 655367, 0, 4, 655368, 0, 4, 655369, 0, 4, 655370, 0, 4, 655371, 0, 4, 655372, 0, 4, 655373, 0, 4, 655374, 0, 4, 655375, 0, 4, 655376, 0, 4, 655377, 0, 4, 720913, 0, 4, 786449, 0, 4, 851985, 0, 4, 917521, 0, 4, 983057, 0, 4, 1048592, 0, 4, 1048593, 0, 4, 1114128, 0, 4, 1114129, 0, 1, 1179664, 0, 4, 1179665, 0, 1, 1245200, 0, 4, 1245201, 0, 1, 1310736, 0, 4, 1310737, 0, 1, 1376272, 0, 4, 1376273, 0, 1, 1441808, 0, 4, 1441809, 0, 1, 1507344, 0, 4, 1507345, 0, 4, 1572864, 0, 4, 1572865, 0, 4, 1572866, 0, 4, 1572867, 0, 4, 1572868, 0, 4, 1572869, 0, 4, 1572870, 0, 4, 1572871, 0, 4, 1572872, 0, 4, 1572873, 0, 4, 1572874, 0, 4, 1572875, 0, 4, 1572876, 0, 4, 1572877, 0, 4, 1572878, 0, 4, 1572879, 0, 4, 1572880, 0, 4, 1572881, 0, 4 )
 
 [node name="WallsTileMap" parent="TileMapContainer" instance=ExtResource( 8 )]
-tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -1, 0, 0, -65536, 0, 0, 65596, 0, 0, 65597, 0, 0, 131132, 0, 0, 131133, 0, 0, 196668, 0, 0, 196669, 0, 0, 262204, 0, 0, 262205, 0, 0, 327740, 0, 0, 327741, 0, 0, 393276, 0, 0, 393277, 0, 0, 458812, 0, 0, 458813, 0, 0, 524348, 0, 0, 524349, 0, 0, 589884, 0, 0, 589885, 0, 0, 655420, 0, 0, 655421, 0, 0, 720897, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720927, 0, 0, 720928, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786441, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1376256, 1, 0, 1376257, 1, 0, 1376258, 1, 0, 1376259, 1, 0, 1376260, 1, 0, 1376261, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1376265, 1, 0, 1376266, 1, 0, 1376267, 1, 0, 1376268, 1, 0, 1376269, 1, 0, 1376270, 1, 0, 1376271, 1, 0, 1376272, 1, 0, 1376273, 1, 0, 1376274, 1, 0, 1376275, 1, 0, 1376276, 1, 0, 1376277, 1, 0, 1376278, 1, 0, 1376279, 1, 0 )
+tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -1, 0, 0, -65536, 0, 0, 65596, 0, 0, 65597, 0, 0, 131132, 0, 0, 131133, 0, 0, 196668, 0, 0, 196669, 0, 0, 262204, 0, 0, 262205, 0, 0, 327740, 0, 0, 327741, 0, 0, 393276, 0, 0, 393277, 0, 0, 458812, 0, 0, 458813, 0, 0, 524348, 0, 0, 524349, 0, 0, 589884, 0, 0, 589885, 0, 0, 655420, 0, 0, 655421, 0, 0, 720897, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720927, 0, 0, 720928, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786441, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1703926, 1, 0, 1703927, 1, 0, 1703928, 1, 0, 1703929, 1, 0, 1703930, 1, 0, 1703931, 1, 0, 1703932, 1, 0, 1703933, 1, 0, 1703934, 1, 0, 1703935, 1, 0, 1638400, 1, 0, 1638401, 1, 0, 1638402, 1, 0, 1638403, 1, 0, 1638404, 1, 0, 1638405, 1, 0, 1638406, 1, 0, 1638407, 1, 0, 1638408, 1, 0, 1638409, 1, 0, 1638410, 1, 0, 1638411, 1, 0, 1638412, 1, 0, 1638413, 1, 0, 1638414, 1, 0, 1638415, 1, 0, 1638416, 1, 0, 1638417, 1, 0, 1638418, 1, 0, 1638419, 1, 0, 1638420, 1, 0, 1638421, 1, 0, 1638422, 1, 0, 1638423, 1, 0, 1638424, 1, 0, 1638425, 1, 0, 1638426, 1, 0, 1638427, 1, 0, 1638428, 1, 0, 1638429, 1, 0, 1638430, 1, 0, 1638431, 1, 0, 1638432, 1, 0, 1638433, 1, 0, 1638434, 1, 0, 1638435, 1, 0, 1638436, 1, 0, 1638437, 1, 0, 1638438, 1, 0, 1638439, 1, 0, 1638440, 1, 0, 1638441, 1, 0, 1638442, 1, 0, 1638443, 1, 0, 1638444, 1, 0, 1638445, 1, 0, 1638446, 1, 0, 1638447, 1, 0, 1638448, 1, 0, 1638449, 1, 0, 1638450, 1, 0, 1638451, 1, 0, 1638452, 1, 0, 1638453, 1, 0, 1638454, 1, 0, 1638455, 1, 0, 1638456, 1, 0, 1638457, 1, 0, 1638458, 1, 0, 1638459, 1, 0, 1638460, 1, 0, 1638461, 1, 0, 1638462, 1, 0, 1638463, 1, 0, 1638464, 1, 0, 1638465, 1, 0, 1638466, 1, 0, 1638467, 1, 0, 1638468, 1, 0, 1638469, 1, 0, 1638470, 1, 0, 1638471, 1, 0, 1638472, 1, 0, 1638473, 1, 0 )
 
 [node name="SpikeContainer" type="Node" parent="."]
 
-[node name="Spike" parent="SpikeContainer" instance=ExtResource( 9 )]
-position = Vector2( 72, 168 )
+[node name="Spike" parent="SpikeContainer" instance=ExtResource( 18 )]
+position = Vector2( 152, 200 )
 
 [node name="LauncherContainer" type="Node" parent="."]
 
+[node name="Launcher" parent="LauncherContainer" instance=ExtResource( 17 )]
+position = Vector2( 288, 120 )
+firing_direction = 2
+
 [node name="ButtonContainer" type="Node" parent="."]
 
-[node name="ObstaclesContainer" type="Node" parent="."]
+[node name="Button" parent="ButtonContainer" instance=ExtResource( 16 )]
+position = Vector2( 128, 200 )
+
+[node name="BridgeContainer" type="Node" parent="."]
+
+[node name="Bridge" parent="BridgeContainer" instance=ExtResource( 9 )]
+position = Vector2( 168, 120 )
+closedPosition = 2
+openedPosition = 1
+isOpen = false
+
+[node name="HomingObstContainer" type="Node" parent="."]
+
+[node name="HomingObstacle" parent="HomingObstContainer" instance=ExtResource( 12 )]
+position = Vector2( 456, 136 )
+
+[node name="PathObstContainer" type="Node" parent="."]
+
+[node name="pathFollowObstacle" parent="PathObstContainer" instance=ExtResource( 11 )]
+position = Vector2( 328, 112 )
+
+[node name="GrabableObjsContainer" type="Node" parent="."]
+
+[node name="GrabbyBox" parent="GrabableObjsContainer" instance=ExtResource( 15 )]
+position = Vector2( 80, 192 )
+
+[node name="PhaseObstContainer" type="Node" parent="."]
+
+[node name="phasingMaterial" parent="PhaseObstContainer" instance=ExtResource( 13 )]
+position = Vector2( 248, 192 )
+
+[node name="HintBoxContainer" type="Node" parent="."]
+
+[node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 14 )]
+position = Vector2( 72, 136 )
+hint_text = "Alas, a hint"
+
+[node name="DeadZoneContainer" type="Node" parent="."]
+
+[node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 3 )]
+position = Vector2( -112, 224 )
 
 [node name="CheckpointContainer" type="Node" parent="."]
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 10 )]
-position = Vector2( 120, 168 )
-z_index = -3
-
-[node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 10 )]
-position = Vector2( 144, 168 )
-z_index = -3
+position = Vector2( 328, 200 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 6 )]
-position = Vector2( 176, 162.824 )
+position = Vector2( -8, 192 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 8, 160 )
+position = Vector2( -48, 184 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
-[connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]
+[connection signal="pressed" from="ButtonContainer/Button" to="." method="_on_Button_pressed"]
