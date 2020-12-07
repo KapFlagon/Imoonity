@@ -16,7 +16,7 @@ func _ready():
 func _physics_process(delta):
 	if is_visible_by_player():
 		if picked == true:
-			self.position = get_node("../Player/Position2D").global_position
+			self.position = get_node("../../Player/Position2D").global_position
 			get_node("../../Player").base_movement_speed = originalspeed/2  # Slow down due to box
 			get_node("../../Player").jump_force = originaljump/1.1  # Jump reduction due to box
 			sleeping = true
