@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GodotGame_SFX_Planet projectile appear.ogg-0de11e57c2edd28c445a7a055e278a75.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/GodotGame_SFX_Planet projectile appear.ogg"
+dest_files=[ "res://.import/GodotGame_SFX_Planet projectile appear.ogg-0de11e57c2edd28c445a7a055e278a75.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

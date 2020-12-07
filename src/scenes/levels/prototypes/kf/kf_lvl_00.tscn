@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
+[ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/game_objects/BackgroundsTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/game_objects/LevelExit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
+
+[node name="kf_lvl_00" type="Node2D"]
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="TileMapContainer" type="Node" parent="."]
+
+[node name="Background" type="TextureRect" parent="TileMapContainer"]
+visible = false
+margin_left = -40.0
+margin_top = -72.0
+margin_right = 1144.0
+margin_bottom = 232.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundsTileMap" parent="TileMapContainer" instance=ExtResource( 4 )]
+
+[node name="WallsTileMap" parent="TileMapContainer" instance=ExtResource( 8 )]
+
+[node name="SpikeContainer" type="Node" parent="."]
+
+[node name="LauncherContainer" type="Node" parent="."]
+
+[node name="ButtonContainer" type="Node" parent="."]
+
+[node name="BridgeContainer" type="Node" parent="."]
+
+[node name="HomingObstContainer" type="Node" parent="."]
+
+[node name="PathObstContainer" type="Node" parent="."]
+
+[node name="GrabableObjsContainer" type="Node" parent="."]
+
+[node name="PhaseObstContainer" type="Node" parent="."]
+
+[node name="HintBoxContainer" type="Node" parent="."]
+
+[node name="DeadZoneContainer" type="Node" parent="."]
+
+[node name="CheckpointContainer" type="Node" parent="."]
+
+[node name="LevelExit" parent="." instance=ExtResource( 6 )]
+position = Vector2( 74.2424, 171.801 )
+rotation = -1.5708
+script = null
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 16, 168 )
+collision_mask = 15
+
+[node name="Transitions" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2035.01, -3856.93 )
+z_index = 10

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/images/sprites/01/rocks.png" type="Texture" id=1]
+[ext_resource path="res://World/Props/Rock.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.54782, 6.70133 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.4008, 11.5499 )
+
+[node name="Rock" type="RigidBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 7.7486e-07, -3.72529e-07 )
+scale = Vector2( 2.66667, 2.66667 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 8
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 1.90735e-06, 1.90735e-06 )
+scale = Vector2( 6.4, 6.4 )
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

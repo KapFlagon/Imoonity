@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/images/sprites/02/Baren_16x16.png" type="Texture" id=2]
+[ext_resource path="res://src/scenes/ui/scripts/PlayerHud.gd" type="Script" id=3]
+[ext_resource path="res://assets/images/sprites/02/Terran_16x16.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/sprites/02/Lava_16x16.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/sprites/02/Ice_16x16.png" type="Texture" id=6]
+
+[node name="PlayerHud" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 312.0
+margin_bottom = 32.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeHBoxContainer" type="HBoxContainer" parent="TopHBoxContainer"]
+visible = false
+margin_right = 28.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="TimeDescLbl" type="Label" parent="TopHBoxContainer/TimeHBoxContainer"]
+margin_top = 7.0
+margin_right = 24.0
+margin_bottom = 16.0
+text = "Time:"
+align = 1
+valign = 1
+
+[node name="TimeValueLbl" type="Label" parent="TopHBoxContainer/TimeHBoxContainer"]
+margin_left = 28.0
+margin_top = 7.0
+margin_right = 28.0
+margin_bottom = 16.0
+align = 1
+valign = 1
+
+[node name="DeathsHBoxContainer" type="HBoxContainer" parent="TopHBoxContainer"]
+visible = false
+margin_right = 38.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="DeathsDescLbl" type="Label" parent="TopHBoxContainer/DeathsHBoxContainer"]
+margin_top = 7.0
+margin_right = 34.0
+margin_bottom = 16.0
+text = "Deaths:"
+align = 1
+valign = 1
+
+[node name="DeathsValueLbl" type="Label" parent="TopHBoxContainer/DeathsHBoxContainer"]
+margin_left = 38.0
+margin_top = 7.0
+margin_right = 38.0
+margin_bottom = 16.0
+align = 1
+valign = 1
+
+[node name="PowersHBoxContainer" type="HBoxContainer" parent="TopHBoxContainer"]
+margin_right = 76.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="PuckDash" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_right = 16.0
+margin_bottom = 24.0
+value = 100.0
+rounded = true
+texture_progress = ExtResource( 2 )
+fill_mode = 4
+
+[node name="IoPhase" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 24.0
+value = 100.0
+rounded = true
+texture_progress = ExtResource( 4 )
+fill_mode = 4
+
+[node name="PhobosStrength" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 24.0
+value = 100.0
+rounded = true
+texture_progress = ExtResource( 5 )
+fill_mode = 4
+
+[node name="TitanPlat" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 24.0
+max_value = 3.0
+value = 3.0
+rounded = true
+texture_progress = ExtResource( 6 )
+fill_mode = 4

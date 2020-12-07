@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/images/sprites/01/explosion.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/game_objects/obstacles/scripts/HomingObstacle.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/game_objects/obstacles/scripts/HomingObstacleProjectile.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 94.753, 56.7742 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "moving"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HomingSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3.45302, 3.00187 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3.96407, 4.22002 )
+
+[node name="HomingObstacle" type="Area2D"]
+pause_mode = 1
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="HomingObstacleProjectile" type="KinematicBody2D" parent="."]
+collision_layer = 16
+collision_mask = 31
+script = ExtResource( 3 )
+
+[node name="HomingSprite" type="Sprite" parent="HomingObstacleProjectile"]
+position = Vector2( 0.0787432, -0.236237 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 18
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HomingObstacleProjectile"]
+anims/moving = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomingObstacleProjectile"]
+position = Vector2( 0.157494, -0.15749 )
+shape = SubResource( 3 )
+
+[node name="lethalCollision" type="Area2D" parent="HomingObstacleProjectile" groups=[
+"lethal",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomingObstacleProjectile/lethalCollision"]
+shape = SubResource( 4 )
+[connection signal="body_entered" from="." to="." method="_on_HomingObstacle_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_HomingObstacle_body_exited"]

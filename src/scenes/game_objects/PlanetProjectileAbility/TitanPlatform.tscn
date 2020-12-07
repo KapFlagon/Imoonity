@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/sprites/01/battery.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/game_objects/PlanetProjectileAbility/TitanPlatform.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.1319, 3.46627 )
+
+[node name="PlanetPlatform" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 31
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 1.19209e-07 )
+scale = Vector2( 1, 0.702699 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="platformTimer" type="Timer" parent="."]
+[connection signal="timeout" from="platformTimer" to="." method="_on_platformTimer_timeout"]

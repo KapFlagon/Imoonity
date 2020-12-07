@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GodotGame_SFX_Grab - Put down.ogg-f877892dbf5ff8a8dba625f21a168989.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/GodotGame_SFX_Grab - Put down.ogg"
+dest_files=[ "res://.import/GodotGame_SFX_Grab - Put down.ogg-f877892dbf5ff8a8dba625f21a168989.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
