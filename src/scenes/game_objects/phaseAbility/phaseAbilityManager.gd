@@ -45,6 +45,13 @@ func broadcast_elapsed_time_percentage() -> void:
 		var elapsed_percentage: float = cooldown_elapsed_time / cooldown_time_seconds
 		elapsed_percentage = elapsed_percentage * 100
 		emit_signal("phase_timer_elapsing", elapsed_percentage)
+	elif !$ActiveTimer.is_stopped():
+		var active_time_left: float = $ActiveTimer.get_time_left()
+		var active_elapsed_time: float = active_time_seconds - active_time_left
+		var elapsed_percentage: float = active_elapsed_time / active_time_seconds
+		elapsed_percentage = elapsed_percentage * 100
+		emit_signal("phase_timer_elapsing", 100 - elapsed_percentage)
+			
 
 
 func _on_CoolDownTimer_timeout():
