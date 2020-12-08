@@ -25,6 +25,7 @@ extents = Vector2( 6.30746, 6.83786 )
 
 [node name="LevelExit" type="Node2D"]
 rotation = 4.71239
+z_index = -5
 script = ExtResource( 3 )
 
 [node name="LevelExitSprite" type="AnimatedSprite" parent="."]
