@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/scenes/game_objects/phaseAbility/phaseAbilityManager.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/game_objects/scripts/phaseAbilityManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sfx/GodotGame_SFX_Phasing on.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/sfx/GodotGame_SFX_Phasing off.ogg" type="AudioStream" id=3]
+
 
 [node name="phaseAbilityManager" type="Node"]
 script = ExtResource( 1 )

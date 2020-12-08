@@ -1,0 +1,445 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
+[ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/game_objects/phaseAbility/PhaseAreaMaterial.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/game_objects/BackgroundsTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/game_objects/LevelExit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/scenes/game_objects/HintBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=10]
+
+[node name="kf_lvl_00" type="Node2D"]
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="TileMapContainer" type="Node" parent="."]
+
+[node name="Background" type="TextureRect" parent="TileMapContainer"]
+visible = false
+margin_left = -40.0
+margin_top = -72.0
+margin_right = 1144.0
+margin_bottom = 232.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundsTileMap" parent="TileMapContainer" instance=ExtResource( 4 )]
+
+[node name="WallsTileMap" parent="TileMapContainer" instance=ExtResource( 8 )]
+tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -1, 0, 0, -65536, 0, 0, 65596, 0, 0, 65597, 0, 0, 131132, 0, 0, 131133, 0, 0, 196668, 0, 0, 196669, 0, 0, 262204, 0, 0, 262205, 0, 0, 327740, 0, 0, 327741, 0, 0, 393276, 0, 0, 393277, 0, 0, 458812, 0, 0, 458813, 0, 0, 524348, 0, 0, 524349, 0, 0, 589884, 0, 0, 589885, 0, 0, 655420, 0, 0, 655421, 0, 0, 720897, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720927, 0, 0, 720928, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786441, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 1048551, 1, 0, 1048552, 1, 0, 1048553, 1, 0, 1048554, 1, 0, 1048555, 1, 0, 1048556, 1, 0, 1048557, 1, 0, 1048558, 1, 0, 1048559, 1, 0, 1048560, 1, 0, 1048561, 1, 0, 1048562, 1, 0, 1048563, 1, 0, 1048564, 1, 0, 1048565, 1, 0, 1048566, 1, 0, 1048567, 1, 0, 1048568, 1, 0, 1048569, 1, 0, 1048570, 1, 0, 1048571, 1, 0, 1048572, 1, 0, 1048573, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 983072, 1, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 1, 0, 983078, 1, 0, 983079, 1, 0, 983080, 1, 0, 983081, 1, 0, 983082, 1, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 983087, 1, 0, 983088, 1, 0, 983089, 1, 0, 983090, 1, 0, 983091, 1, 0, 983092, 1, 0, 983093, 1, 0, 983094, 1, 0, 983095, 1, 0, 983096, 1, 0, 983097, 1, 0, 983098, 1, 0, 1114087, 1, 0, 1048634, 1, 0, 1179623, 1, 0, 1114170, 1, 0, 1245159, 1, 0, 1179655, 0, 0, 1179656, 0, 0, 1179706, 1, 0, 1310695, 1, 0, 1245242, 1, 0, 1245243, 1, 0, 1245244, 1, 0, 1245245, 1, 0, 1245246, 1, 0, 1245247, 1, 0, 1245248, 1, 0, 1245249, 1, 0, 1245250, 1, 0, 1245251, 1, 0, 1245252, 1, 0, 1245253, 1, 0, 1245254, 1, 0, 1245255, 1, 0, 1245256, 1, 0, 1245257, 1, 0, 1245258, 1, 0, 1245259, 1, 0, 1245260, 1, 0, 1245261, 1, 0, 1245262, 1, 0, 1245263, 1, 0, 1245264, 1, 0, 1245265, 1, 0, 1245266, 1, 0, 1245267, 1, 0, 1245268, 1, 0, 1245269, 1, 0, 1245270, 1, 0, 1245271, 1, 0, 1245272, 1, 0, 1245273, 1, 0, 1245274, 1, 0, 1245275, 1, 0, 1245276, 1, 0, 1245277, 1, 0, 1245278, 1, 0, 1245279, 1, 0, 1245280, 1, 0, 1245281, 1, 0, 1245282, 1, 0, 1245283, 1, 0, 1245284, 1, 0, 1245285, 1, 0, 1245286, 1, 0, 1245287, 1, 0, 1245288, 1, 0, 1245289, 1, 0, 1245290, 1, 0, 1245291, 1, 0, 1245292, 1, 0, 1376231, 1, 0, 1310827, 1, 0, 1310828, 1, 0, 1441767, 1, 0, 1376363, 1, 0, 1376364, 1, 0, 1507303, 1, 0, 1441899, 1, 0, 1441900, 1, 0, 1572839, 1, 0, 1507435, 1, 0, 1507436, 1, 0, 1638375, 1, 0, 1638376, 1, 0, 1638377, 1, 0, 1638378, 1, 0, 1638379, 1, 0, 1638380, 1, 0, 1638381, 1, 0, 1638382, 1, 0, 1638383, 1, 0, 1638384, 1, 0, 1638385, 1, 0, 1638386, 1, 0, 1638387, 1, 0, 1638388, 1, 0, 1638389, 1, 0, 1638390, 1, 0, 1638391, 1, 0, 1638392, 1, 0, 1638393, 1, 0, 1638394, 1, 0, 1638395, 1, 0, 1638396, 1, 0, 1638397, 1, 0, 1638398, 1, 0, 1638399, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0, 1572871, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1572876, 1, 0, 1572877, 1, 0, 1572878, 1, 0, 1572879, 1, 0, 1572880, 1, 0, 1572881, 1, 0, 1572882, 1, 0, 1572883, 1, 0, 1572884, 1, 0, 1572885, 1, 0, 1572886, 1, 0, 1572887, 1, 0, 1572888, 1, 0, 1572889, 1, 0, 1572890, 1, 0, 1572891, 1, 0, 1572892, 1, 0, 1572893, 1, 0, 1572894, 1, 0, 1572895, 1, 0, 1572896, 1, 0, 1572897, 1, 0, 1572898, 1, 0, 1572899, 1, 0, 1572909, 1, 0, 1572910, 1, 0, 1572911, 1, 0, 1572912, 1, 0, 1572913, 1, 0, 1572914, 1, 0, 1572915, 1, 0, 1572916, 1, 0, 1572917, 1, 0, 1572918, 1, 0, 1572919, 1, 0, 1572920, 1, 0, 1572921, 1, 0, 1572922, 1, 0, 1572923, 1, 0, 1572924, 1, 0, 1572925, 1, 0, 1572926, 1, 0, 1572927, 1, 0, 1572928, 1, 0, 1572929, 1, 0, 1572930, 1, 0, 1572931, 1, 0, 1572932, 1, 0, 1572933, 1, 0, 1572934, 1, 0, 1572935, 1, 0, 1572936, 1, 0, 1572937, 1, 0, 1572938, 1, 0, 1572939, 1, 0, 1572940, 1, 0, 1572941, 1, 0, 1572942, 1, 0, 1572943, 1, 0, 1572944, 1, 0, 1572945, 1, 0, 1572946, 1, 0, 1572947, 1, 0, 1572948, 1, 0, 1572949, 1, 0, 1572950, 1, 0, 1572951, 1, 0, 1572952, 1, 0, 1572953, 1, 0, 1572954, 1, 0, 1572955, 1, 0, 1572956, 1, 0, 1572957, 1, 0, 1572958, 1, 0, 1572959, 1, 0, 1572960, 1, 0, 1572961, 1, 0, 1572962, 1, 0, 1572963, 1, 0, 1572964, 1, 0, 1572965, 1, 0, 1572966, 1, 0, 1572967, 1, 0, 1572968, 1, 0, 1572969, 1, 0, 1572970, 1, 0, 1572971, 1, 0, 1572972, 1, 0 )
+
+[node name="SpikeContainer" type="Node" parent="."]
+
+[node name="LauncherContainer" type="Node" parent="."]
+
+[node name="ButtonContainer" type="Node" parent="."]
+
+[node name="BridgeContainer" type="Node" parent="."]
+
+[node name="HomingObstContainer" type="Node" parent="."]
+
+[node name="PathObstContainer" type="Node" parent="."]
+
+[node name="GrabableObjsContainer" type="Node" parent="."]
+
+[node name="PhaseObstContainer" type="Node" parent="."]
+
+[node name="phasingMaterial" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 184.088 )
+
+[node name="phasingMaterial25" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 192 )
+
+[node name="phasingMaterial2" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 128 )
+
+[node name="phasingMaterial5" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 160 )
+
+[node name="phasingMaterial6" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 152 )
+
+[node name="phasingMaterial8" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 144 )
+
+[node name="phasingMaterial7" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 136 )
+
+[node name="phasingMaterial3" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 168.063 )
+
+[node name="phasingMaterial4" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 112, 176.004 )
+
+[node name="phasingMaterial9" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 183.942 )
+
+[node name="phasingMaterial10" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 128 )
+
+[node name="phasingMaterial11" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 160 )
+
+[node name="phasingMaterial12" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 152 )
+
+[node name="phasingMaterial13" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 144 )
+
+[node name="phasingMaterial14" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 136 )
+
+[node name="phasingMaterial15" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 168 )
+
+[node name="phasingMaterial16" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 320, 176 )
+
+[node name="phasingMaterial98" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 192 )
+
+[node name="phasingMaterial99" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 183.938 )
+
+[node name="phasingMaterial100" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 128 )
+
+[node name="phasingMaterial101" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 160 )
+
+[node name="phasingMaterial102" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 152 )
+
+[node name="phasingMaterial103" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 144 )
+
+[node name="phasingMaterial104" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 136 )
+
+[node name="phasingMaterial105" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 168 )
+
+[node name="phasingMaterial106" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 312, 176 )
+
+[node name="phasingMaterial107" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 192 )
+
+[node name="phasingMaterial108" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 184.004 )
+
+[node name="phasingMaterial109" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 128.063 )
+
+[node name="phasingMaterial110" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 160.063 )
+
+[node name="phasingMaterial111" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 152.063 )
+
+[node name="phasingMaterial112" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 144.063 )
+
+[node name="phasingMaterial113" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 136.063 )
+
+[node name="phasingMaterial114" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 168.063 )
+
+[node name="phasingMaterial115" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 328, 176.063 )
+
+[node name="phasingMaterial17" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 576, 184 )
+
+[node name="phasingMaterial18" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, 160.125 )
+
+[node name="phasingMaterial19" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 576, 160.063 )
+
+[node name="phasingMaterial20" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, 184 )
+
+[node name="phasingMaterial21" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, 175.942 )
+
+[node name="phasingMaterial22" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, 168 )
+
+[node name="phasingMaterial23" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 576, 168 )
+
+[node name="phasingMaterial24" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 576, 175.942 )
+
+[node name="phasingMaterial26" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 592, 183.938 )
+
+[node name="phasingMaterial27" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 600, 160.063 )
+
+[node name="phasingMaterial28" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 592, 160 )
+
+[node name="phasingMaterial29" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 600, 183.938 )
+
+[node name="phasingMaterial30" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 600, 175.879 )
+
+[node name="phasingMaterial31" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 600, 167.938 )
+
+[node name="phasingMaterial32" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 592, 167.938 )
+
+[node name="phasingMaterial33" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 592, 175.879 )
+
+[node name="phasingMaterial34" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 608, 183.938 )
+
+[node name="phasingMaterial35" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 616, 160.063 )
+
+[node name="phasingMaterial36" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 608, 160 )
+
+[node name="phasingMaterial37" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 616, 183.938 )
+
+[node name="phasingMaterial38" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 616, 175.879 )
+
+[node name="phasingMaterial39" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 616, 167.938 )
+
+[node name="phasingMaterial40" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 608, 167.938 )
+
+[node name="phasingMaterial41" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 608, 175.879 )
+
+[node name="phasingMaterial42" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 624, 183.938 )
+
+[node name="phasingMaterial43" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 632, 160.063 )
+
+[node name="phasingMaterial44" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 624, 160 )
+
+[node name="phasingMaterial45" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 632, 183.938 )
+
+[node name="phasingMaterial46" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 632, 175.879 )
+
+[node name="phasingMaterial47" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 632, 167.938 )
+
+[node name="phasingMaterial48" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 624, 167.938 )
+
+[node name="phasingMaterial49" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 624, 175.879 )
+
+[node name="phasingMaterial50" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 640, 183.938 )
+
+[node name="phasingMaterial51" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 648, 160.063 )
+
+[node name="phasingMaterial52" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 640, 160 )
+
+[node name="phasingMaterial53" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 648, 183.938 )
+
+[node name="phasingMaterial54" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 648, 175.879 )
+
+[node name="phasingMaterial55" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 648, 167.938 )
+
+[node name="phasingMaterial56" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 640, 167.938 )
+
+[node name="phasingMaterial57" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 640, 175.879 )
+
+[node name="phasingMaterial58" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 656, 183.938 )
+
+[node name="phasingMaterial59" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 664, 160.328 )
+
+[node name="phasingMaterial60" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 656, 160.265 )
+
+[node name="phasingMaterial61" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 663.875, 183.938 )
+
+[node name="phasingMaterial62" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 664, 176.144 )
+
+[node name="phasingMaterial63" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 664, 168.203 )
+
+[node name="phasingMaterial64" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 656, 168.203 )
+
+[node name="phasingMaterial65" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 656, 176.144 )
+
+[node name="phasingMaterial66" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 672, 184.063 )
+
+[node name="phasingMaterial67" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 680, 160 )
+
+[node name="phasingMaterial68" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 672, 160.265 )
+
+[node name="phasingMaterial69" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 680, 184 )
+
+[node name="phasingMaterial70" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 680, 176.144 )
+
+[node name="phasingMaterial71" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 680, 168.063 )
+
+[node name="phasingMaterial72" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 672, 168.203 )
+
+[node name="phasingMaterial73" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 672, 176.144 )
+
+[node name="phasingMaterial74" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 688, 183.938 )
+
+[node name="phasingMaterial75" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 695.875, 160 )
+
+[node name="phasingMaterial76" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 688, 160 )
+
+[node name="phasingMaterial77" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 696, 184 )
+
+[node name="phasingMaterial78" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 696, 175.706 )
+
+[node name="phasingMaterial79" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 696, 167.938 )
+
+[node name="phasingMaterial80" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 688, 167.938 )
+
+[node name="phasingMaterial81" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 687.875, 175.769 )
+
+[node name="phasingMaterial82" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 704, 183.938 )
+
+[node name="phasingMaterial83" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 712, 160 )
+
+[node name="phasingMaterial84" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 704, 160 )
+
+[node name="phasingMaterial85" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 712, 184 )
+
+[node name="phasingMaterial86" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 711.875, 175.942 )
+
+[node name="phasingMaterial87" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 712, 167.938 )
+
+[node name="phasingMaterial88" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 704, 167.938 )
+
+[node name="phasingMaterial89" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 704, 175.879 )
+
+[node name="phasingMaterial90" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 719.875, 183.938 )
+
+[node name="phasingMaterial91" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 728, 160 )
+
+[node name="phasingMaterial92" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 720, 160 )
+
+[node name="phasingMaterial93" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 727.875, 183.938 )
+
+[node name="phasingMaterial94" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 728, 175.942 )
+
+[node name="phasingMaterial95" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 727.875, 167.938 )
+
+[node name="phasingMaterial96" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 720, 167.938 )
+
+[node name="phasingMaterial97" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 720, 175.831 )
+
+[node name="HintBoxContainer" type="Node" parent="."]
+
+[node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 9 )]
+position = Vector2( -116.908, 148.063 )
+hint_text = "Press 'o' to activate phasing ability
+
+
+"
+
+[node name="HintBox5" parent="HintBoxContainer" instance=ExtResource( 9 )]
+position = Vector2( 48, 148.063 )
+hint_text = "It can be used to pass through red Material
+
+
+"
+
+[node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 9 )]
+position = Vector2( 184, 148.063 )
+hint_text = "It will only stay active for a limited time"
+
+[node name="HintBox3" parent="HintBoxContainer" instance=ExtResource( 9 )]
+position = Vector2( 264, 148.125 )
+hint_text = "So timing is important"
+
+[node name="HintBox4" parent="HintBoxContainer" instance=ExtResource( 9 )]
+position = Vector2( 512, 132.063 )
+hint_text = "Very Important!"
+
+[node name="DeadZoneContainer" type="Node" parent="."]
+
+[node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 10 )]
+position = Vector2( 616, 264 )
+
+[node name="CheckpointContainer" type="Node" parent="."]
+
+[node name="LevelExit" parent="." instance=ExtResource( 6 )]
+position = Vector2( 832, 187.924 )
+rotation = -1.5708
+script = null
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( -176, 187.924 )
+collision_mask = 15
+
+[node name="Transitions" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2035.01, -3856.93 )
+z_index = 10
