@@ -52,6 +52,7 @@ config/icon="res://icon.png"
 
 ScreenManager="*res://src/sceneless_scripts/autoload/ScreenManager.gd"
 PowerManager="*res://src/sceneless_scripts/autoload/PowerManager.gd"
+MusicManager="*res://src/sceneless_scripts/autoload/MusicManager.gd"
 
 [display]
 

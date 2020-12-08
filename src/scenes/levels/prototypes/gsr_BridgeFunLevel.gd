@@ -1,6 +1,10 @@
 extends BaseLevel
 
 
+func _ready():
+	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.wav")
+
+
 func _on_BridgeButton_pressed():
 	var bridge = get_node("BridgeContainer/Bridge")
 	if !bridge.animPlayer.is_playing():
