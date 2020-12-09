@@ -10,6 +10,7 @@ export var speed = 100
 func _ready():
 	$Sprite.self_modulate = Color( 0, 1, 0, 1 )
 	$AnimationPlayer.play("moving")
+	$PathFollowAudio.play()
 
 
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/images/sprites/01/explosion.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/game_objects/obstacles/scripts/HomingObstacle.gd" type="Script" id=2]
 [ext_resource path="res://src/scenes/game_objects/obstacles/scripts/HomingObstacleProjectile.gd" type="Script" id=3]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_HomingProjectile.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 94.753, 56.7742 )
@@ -62,5 +63,9 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HomingObstacleProjectile/lethalCollision"]
 shape = SubResource( 4 )
+
+[node name="HomingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+attenuation = 3.24901
 [connection signal="body_entered" from="." to="." method="_on_HomingObstacle_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_HomingObstacle_body_exited"]

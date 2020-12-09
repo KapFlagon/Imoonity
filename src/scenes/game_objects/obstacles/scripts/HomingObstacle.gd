@@ -18,9 +18,11 @@ func _on_HomingObstacle_body_entered(body):
 	if body.name == "Player" :
 		$HomingObstacleProjectile.set_moving(true)
 		get_node("HomingObstacleProjectile/AnimationPlayer").play("moving")
+		$HomingAudio.play()
 
 
 func _on_HomingObstacle_body_exited(body):
 	if body.name == "Player" :
 		$HomingObstacleProjectile.set_moving(false)
 		get_node("HomingObstacleProjectile/AnimationPlayer").stop()
+		$HomingAudio.stop()

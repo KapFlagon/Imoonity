@@ -1,7 +1,7 @@
 extends BaseLevel
 
 func _ready():
-	MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.ogg")
+	MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.wav")
 	# Hi everyone
 
 func _on_BridgeButton_pressed():
