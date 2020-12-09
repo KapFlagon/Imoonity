@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GodotGame_SFX_Checkpoint.wav-ccf960ab623740b27d98db057335c937.sample"
+
+[deps]
+
+source_file="res://assets/sfx/GodotGame_SFX_Checkpoint.wav"
+dest_files=[ "res://.import/GodotGame_SFX_Checkpoint.wav-ccf960ab623740b27d98db057335c937.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

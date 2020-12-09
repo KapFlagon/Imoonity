@@ -55,3 +55,4 @@ func update_player_coords_from_screen_manager() -> void:
 
 func push_start_coords_to_player() -> void:
 	get_node("Player").set_position(player_spawn_coordinates)
+

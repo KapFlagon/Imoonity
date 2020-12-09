@@ -35,7 +35,7 @@ func fireNewProjectile():
 	projectileInstance = TitanProjectile.instance()
 	projectileInstance.setprojectileDirection(playerScene.facing)
 	add_child(projectileInstance)
-	projectileInstance.transform = playerScene.global_transform.translated(Vector2(1,-8))
+	projectileInstance.transform = playerScene.global_transform.translated(Vector2(1,-3))
 	$shootTitanAudio.play()
 
 func spawnPlatform():

@@ -108,7 +108,6 @@ func _on_VisibilityEnabler2D_screen_exited() -> void:
 
 func _on_Detector_area_entered(area):
 	if area.is_in_group("special_lethal"):
-		print("Yes")
 		_respawn_rock()
 
 
