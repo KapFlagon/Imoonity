@@ -99,8 +99,7 @@ func is_valid_passed_screen(passed_screen: int) -> bool:
 
 func set_player_start_coordinates(new_value: Vector2) -> void:
 	player_start_coordinates = new_value
-	print("Setting value: ", player_start_coordinates)
+
 
 func get_player_start_coordinates() -> Vector2: 
-	print("Getting value: ", player_start_coordinates)
 	return player_start_coordinates
