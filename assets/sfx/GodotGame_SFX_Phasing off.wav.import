@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GodotGame_SFX_Phasing off.wav-a3190e7b2a57e7c50000a6a93bb451de.sample"
+
+[deps]
+
+source_file="res://assets/sfx/GodotGame_SFX_Phasing off.wav"
+dest_files=[ "res://.import/GodotGame_SFX_Phasing off.wav-a3190e7b2a57e7c50000a6a93bb451de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

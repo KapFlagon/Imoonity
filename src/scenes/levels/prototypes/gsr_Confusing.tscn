@@ -575,7 +575,6 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 1/z_index = 0
 
 [node name="gsr_BridgeFunLevel" type="Node2D"]
-position = Vector2( 77.0534, -28.5807 )
 script = ExtResource( 8 )
 
 [node name="GrabableObjsContainer" type="Node" parent="."]
@@ -584,10 +583,10 @@ script = ExtResource( 8 )
 position = Vector2( 285.409, -157.04 )
 
 [node name="GrabbyBox3" parent="GrabableObjsContainer" instance=ExtResource( 3 )]
-position = Vector2( 378.049, -138.515 )
+position = Vector2( 368, -136 )
 
 [node name="GrabbyBox4" parent="GrabableObjsContainer" instance=ExtResource( 3 )]
-position = Vector2( 567.255, -337.942 )
+position = Vector2( 349.409, -208 )
 
 [node name="TileMapContainer" type="Node" parent="."]
 
@@ -737,20 +736,20 @@ position = Vector2( 352, 121.858 )
 rotation = 1.5708
 
 [node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 5 )]
-position = Vector2( 156.357, 153.227 )
+position = Vector2( 126.143, 144 )
 rotation = -1.5708
 
 [node name="CheckpointContainer" type="Node" parent="."]
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 13 )]
-position = Vector2( 176, -74.5147 )
+position = Vector2( 184, -76.2173 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
-position = Vector2( 341.43, 157.427 )
+position = Vector2( 419.787, 128 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 62.5783, -32.7921 )
+position = Vector2( 80, 184 )
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Godot_Slurp_Master1.ogg-05d92bfb715f8068ae689f0628371c3f.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Godot_Slurp_Master1.ogg"
+dest_files=[ "res://.import/Godot_Slurp_Master1.ogg-05d92bfb715f8068ae689f0628371c3f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
