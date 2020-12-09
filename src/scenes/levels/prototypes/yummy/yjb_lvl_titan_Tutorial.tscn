@@ -11,7 +11,7 @@
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=10]
 
-[node name="kf_lvl_00" type="Node2D"]
+[node name="yjb_lvl_titan_Tutorial" type="Node2D"]
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource( 2 )
