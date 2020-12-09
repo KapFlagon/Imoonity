@@ -16,12 +16,13 @@ func _ready():
 	set_initial_position()
 
 func rotateBridge() -> void:
-	if isOpen:
-		animPlayer.play("close")
-		isOpen = false
-	elif !isOpen:
-		animPlayer.play("open")
-		isOpen = true
+	if !animPlayer.is_playing():
+		if isOpen:
+			animPlayer.play("close")
+			isOpen = false
+		elif !isOpen:
+			animPlayer.play("open")
+			isOpen = true
 
 func isValidRotation(newRotation: int) -> bool:
 	var validRotation = false
