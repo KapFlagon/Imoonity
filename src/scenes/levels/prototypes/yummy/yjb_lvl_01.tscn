@@ -1,0 +1,348 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
+[ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/game_objects/phaseAbility/PhaseAreaMaterial.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/game_objects/BackgroundsTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/game_objects/LevelExit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=13]
+
+[node name="yjb_lvl_01" type="Node2D"]
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="TileMapContainer" type="Node" parent="."]
+
+[node name="Background" type="TextureRect" parent="TileMapContainer"]
+visible = false
+margin_left = -40.0
+margin_top = -72.0
+margin_right = 1144.0
+margin_bottom = 232.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundsTileMap" parent="TileMapContainer" instance=ExtResource( 4 )]
+
+[node name="WallsTileMap" parent="TileMapContainer" instance=ExtResource( 8 )]
+tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -1, 0, 0, -65536, 0, 0, 45, 1, 196608, 46, 1, 196608, 47, 1, 196608, 48, 1, 196608, 49, 1, 196608, 50, 1, 196608, 51, 1, 196608, 52, 1, 196608, 53, 1, 196608, 54, 1, 196608, 55, 1, 196608, 56, 1, 196608, 57, 1, 196608, 58, 1, 196608, 59, 1, 196608, 60, 1, 196608, 61, 1, 196608, 62, 1, 196608, 63, 1, 196608, 64, 1, 196608, 65, 1, 196608, 66, 1, 196608, 67, 1, 196608, 68, 1, 196608, 69, 1, 196608, 70, 1, 196608, 71, 1, 196608, 72, 1, 196608, 73, 1, 196608, 74, 1, 196608, 75, 1, 196608, 76, 1, 196608, 77, 1, 196608, 78, 1, 196608, 79, 1, 196608, 80, 1, 196608, 81, 1, 196608, 82, 1, 196608, 83, 1, 196608, 84, 1, 196608, 85, 1, 196608, 86, 1, 196608, 87, 1, 196608, 88, 1, 196608, 89, 1, 196608, 90, 1, 196608, 91, 1, 196608, 92, 1, 196608, 93, 1, 196608, 94, 1, 196608, 95, 1, 196608, 96, 1, 196608, 97, 1, 196608, 98, 1, 196608, 65581, 1, 196608, 65596, 0, 0, 65597, 0, 0, 65634, 1, 196608, 65635, 1, 196608, 65636, 1, 196608, 131117, 1, 196608, 131132, 0, 0, 131133, 0, 0, 131172, 1, 196608, 196653, 1, 196608, 196668, 0, 0, 196669, 0, 0, 196708, 1, 196608, 196709, 1, 196608, 262189, 1, 196608, 262204, 0, 0, 262205, 0, 0, 262245, 1, 196608, 262246, 1, 196608, 327725, 1, 196608, 327739, 1, 196608, 327740, 1, 196608, 327741, 1, 196608, 327758, 1, 196608, 327759, 1, 196608, 327760, 1, 196608, 327782, 1, 196608, 393261, 1, 196608, 393276, 0, 0, 393277, 0, 0, 393282, 1, 196608, 393283, 1, 196608, 393284, 1, 196608, 393301, 1, 196608, 393302, 1, 196608, 393303, 1, 196608, 393318, 1, 196608, 458797, 1, 196608, 458806, 1, 196608, 458807, 1, 196608, 458808, 1, 196608, 458812, 0, 0, 458813, 0, 0, 458824, 1, 196608, 458825, 1, 196608, 458826, 1, 196608, 458854, 1, 196608, 524333, 1, 196608, 524348, 0, 0, 524349, 0, 0, 524390, 1, 196608, 524391, 1, 196608, 589843, 1, 196608, 589844, 1, 196608, 589845, 1, 196608, 589846, 1, 196608, 589847, 1, 196608, 589848, 1, 196608, 589849, 1, 196608, 589850, 1, 196608, 589851, 1, 196608, 589852, 1, 196608, 589853, 1, 196608, 589854, 1, 196608, 589855, 1, 196608, 589856, 1, 196608, 589857, 1, 196608, 589858, 1, 196608, 589859, 1, 196608, 589860, 1, 196608, 589861, 1, 196608, 589862, 1, 196608, 589863, 1, 196608, 589864, 1, 196608, 589865, 1, 196608, 589866, 1, 196608, 589867, 1, 196608, 589868, 1, 196608, 589869, 1, 196608, 589884, 0, 0, 589885, 0, 0, 589886, 1, 196608, 589887, 1, 196608, 589888, 1, 196608, 589927, 1, 196608, 589928, 1, 196608, 589929, 1, 196608, 589930, 1, 196608, 589931, 1, 196608, 589932, 1, 196608, 589933, 1, 196608, 589934, 1, 196608, 589935, 1, 196608, 589936, 1, 196608, 589937, 1, 196608, 589938, 1, 196608, 589939, 1, 196608, 589940, 1, 196608, 589941, 1, 196608, 589942, 1, 196608, 589943, 1, 196608, 589944, 1, 196608, 589945, 1, 196608, 589946, 1, 196608, 589947, 1, 196608, 589948, 1, 196608, 589949, 1, 196608, 589950, 1, 196608, 589951, 1, 196608, 589952, 1, 196608, 589953, 1, 196608, 589954, 1, 196608, 589955, 1, 196608, 589956, 1, 196608, 589957, 1, 196608, 589958, 1, 196608, 589959, 1, 196608, 589960, 1, 196608, 589961, 1, 196608, 589962, 1, 196608, 589963, 1, 196608, 589964, 1, 196608, 589965, 1, 196608, 589966, 1, 196608, 589967, 1, 196608, 589968, 1, 196608, 589969, 1, 196608, 589970, 1, 196608, 589971, 1, 196608, 589972, 1, 196608, 589973, 1, 196608, 589974, 1, 196608, 589975, 1, 196608, 589976, 1, 196608, 589977, 1, 196608, 589978, 1, 196608, 655379, 1, 196608, 655389, 1, 196608, 655401, 1, 196608, 655410, 1, 196608, 655411, 1, 196608, 655412, 1, 196608, 655420, 0, 0, 655421, 0, 0, 655443, 1, 196608, 655444, 1, 196608, 655445, 1, 196608, 655514, 1, 196608, 720897, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 1, 196608, 720916, 0, 0, 720917, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 1, 196608, 720937, 1, 196608, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 721050, 1, 196608, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786441, 0, 0, 786443, 0, 0, 786444, 1, 196608, 786445, 1, 196608, 786446, 1, 196608, 786447, 1, 196608, 786448, 1, 196608, 786449, 1, 196608, 786450, 1, 196608, 786451, 1, 196608, 786452, 0, 0, 786453, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786488, 1, 196608, 786489, 1, 196608, 786490, 1, 196608, 786509, 1, 196608, 786510, 1, 196608, 786511, 1, 196608, 786530, 1, 196608, 786586, 1, 196608, 851980, 1, 196608, 852015, 1, 196608, 852016, 1, 196608, 852017, 1, 196608, 852033, 1, 196608, 852034, 1, 196608, 852035, 1, 196608, 852066, 1, 196608, 852122, 1, 196608, 917516, 1, 196608, 917529, 1, 196608, 917530, 1, 196608, 917531, 1, 196608, 917532, 1, 196608, 917533, 1, 196608, 917534, 1, 196608, 917535, 1, 196608, 917536, 1, 196608, 917537, 1, 196608, 917543, 1, 196608, 917544, 1, 196608, 917545, 1, 196608, 917546, 1, 196608, 917547, 1, 196608, 917548, 1, 196608, 917556, 1, 196608, 917557, 1, 196608, 917558, 1, 196608, 917576, 1, 196608, 917577, 1, 196608, 917578, 1, 196608, 917593, 1, 196608, 917594, 1, 196608, 917595, 1, 196608, 917596, 1, 196608, 917597, 1, 196608, 917598, 1, 196608, 917599, 1, 196608, 917600, 1, 196608, 917601, 1, 196608, 917602, 1, 196608, 917603, 1, 196608, 917604, 1, 196608, 917605, 1, 196608, 917606, 1, 196608, 917607, 1, 196608, 917608, 1, 196608, 917609, 1, 196608, 917610, 1, 196608, 917611, 1, 196608, 917612, 1, 196608, 917613, 1, 196608, 917616, 1, 196608, 917617, 1, 196608, 917618, 1, 196608, 917619, 1, 196608, 917620, 1, 196608, 917623, 1, 196608, 917624, 1, 196608, 917625, 1, 196608, 917626, 1, 196608, 917627, 1, 196608, 917630, 1, 196608, 917631, 1, 196608, 917632, 1, 196608, 917633, 1, 196608, 917634, 1, 196608, 917637, 1, 196608, 917638, 1, 196608, 917639, 1, 196608, 917640, 1, 196608, 917641, 1, 196608, 917644, 1, 196608, 917645, 1, 196608, 917646, 1, 196608, 917647, 1, 196608, 917648, 1, 196608, 917649, 1, 196608, 917650, 1, 196608, 917651, 1, 196608, 917652, 1, 196608, 917653, 1, 196608, 917654, 1, 196608, 917655, 1, 196608, 917656, 1, 196608, 917657, 1, 196608, 917658, 1, 196608, 983040, 1, 196608, 983041, 1, 196608, 983042, 1, 196608, 983043, 1, 196608, 983044, 1, 196608, 983045, 1, 196608, 983046, 1, 196608, 983047, 1, 196608, 983048, 1, 196608, 983049, 1, 196608, 983050, 1, 196608, 983051, 1, 196608, 983052, 1, 196608, 983065, 1, 196608, 983100, 1, 196608, 983101, 1, 196608, 983102, 1, 196608, 983124, 1, 196608, 983125, 1, 196608, 983126, 1, 196608, 1048576, 1, 196608, 1048601, 1, 196608, 1114112, 1, 196608, 1114130, 1, 196608, 1114131, 1, 196608, 1114132, 1, 196608, 1114133, 1, 196608, 1114134, 1, 196608, 1114135, 1, 196608, 1114136, 1, 196608, 1114137, 1, 196608, 1179648, 1, 196608, 1179666, 1, 196608, 1245184, 1, 196608, 1245202, 1, 196608, 1310720, 1, 196608, 1310731, 1, 196608, 1310732, 1, 196608, 1310733, 1, 196608, 1310734, 1, 196608, 1310735, 1, 196608, 1310736, 1, 196608, 1310737, 1, 196608, 1310738, 1, 196608, 1376256, 1, 196608, 1376267, 1, 196608, 1441792, 1, 196608, 1441803, 1, 196608, 1507328, 1, 196608, 1507329, 1, 196608, 1507330, 1, 196608, 1507331, 1, 196608, 1507332, 1, 196608, 1507333, 1, 196608, 1507334, 1, 196608, 1507335, 1, 196608, 1507336, 1, 196608, 1507337, 1, 196608, 1507338, 1, 196608, 1507339, 1, 196608 )
+
+[node name="SpikeContainer" type="Node" parent="."]
+
+[node name="Spike" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 276, 116.063 )
+
+[node name="Spike2" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 284, 116.063 )
+
+[node name="Spike3" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 292.036, 116.063 )
+
+[node name="Spike4" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 300.271, 116.063 )
+
+[node name="Spike5" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 308.113, 116.062 )
+
+[node name="Spike6" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 884, 116.062 )
+
+[node name="Spike7" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 891.662, 116.062 )
+
+[node name="Spike8" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 940.25, 116.062 )
+
+[node name="Spike9" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 947.912, 116.062 )
+
+[node name="Spike10" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 996.25, 116.062 )
+
+[node name="Spike11" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 1003.91, 116.062 )
+
+[node name="Spike12" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 1052.25, 116.062 )
+
+[node name="Spike13" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 1059.91, 116.062 )
+
+[node name="Spike14" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 1108, 116.062 )
+
+[node name="Spike15" parent="SpikeContainer" instance=ExtResource( 9 )]
+position = Vector2( 1115.66, 116.062 )
+
+[node name="LauncherContainer" type="Node" parent="."]
+
+[node name="Launcher" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 244.113, 83.9336 )
+firing_direction = 1
+
+[node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 244.113, 92.0625 )
+firing_direction = 1
+
+[node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 180.238, 83.9336 )
+firing_direction = 2
+
+[node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 172, 83.9336 )
+firing_direction = 2
+
+[node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 124.238, 108.062 )
+firing_direction = 2
+
+[node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 116, 108.062 )
+firing_direction = 2
+
+[node name="Launcher7" parent="LauncherContainer" instance=ExtResource( 10 )]
+position = Vector2( 796, 108 )
+firing_direction = 1
+
+[node name="ButtonContainer" type="Node" parent="."]
+
+[node name="BridgeContainer" type="Node" parent="."]
+
+[node name="HomingObstContainer" type="Node" parent="."]
+
+[node name="HomingObstacle" parent="HomingObstContainer" instance=ExtResource( 12 )]
+position = Vector2( 635.699, 79.9336 )
+
+[node name="HomingObstacle2" parent="HomingObstContainer" instance=ExtResource( 12 )]
+position = Vector2( 456, 80 )
+
+[node name="PathObstContainer" type="Node" parent="."]
+
+[node name="GrabableObjsContainer" type="Node" parent="."]
+
+[node name="PhaseObstContainer" type="Node" parent="."]
+
+[node name="phasingMaterial" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 88, 152 )
+
+[node name="phasingMaterial2" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 88, 144 )
+
+[node name="phasingMaterial3" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 88, 136 )
+
+[node name="phasingMaterial4" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 88, 128 )
+
+[node name="phasingMaterial5" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 96, 128.063 )
+
+[node name="phasingMaterial7" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 96, 136 )
+
+[node name="phasingMaterial8" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 96, 144 )
+
+[node name="phasingMaterial9" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 96, 152 )
+
+[node name="phasingMaterial10" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 144, 128 )
+
+[node name="phasingMaterial11" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 144, 120 )
+
+[node name="phasingMaterial12" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 144, 112 )
+
+[node name="phasingMaterial13" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 144, 104 )
+
+[node name="phasingMaterial14" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 152, 104.063 )
+
+[node name="phasingMaterial16" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 152, 112 )
+
+[node name="phasingMaterial17" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 152, 120 )
+
+[node name="phasingMaterial18" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 152, 128 )
+
+[node name="phasingMaterial19" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 200, 104 )
+
+[node name="phasingMaterial20" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 200, 96 )
+
+[node name="phasingMaterial21" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 200, 88 )
+
+[node name="phasingMaterial22" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 200, 80 )
+
+[node name="phasingMaterial23" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 208, 80.0625 )
+
+[node name="phasingMaterial25" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 208, 88 )
+
+[node name="phasingMaterial26" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 208, 96 )
+
+[node name="phasingMaterial27" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 208, 104 )
+
+[node name="phasingMaterial28" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 400, 72 )
+
+[node name="phasingMaterial29" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 416, 72 )
+
+[node name="phasingMaterial30" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 408, 72 )
+
+[node name="phasingMaterial31" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 576, 48 )
+
+[node name="phasingMaterial32" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 592, 48 )
+
+[node name="phasingMaterial33" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, 48 )
+
+[node name="phasingMaterial37" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 576, 104 )
+
+[node name="phasingMaterial38" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 592, 104 )
+
+[node name="phasingMaterial39" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 584, 104 )
+
+[node name="phasingMaterial40" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 664, 72 )
+
+[node name="phasingMaterial41" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 680, 72 )
+
+[node name="phasingMaterial42" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 672, 72 )
+
+[node name="phasingMaterial43" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 856, 104 )
+
+[node name="phasingMaterial44" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 856, 88 )
+
+[node name="phasingMaterial64" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 856, 79.7761 )
+
+[node name="phasingMaterial45" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 856, 96 )
+
+[node name="phasingMaterial46" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 911.875, 103.934 )
+
+[node name="phasingMaterial47" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 911.875, 87.9336 )
+
+[node name="phasingMaterial65" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 911.875, 80.125 )
+
+[node name="phasingMaterial66" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1024, 80.2652 )
+
+[node name="phasingMaterial48" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 911.875, 95.9336 )
+
+[node name="phasingMaterial49" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1136, 103.697 )
+
+[node name="phasingMaterial50" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1136, 87.6973 )
+
+[node name="phasingMaterial51" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1136, 95.6973 )
+
+[node name="phasingMaterial58" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1024, 103.697 )
+
+[node name="phasingMaterial59" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1024, 88.1987 )
+
+[node name="phasingMaterial60" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1024, 95.8452 )
+
+[node name="phasingMaterial61" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1080, 103.697 )
+
+[node name="phasingMaterial62" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1080, 87.9336 )
+
+[node name="phasingMaterial63" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1080, 95.9625 )
+
+[node name="phasingMaterial52" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 968, 103.697 )
+
+[node name="phasingMaterial53" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 968, 87.6974 )
+
+[node name="phasingMaterial54" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 968, 95.6974 )
+
+[node name="phasingMaterial55" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1136, 79.7761 )
+
+[node name="phasingMaterial56" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 968, 79.7761 )
+
+[node name="phasingMaterial57" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 1080, 79.9336 )
+
+[node name="phasingMaterial34" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 472, 32 )
+
+[node name="phasingMaterial35" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 488, 32 )
+
+[node name="phasingMaterial36" parent="PhaseObstContainer" instance=ExtResource( 3 )]
+position = Vector2( 480, 32 )
+
+[node name="HintBoxContainer" type="Node" parent="."]
+
+[node name="DeadZoneContainer" type="Node" parent="."]
+
+[node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 11 )]
+position = Vector2( 984.461, 196.326 )
+
+[node name="CheckpointContainer" type="Node" parent="."]
+
+[node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 13 )]
+position = Vector2( 744, 112 )
+
+[node name="LevelExit" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1200, 105.858 )
+rotation = -1.5708
+script = null
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 772.5, 88.5303 )
+collision_mask = 15
+
+[node name="Transitions" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2035.01, -3856.93 )
+z_index = 10

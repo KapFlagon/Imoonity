@@ -151,4 +151,3 @@ func _respawn_player():
 	movementEnabled = true
 	$DeathAnimation/DeathAudio.stop()
 	get_tree().reload_current_scene()  # Reset level
-

@@ -18,8 +18,8 @@ position = Vector2( 4, 4.0625 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3.9375, 4.03125 )
-scale = Vector2( 0.984375, 0.992188 )
+position = Vector2( 3.9375, 4.16383 )
+scale = Vector2( 0.984375, 1.02533 )
 texture = ExtResource( 1 )
 vframes = 20
 hframes = 20
