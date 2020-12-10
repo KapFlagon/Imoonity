@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 # Exported variables
-export var projectileSpeed = 2
+export var projectileSpeed: int = 2
+export var max_movement_speed: int = 100
 
 
 # Other variables
@@ -29,12 +30,16 @@ func update_projectile_velocity(current_velocity: Vector2) -> Vector2:
 	match firing_direction:
 		Enums.FIRING_DIRECTIONS.UP:
 			projectile_velocity.y -= projectileSpeed
+			projectile_velocity.y = normalize_projectile_speed(projectile_velocity.y)
 		Enums.FIRING_DIRECTIONS.RIGHT:
 			projectile_velocity.x += projectileSpeed
+			projectile_velocity.x = normalize_projectile_speed(projectile_velocity.x)
 		Enums.FIRING_DIRECTIONS.DOWN:
 			projectile_velocity.y += projectileSpeed
+			projectile_velocity.y = normalize_projectile_speed(projectile_velocity.y)
 		Enums.FIRING_DIRECTIONS.LEFT:
 			projectile_velocity.x -= projectileSpeed
+			projectile_velocity.x = normalize_projectile_speed(projectile_velocity.x)
 	return projectile_velocity
 
 
@@ -44,3 +49,6 @@ func set_firing_direction(new_firing_direction: int) -> void:
 
 func get_firing_direction() -> int:
 	return firing_direction
+	
+func normalize_projectile_speed(currentVelocity: float) -> float:
+	return clamp(currentVelocity, -max_movement_speed, max_movement_speed)

@@ -617,8 +617,12 @@ rotation = 4.71239
 [node name="LauncherContainer" type="Node" parent="."]
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 8 )]
-position = Vector2( 19.7796, 105.605 )
+position = Vector2( 40.8033, 88.2521 )
 firing_direction = 1
+
+[node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 8 )]
+position = Vector2( 97.8677, 87.9184 )
+firing_direction = 0
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 8 )]
 position = Vector2( 254.578, 39.6384 )
