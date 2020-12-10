@@ -2,8 +2,7 @@ extends Area2D
 
 
 onready var path_follow = get_parent()
-
-export var speed = 100
+onready var speed = get_parent().get_parent().movement_speed
 
 
 # Called when the node enters the scene tree for the first time.
