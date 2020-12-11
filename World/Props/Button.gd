@@ -1,30 +1,75 @@
 extends Area2D
 
-onready var animated_sprite : AnimatedSprite = $AnimatedSprite
 
-signal pressed
-signal unpressed
+onready var _animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
+onready var _button_audio = get_node("buttonAudio")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
-	
-func _on_body_entered(body: PhysicsBody2D) -> void:
-	# Check if a body already there
-	var bodies = $Detector.get_overlapping_bodies()
-	if len(bodies) > 1:
-		pass
-	else:
-		animated_sprite.play("On")
-		emit_signal("pressed")
-		$buttonAudio.play()
 
-func _on_body_exited(body: PhysicsBody2D) -> void:
-	### Is there still a body touching it?
-	var bodies = $Detector.get_overlapping_bodies()
-	if len(bodies) > 0:
-		pass
-	else:
-		animated_sprite.play("Off")
-		emit_signal("unpressed")
+var _button_just_pressed: bool = false setget set_button_just_pressed, is_button_just_pressed
+var _button_down: bool = false setget set_button_down, is_button_down
+var _button_up: bool = false setget set_button_up, is_button_up
+var _object_count: int = 0
+
+
+signal button_pressed
+signal button_unpressed
+signal button_just_pressed
+
+
+func _ready():
+	connect("body_entered", self, "_on_Button_body_entered")
+	connect("body_exited", self, "_on_Button_body_exited")
+
+
+func _process(delta):
+	_emit_continual_pressed_signal()
+
+
+func set_button_just_pressed(new_value: bool) -> void:
+	_button_just_pressed = new_value
+
+
+func is_button_just_pressed() -> bool:
+	return _button_just_pressed
+
+
+func set_button_down(new_value: bool) -> void:
+	_button_down = new_value
+
+
+func is_button_down() -> bool: 
+	return _button_down
+
+
+func set_button_up(new_value: bool) -> void:
+	_button_up = new_value
+
+
+func is_button_up() -> bool:
+	return _button_up
+
+
+func _on_Button_body_entered(body):
+	_object_count += 1
+	if _object_count <= 1:
+		if not is_button_just_pressed():
+			emit_signal("button_just_pressed")
+			set_button_just_pressed(true)
+		_button_audio.play()
+		_animated_sprite.play("On")
+		set_button_down(true)
+
+
+func _on_Button_body_exited(body):
+	_object_count -= 1
+	if _object_count < 1:
+		_animated_sprite.play("Off")
+		emit_signal("button_unpressed")
+		set_button_just_pressed(false)
+		set_button_down(false)
+
+
+func _emit_continual_pressed_signal() -> void:
+	if is_button_down():
+		emit_signal("button_pressed")
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/images/sprites/SwitchPlatform.png" type="Texture" id=1]
 [ext_resource path="res://World/Props/Button.gd" type="Script" id=2]
@@ -6,23 +6,20 @@
 [ext_resource path="res://assets/sfx/GodotGame_SFX_Button.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.1941, 1.24249 )
+extents = Vector2( 8.1941, 1.16969 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "On",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
-"loop": true,
+"loop": false,
 "name": "Off",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "On",
+"speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8.12008, 1.56263 )
 
 [node name="Button" type="Area2D"]
 collision_layer = 32
@@ -39,11 +36,6 @@ scale = Vector2( 0.5, 0.0625 )
 frames = SubResource( 2 )
 animation = "Off"
 
-[node name="Detector" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-position = Vector2( -0.0131369, -1.68598 )
-shape = SubResource( 3 )
-
 [node name="buttonAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
