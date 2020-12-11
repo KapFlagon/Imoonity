@@ -335,12 +335,11 @@ position = Vector2( 984.461, 196.326 )
 position = Vector2( 744, 112 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1200, 105.858 )
+position = Vector2( 1209.28, 105.858 )
 rotation = -1.5708
-script = null
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 772.5, 88.5303 )
+position = Vector2( 32, 175 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 5 )]
