@@ -31,14 +31,16 @@ tracks/0/keys = {
 radius = 3.99426
 height = 0.0
 
-[node name="Spike" type="Area2D" groups=[
+[node name="Spike" type="Node2D" groups=[
 "lethal",
 ]]
 pause_mode = 1
 position = Vector2( 0, -3.60627 )
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -7.53376 )
 shape = SubResource( 1 )
 
@@ -74,5 +76,3 @@ stream = ExtResource( 4 )
 volume_db = -12.691
 max_distance = 200.0
 attenuation = 9.84914
-[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
-[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
