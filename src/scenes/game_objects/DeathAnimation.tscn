@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/sfx/GodotGame_SFX_Death sound.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_Death sound.wav" type="AudioStream" id=1]
 
 [node name="DeathAnimation" type="CPUParticles2D"]
 emitting = false

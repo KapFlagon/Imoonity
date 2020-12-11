@@ -3,10 +3,11 @@
 [ext_resource path="res://assets/images/sprites/01/explosion.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/game_objects/obstacles/scripts/pathFollowObstacleArea2D.gd" type="Script" id=2]
 [ext_resource path="res://src/scenes/game_objects/obstacles/scripts/pathFollowObstacle.gd" type="Script" id=3]
+[ext_resource path="res://assets/sfx/GodotGame_SFX_CirclingProjectile.wav" type="AudioStream" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 128, 0, 0, 0, 0, 0, 191.979, 62.8268, 64.0975, 0, -64.0975, 0, 128, 128, -0.529732, 0, 0.529732, 0, 64.5873, 68.4901, -61.4489, 0.529732, 61.4489, -0.529732, 128, 0 )
+"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 132.293, -48.8776, 0, 0, 0, 0, 191.979, 62.8268, 64.0975, 0, -64.0975, 0, 134.251, 225.111, -0.529732, 0, 0.529732, 0, 64.5873, 68.4901, -61.4489, 0.529732, 61.4489, -0.529732, 132.293, -48.8776 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -36,7 +37,7 @@ curve = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2( 128, 0 )
+position = Vector2( 132.293, -48.8776 )
 rotation = 0.0228158
 rotate = false
 
@@ -49,10 +50,17 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="PathFollow2D/pathFollowObstacleArea2D"]
 texture = ExtResource( 1 )
 hframes = 18
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/pathFollowObstacleArea2D"]
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/pathFollowObstacleArea2D"]
 anims/moving = SubResource( 3 )
+
+[node name="PathFollowAudio" type="AudioStreamPlayer2D" parent="PathFollow2D/pathFollowObstacleArea2D"]
+position = Vector2( -127.967, 2.92017 )
+rotation = -0.0228158
+stream = ExtResource( 3 )
+volume_db = -10.759
+max_distance = 1000.0
+attenuation = 14.9285

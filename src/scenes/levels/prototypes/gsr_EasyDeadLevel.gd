@@ -2,7 +2,7 @@ extends BaseLevel
 
 
 func _ready():
-	MusicManager.play_song("res://assets/music/Godot_Escape_Master1.wav")
+	pass#MusicManager.play_song("res://assets/music/Godot_Escape_Master1.wav")
 
 
 func _on_BridgeButton_pressed():

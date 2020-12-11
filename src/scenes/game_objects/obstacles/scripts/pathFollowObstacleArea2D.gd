@@ -9,6 +9,7 @@ onready var speed = get_parent().get_parent().movement_speed
 func _ready():
 	$Sprite.self_modulate = Color( 0, 1, 0, 1 )
 	$AnimationPlayer.play("moving")
+	$PathFollowAudio.play()
 
 
 

@@ -9,6 +9,7 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sprite.self_modulate = Color( 1, 0, 0, 1 )
+	$PhaseMaterialAudio.play()
 
 
 func _add_to_lethal_group() -> void:

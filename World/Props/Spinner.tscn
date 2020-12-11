@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/images/sprites/Bridge.png" type="Texture" id=1]
+[ext_resource path="res://World/Props/Spinner.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.9912, 31.8578 )
+
+[node name="Spinner" type="StaticBody2D"]
+physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

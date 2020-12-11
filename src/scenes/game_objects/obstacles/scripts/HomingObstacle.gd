@@ -15,6 +15,7 @@ func _on_Area2D_body_exited(body):
 		_stop_homing()
 
 
+<<<<<<< HEAD
 func flip_active_state() -> void:
 	if is_obstacle_active():
 		_stop_homing()
@@ -26,9 +27,11 @@ func flip_active_state() -> void:
 func _start_homing() -> void:
 	_homing_obstacle_projectile.set_moving(true)
 	_animation_player.play("moving")
+    $HomingAudio.play()
 
 
 func _stop_homing() -> void:
 	_homing_obstacle_projectile.set_moving(false)
 	_animation_player.stop()
+    $HomingAudio.stop()
 
