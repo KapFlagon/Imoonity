@@ -51,7 +51,7 @@ func is_button_up() -> bool:
 
 func _on_Button_body_entered(body):
 	_object_count += 1
-	if _object_count <= 1:
+	if _object_count <= 1 and _valid_for_collision(body):
 		if not is_button_just_pressed():
 			emit_signal("button_just_pressed")
 			set_button_just_pressed(true)
@@ -62,7 +62,7 @@ func _on_Button_body_entered(body):
 
 func _on_Button_body_exited(body):
 	_object_count -= 1
-	if _object_count < 1:
+	if _object_count < 1 and _valid_for_collision(body):
 		_animated_sprite.play("Off")
 		emit_signal("button_unpressed")
 		set_button_just_pressed(false)
@@ -73,3 +73,9 @@ func _emit_continual_pressed_signal() -> void:
 	if is_button_down():
 		emit_signal("button_pressed")
 
+
+func _valid_for_collision(body: PhysicsBody2D) -> bool:
+	var valid_collision = false
+	if body.name != "HomingObstacle" and body.name != "HomingObstacleProjectile":
+		valid_collision = true
+	return valid_collision
