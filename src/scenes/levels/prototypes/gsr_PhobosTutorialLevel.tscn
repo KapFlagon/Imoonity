@@ -665,19 +665,19 @@ z_index = -1
 hint_text = "Step on a button to trigger an event!"
 
 [node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 6 )]
-position = Vector2( 376, 126.594 )
+position = Vector2( 386.799, 136.973 )
 scale = Vector2( 0.752625, 0.753353 )
 z_index = -1
 hint_text = "Pick a rock up using \"e\""
 
 [node name="HintBox3" parent="HintBoxContainer" instance=ExtResource( 6 )]
-position = Vector2( 469.991, 127.395 )
+position = Vector2( 461.716, 136.792 )
 scale = Vector2( 0.752625, 0.753353 )
 z_index = -1
 hint_text = "Throw the rock to hit the button using \"e\""
 
 [node name="HintBox4" parent="HintBoxContainer" instance=ExtResource( 6 )]
-position = Vector2( 601.1, 127.395 )
+position = Vector2( 585.532, 137.072 )
 scale = Vector2( 0.752625, 0.753353 )
 z_index = -1
 hint_text = "Hold UP and press \"e\" to throw upwards"
@@ -691,7 +691,7 @@ hint_text = "Hold DOWN and press \"e\" to drop the rock"
 [node name="ButtonContainer" type="Node" parent="."]
 
 [node name="BridgeButton" parent="ButtonContainer" instance=ExtResource( 2 )]
-position = Vector2( 207.781, 175.8 )
+position = Vector2( 136.533, 175.66 )
 
 [node name="BridgeButton2" parent="ButtonContainer" instance=ExtResource( 2 )]
 position = Vector2( 508.098, 159.719 )
@@ -706,7 +706,7 @@ position = Vector2( 956.501, 144.675 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 102.367, 117.372 )
+position = Vector2( 33.7833, 110.78 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]

@@ -751,7 +751,7 @@ position = Vector2( 536, -46.7504 )
 [node name="PathObstContainer" type="Node" parent="."]
 
 [node name="pathFollowObstacle" parent="PathObstContainer" instance=ExtResource( 13 )]
-position = Vector2( 140.177, 4.07864 )
+position = Vector2( 153.944, -29.8224 )
 
 [node name="pathFollowObstacle2" parent="PathObstContainer" instance=ExtResource( 13 )]
 position = Vector2( 204.609, -93.8139 )
@@ -764,7 +764,7 @@ position = Vector2( 762.698, -174.111 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 296, -54.9866 )
+position = Vector2( 32.7464, 165.18 )
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )
