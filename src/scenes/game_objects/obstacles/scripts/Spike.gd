@@ -38,9 +38,11 @@ func flip_active_state() -> void:
 		_tip_sprite.hide()
 		_shape.set_deferred("disabled", true)
 		_animation_player.stop()
+		_audio.stop()
 	else:
 		_tip_sprite.show()
 		_shape.set_deferred("disabled", false)
 		_animation_player.play("flash")
+		_audio.play()
 		_connect_visibility_enabler_signals()
 	.flip_active_state()
