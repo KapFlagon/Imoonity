@@ -50,3 +50,9 @@ collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lethalCollision"]
 shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -1045.33, -1045.33 )
+scale = Vector2( 2.13333, 2.13333 )
+rect = Rect2( -10, -10, 1000, 1000 )
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
