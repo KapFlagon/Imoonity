@@ -13,7 +13,6 @@ script = ExtResource( 3 )
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( 127.969, -44.2194 )
 rotation = 0.0228158
-scale = Vector2( 1, 1 )
 rotate = false
 
 [node name="ObstaclePathFollower" parent="PathFollow2D" instance=ExtResource( 1 )]
