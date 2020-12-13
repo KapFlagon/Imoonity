@@ -11,7 +11,6 @@ extents = Vector2( 4, 32 )
 extents = Vector2( 4, 32 )
 
 [node name="Bridge" type="Area2D"]
-rotation = 1.5708
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

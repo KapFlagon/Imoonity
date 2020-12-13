@@ -1,28 +1,36 @@
-extends Area2D
+extends SwitchableObstacle
 
 
-var moving = false
+onready var _homing_obstacle_projectile = get_node("HomingObstacleProjectile")
+onready var _animation_player = get_node("HomingObstacleProjectile/AnimationPlayer")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_Area2D_body_entered(body):
+	if body.name == "Player" and is_obstacle_active():
+		_start_homing()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Area2D_body_exited(body):
+	if body.name == "Player" and is_obstacle_active():
+		_stop_homing()
 
 
-func _on_HomingObstacle_body_entered(body):
-	if body.name == "Player" :
-		$HomingObstacleProjectile.set_moving(true)
-		get_node("HomingObstacleProjectile/AnimationPlayer").play("moving")
-		$HomingAudio.play()
+func flip_active_state() -> void:
+	if is_obstacle_active():
+		_stop_homing()
+	else:
+		_start_homing()
+	.flip_active_state()
 
 
-func _on_HomingObstacle_body_exited(body):
-	if body.name == "Player" :
-		$HomingObstacleProjectile.set_moving(false)
-		get_node("HomingObstacleProjectile/AnimationPlayer").stop()
-		$HomingAudio.stop()
+func _start_homing() -> void:
+	_homing_obstacle_projectile.set_moving(true)
+	_animation_player.play("moving")
+	$HomingAudio.play()
+
+
+func _stop_homing() -> void:
+	_homing_obstacle_projectile.set_moving(false)
+	_animation_player.stop()
+	$HomingAudio.stop()
+

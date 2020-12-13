@@ -1,13 +1,16 @@
+tool
 extends Area2D
 
 enum Positions {UP, RIGHT, DOWN, LEFT,}
 
-export(Positions) var closedPosition
-export(Positions) var openedPosition
-export var isOpen = true
-var animPlayer
-var animation_open
-var animation_close
+export(Positions) var closedPosition = Positions.UP setget set_closedPosition
+export(Positions) var openedPosition = Positions.UP setget set_openedPosition
+export var _bridge_open = true setget set_bridge_open, is_bridge_open
+
+var _anim_player
+var _animation_open
+var _animation_close
+
 
 func _ready():
 	var openedDegrees = position_to_degrees(openedPosition)
@@ -15,42 +18,32 @@ func _ready():
 	buildDynamicAnimationPlayer(closedDegrees,openedDegrees)
 	set_initial_position()
 
+
+func _process(delta):
+	if Engine.editor_hint:
+		set_initial_position()
+
+
 func rotateBridge() -> void:
-	if isOpen:
-		animPlayer.play("close")
-		isOpen = false
-	elif !isOpen:
-		animPlayer.play("open")
-		isOpen = true
+	if not _anim_player.is_playing():
+		if is_bridge_open():
+			_anim_player.play("close")
+			set_bridge_open(false)
+		elif not is_bridge_open():
+			_anim_player.play("open")
+			set_bridge_open(true)
 
-func isValidRotation(newRotation: int) -> bool:
-	var validRotation = false
-	if get_rotation_degrees() != newRotation:
-		validRotation = true
-	return validRotation
-
-#func _on_BridgeButton_pressed():
-#	if !animPlayer.is_playing():
-#		rotateBridge()
-#
-#func _on_BridgeButton2_pressed():
-#	if !animPlayer.is_playing():
-#		rotateBridge()
-
-#func _on_BridgeButton3_pressed():
-#	if !animPlayer.is_playing():
-#		rotateBridge()
 
 func buildDynamicAnimationPlayer(degreesClose, degreesOpen) -> void:
-	animPlayer = AnimationPlayer.new()
-	add_child(animPlayer)
-	animation_open = Animation.new()
-	animation_close = Animation.new()
-	buildAnimationTrack("open", degreesClose, degreesOpen, animation_open)
-	buildAnimationTrack("close", degreesOpen, degreesClose, animation_close)
+	_anim_player = AnimationPlayer.new()
+	add_child(_anim_player)
+	_animation_open = Animation.new()
+	_animation_close = Animation.new()
+	buildAnimationTrack("open", degreesClose, degreesOpen, _animation_open)
+	buildAnimationTrack("close", degreesOpen, degreesClose, _animation_close)
 
 func buildAnimationTrack(animTitle, startKey, endKey, animation_object) -> void:
-	animPlayer.add_animation( animTitle, animation_object)
+	_anim_player.add_animation( animTitle, animation_object)
 	var trackCount = animation_object.get_track_count()
 	animation_object.add_track(trackCount)
 	animation_object.length = 3
@@ -60,29 +53,43 @@ func buildAnimationTrack(animTitle, startKey, endKey, animation_object) -> void:
 	animation_object.track_insert_key(trackCount, 0.0, startKey)
 	animation_object.track_insert_key(trackCount, 3, endKey)
 
+
 func position_to_degrees(newPosition: int) -> int:
 	var degreeOutput
 	match newPosition: 
 		Positions.UP: 
-			if isValidRotation(0):
-				degreeOutput = 0
+			degreeOutput = 0
 		Positions.RIGHT: 
-			if isValidRotation(90):
-				degreeOutput = 90
+			degreeOutput = 90
 		Positions.DOWN: 
-			if isValidRotation(180):
-				degreeOutput = 180
+			degreeOutput = 180
 		Positions.LEFT: 
-			if isValidRotation(270):
-				degreeOutput = 270
+			degreeOutput = 270
+		_:
+			degreeOutput = 0
 	return degreeOutput
+
 
 func set_initial_position() -> void:
 	var rotation
-	if isOpen:
+	if is_bridge_open():
 		rotation = position_to_degrees(openedPosition)
 	else:
 		rotation = position_to_degrees(closedPosition)
 	set_rotation_degrees(rotation)
 
 
+func set_closedPosition(new_value) -> void:
+	closedPosition = new_value
+
+
+func set_openedPosition(new_value) -> void:
+	openedPosition = new_value
+
+
+func set_bridge_open(new_value: bool) -> void:
+	_bridge_open = new_value
+
+
+func is_bridge_open() -> bool:
+	return _bridge_open

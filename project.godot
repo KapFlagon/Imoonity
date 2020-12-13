@@ -29,17 +29,29 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/sceneless_scripts/Enums.gd"
 }, {
+"base": "SwitchableObstacle",
+"class": "ObstaclePathFollower",
+"language": "GDScript",
+"path": "res://src/scenes/game_objects/obstacles/scripts/ObstaclePathFollower.gd"
+}, {
 "base": "Box",
 "class": "PhysicsBox",
 "language": "GDScript",
 "path": "res://World/Props/PhysicsBox.gd"
+}, {
+"base": "Node2D",
+"class": "SwitchableObstacle",
+"language": "GDScript",
+"path": "res://src/scenes/game_objects/scripts/SwitchableObstacle.gd"
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
 "BaseScreen": "",
 "Box": "",
 "Enums": "",
-"PhysicsBox": ""
+"ObstaclePathFollower": "",
+"PhysicsBox": "",
+"SwitchableObstacle": ""
 }
 
 [application]
@@ -127,6 +139,7 @@ checkpoint_action={
 2d_physics/layer_3="phase_material"
 2d_physics/layer_4="pushable_material"
 2d_physics/layer_5="projectile"
+2d_physics/layer_6="button"
 
 [rendering]
 

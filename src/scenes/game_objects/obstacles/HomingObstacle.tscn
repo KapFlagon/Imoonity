@@ -31,11 +31,13 @@ extents = Vector2( 3.45302, 3.00187 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 3.96407, 4.22002 )
 
-[node name="HomingObstacle" type="Area2D"]
+[node name="HomingObstacle" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
 [node name="HomingObstacleProjectile" type="KinematicBody2D" parent="."]
@@ -63,9 +65,9 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HomingObstacleProjectile/lethalCollision"]
 shape = SubResource( 4 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 
 [node name="HomingAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 attenuation = 3.24901
-[connection signal="body_entered" from="." to="." method="_on_HomingObstacle_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_HomingObstacle_body_exited"]

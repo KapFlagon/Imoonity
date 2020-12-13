@@ -2,15 +2,13 @@ extends KinematicBody2D
 
 export var projectileSpeed = 50
 
-var moving setget set_moving, get_moving
+var moving setget set_moving, is_moving
 var velocity = Vector2.ZERO
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	moving = false
-	$HomingSprite.self_modulate = Color( 1, 0.65, 0, 1 ) 
+	get_node("HomingSprite").self_modulate = Color( 1, 0.65, 0, 1 ) 
 
 
 func _physics_process(delta):
@@ -25,5 +23,6 @@ func set_moving(new_moving: bool) -> void:
 	moving = new_moving
 
 
-func get_moving() -> bool:
+func is_moving() -> bool:
 	return moving
+
