@@ -11,8 +11,9 @@
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sprites/01/tiles.png" type="Texture" id=11]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/scenes/levels/prototypes/gsr_BridgeFunLevel.gd" type="Script" id=14]
+[ext_resource path="res://src/scenes/levels/prototypes/gsr/gsr_BridgeFunLevel.gd" type="Script" id=14]
 [ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=16]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"

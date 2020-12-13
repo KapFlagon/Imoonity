@@ -7,10 +7,11 @@
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scenes/game_objects/HintBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/scenes/levels/prototypes/gsr_PhobosTutorialLevel.gd" type="Script" id=8]
+[ext_resource path="res://src/scenes/levels/prototypes/gsr/gsr_PhobosTutorialLevel.gd" type="Script" id=8]
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sprites/01/tiles.png" type="Texture" id=11]
 [ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=16]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
