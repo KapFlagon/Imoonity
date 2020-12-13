@@ -76,6 +76,6 @@ func _emit_continual_pressed_signal() -> void:
 
 func _valid_for_collision(body: PhysicsBody2D) -> bool:
 	var valid_collision = false
-	if body.name != "HomingObstacle" and body.name != "HomingObstacleProjectile":
+	if body.name != "HomingObstacle" and body.name != "HomingObstacleProjectile" and body.name != "Launcher_projectile":
 		valid_collision = true
 	return valid_collision
