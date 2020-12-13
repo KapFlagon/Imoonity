@@ -48,7 +48,6 @@ anims/firing = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
-wait_time = 2.0
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 1.90735e-06, 0 )
