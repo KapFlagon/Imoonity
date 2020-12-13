@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
 [ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
@@ -12,26 +12,8 @@
 [ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/scenes/game_objects/obstacles/pathFollowObstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/scenes/game_objects/obstacles/PathObstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/Props/GrabbyBox.tscn" type="PackedScene" id=14]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 127.969, -48.8776, 0, 0, 0, 0, 143.94, 10.7106, 0, 0, 0, 0, 191.954, 39.5612, 64.0975, 0, -64.0975, 0, 127.969, 128, -0.529732, 0, 0.529732, 0, 63.9845, 39.5612, -61.4489, 0.529732, 61.4489, -0.529732, 132.293, -48.8776 )
-}
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends Path2D
-
-
-export var movement_speed:int = 100
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-"
 
 [node name="kf_lvl_ButtonTests" type="Node2D"]
 script = ExtResource( 3 )
@@ -61,14 +43,14 @@ tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -1, 0, 0, -65536, 0, 0, 
 [node name="SpikeContainer" type="Node" parent="."]
 
 [node name="Spike" parent="SpikeContainer" instance=ExtResource( 12 )]
-position = Vector2( -94.7523, 133.572 )
+position = Vector2( -84.1577, 172.242 )
 
 [node name="LauncherContainer" type="Node" parent="."]
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( -51.6188, 125.158 )
-rotation = 1.5708
-firing_direction = 1
+rotation = 3.14159
+firing_direction = 2
 
 [node name="ButtonContainer" type="Node" parent="."]
 
@@ -106,10 +88,9 @@ position = Vector2( 228.492, 119.115 )
 
 [node name="PathObstContainer" type="Node" parent="."]
 
-[node name="pathFollowObstacle" parent="PathObstContainer" instance=ExtResource( 13 )]
-position = Vector2( 50.7315, 74.2462 )
-curve = SubResource( 1 )
-script = SubResource( 2 )
+[node name="PathObstacle" parent="PathObstContainer" instance=ExtResource( 13 )]
+position = Vector2( 40.5732, 117.708 )
+movement_speed = 150
 
 [node name="GrabableObjsContainer" type="Node" parent="."]
 
@@ -137,4 +118,5 @@ z_index = 10
 [connection signal="button_just_pressed" from="ButtonContainer/Button2" to="." method="_on_Button2_button_just_pressed"]
 [connection signal="button_just_pressed" from="ButtonContainer/Button3" to="." method="_on_Button3_button_just_pressed"]
 [connection signal="button_just_pressed" from="ButtonContainer/Button4" to="." method="_on_Button4_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button6" to="." method="_on_Button6_button_just_pressed"]
 [connection signal="button_just_pressed" from="ButtonContainer/Button7" to="." method="_on_Button7_button_just_pressed"]
