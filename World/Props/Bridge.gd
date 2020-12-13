@@ -93,3 +93,10 @@ func set_bridge_open(new_value: bool) -> void:
 
 func is_bridge_open() -> bool:
 	return _bridge_open
+
+
+func is_bridge_rotating() -> bool:
+	if _anim_player.is_playing():
+		return true
+	else: 
+		return false
