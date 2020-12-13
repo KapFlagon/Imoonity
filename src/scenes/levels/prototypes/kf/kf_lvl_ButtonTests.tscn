@@ -12,7 +12,7 @@
 [ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/scenes/game_objects/obstacles/pathFollowObstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/scenes/game_objects/obstacles/PathObstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/Props/GrabbyBox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Curve2D" id=1]

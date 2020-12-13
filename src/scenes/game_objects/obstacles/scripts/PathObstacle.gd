@@ -18,7 +18,8 @@ func _ready():
 
 func set_movement_speed(new_value: int) -> void:
 	movement_speed = new_value
-	obstacle_path_follower.set_speed(movement_speed)
+	if obstacle_path_follower != null:
+		obstacle_path_follower.set_speed(movement_speed)
 
 
 func get_movement_speed() -> int:

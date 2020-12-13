@@ -29,7 +29,9 @@ tracks/0/keys = {
 ]]
 script = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"lethal",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )

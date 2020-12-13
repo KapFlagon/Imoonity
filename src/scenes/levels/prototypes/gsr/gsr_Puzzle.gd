@@ -1,7 +1,15 @@
 extends BaseLevel
 
 
-func _on_Button_pressed():
-	var bridge = get_node("BridgeContainer/Bridge")
-	if !bridge.animPlayer.is_playing():
-		bridge.rotateBridge()
+func _on_Button_button_just_pressed():
+	$BridgeContainer/Bridge.rotateBridge()
+
+
+func _on_Button2_button_just_pressed():
+	$PathObstContainer/PathObstacle.set_movement_speed(50)
+
+
+func _on_Button3_button_just_pressed():
+	$PathObstContainer/PathObstacle2.set_movement_speed(50)
+
+

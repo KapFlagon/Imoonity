@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/levels/prototypes/gsr/gsr_Puzzle.gd" type="Script" id=2]
@@ -14,9 +14,8 @@
 [ext_resource path="res://World/Props/Spinner.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/Props/Button.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/scenes/game_objects/obstacles/pathFollowObstacle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/scenes/game_objects/obstacles/PathObstacle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=18]
-
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -577,16 +576,6 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 } ]
 1/z_index = 0
 
-[sub_resource type="Curve2D" id=59]
-_data = {
-"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 132.293, -48.8776, 0, 0, 0, 0, 191.979, 62.8268, 64.0975, 0, -64.0975, 0, 134.251, 225.111, -0.529732, 0, 0.529732, 0, 64.5873, 68.4901, -61.4489, 0.529732, 61.4489, -0.529732, 132.293, -48.8776 )
-}
-
-[sub_resource type="Curve2D" id=60]
-_data = {
-"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 132.293, -48.8776, 0, 0, 0, 0, 191.979, 62.8268, 64.0975, 0, -64.0975, 0, 134.251, 225.111, -0.529732, 0, 0.529732, 0, 64.5873, 68.4901, -61.4489, 0.529732, 61.4489, -0.529732, 132.293, -48.8776 )
-}
-
 [node name="gsr_Puzzle" type="Node2D"]
 position = Vector2( -0.151329, 0 )
 script = ExtResource( 2 )
@@ -681,9 +670,10 @@ position = Vector2( 423.749, 45.1528 )
 
 [node name="Bridge" parent="BridgeContainer" instance=ExtResource( 13 )]
 position = Vector2( 347.592, 115.513 )
+rotation = 3.14159
 closedPosition = 2
 openedPosition = 1
-isOpen = false
+_bridge_open = false
 
 [node name="ButtonContainer" type="Node" parent="."]
 
@@ -745,36 +735,43 @@ __meta__ = {
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 92.1039, 171.443 )
+rotation = 1.5708
 firing_direction = 1
 
 [node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 372.012, 219.953 )
+rotation = 4.71239
+firing_direction = 3
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 660.19, 171.383 )
+rotation = 1.5708
 firing_direction = 1
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 668.157, 195.461 )
+rotation = 4.71239
+firing_direction = 3
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 716.268, 155.559 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 731.722, 203.586 )
+rotation = 4.71239
+firing_direction = 3
 
 [node name="PathObstContainer" type="Node" parent="."]
 
-[node name="pathFollowObstacle" parent="PathObstContainer" instance=ExtResource( 15 )]
-position = Vector2( 419.963, 118.719 )
-scale = Vector2( 0.444751, 0.422336 )
-curve = SubResource( 59 )
+[node name="PathObstacle" parent="PathObstContainer" instance=ExtResource( 15 )]
+position = Vector2( 411.304, 104.44 )
+movement_speed = 500
 
-[node name="pathFollowObstacle2" parent="PathObstContainer" instance=ExtResource( 15 )]
-position = Vector2( 419.786, 66.1076 )
-scale = Vector2( 0.444751, 0.422336 )
-curve = SubResource( 60 )
+[node name="PathObstacle2" parent="PathObstContainer" instance=ExtResource( 15 )]
+position = Vector2( 411.051, 62.5253 )
+movement_speed = 500
 
 [node name="DeadZoneContainer" type="Node" parent="."]
 
@@ -791,47 +788,44 @@ position = Vector2( 476.508, 230.855 )
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 198.063 )
 scale = Vector2( 0.3, 0.5 )
-physics_material_override = null
 
 [node name="Spinner5" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 171.063 )
 rotation = 1.0472
 scale = Vector2( 0.3, 0.5 )
-physics_material_override = null
 
 [node name="Spinner4" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 144.062 )
 rotation = 2.0944
 scale = Vector2( 0.3, 0.5 )
-physics_material_override = null
 
 [node name="Spinner3" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 117.062 )
 rotation = 3.14159
 scale = Vector2( 0.3, 0.5 )
-physics_material_override = null
 
 [node name="Spinner6" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 90.0625 )
 rotation = 4.18879
 scale = Vector2( 0.3, 0.5 )
-physics_material_override = null
 
 [node name="Spinner7" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 60.0625 )
 rotation = 5.23599
 scale = Vector2( 0.3, 0.5 )
-physics_material_override = null
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 407.508, 170.325 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 168.151, 151.559 )
+position = Vector2( 580.707, 210.125 )
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
-[connection signal="pressed" from="ButtonContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button" to="." method="_on_Button_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button2" to="." method="_on_Button2_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button3" to="." method="_on_Button3_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button4" to="." method="_on_Button4_button_just_pressed"]
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]
