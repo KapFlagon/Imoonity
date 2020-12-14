@@ -4,7 +4,7 @@ extends SwitchableObstacle
 
 # Exported variables
 export (PackedScene) var projectile
-export var firing_interval: int = 1		# A variable to define how long the timer should last, in seconds.
+export var firing_interval: float = 1.0		# A variable to define how long the timer should last, in seconds.
 export(Enums.FIRING_DIRECTIONS) var firing_direction
 
 
@@ -51,7 +51,7 @@ func _on_Timer_timeout() -> void:
 
 
 # Calculates playback speed for the firing animation based on the firing interval value
-func _calculate_animation_speed_scale(firing_interval: int) -> float: 
+func _calculate_animation_speed_scale(firing_interval: float) -> float: 
 	var output_scale: float = 1
 	if firing_interval != 1:
 		output_scale = 1.0 / (firing_interval / output_scale)
