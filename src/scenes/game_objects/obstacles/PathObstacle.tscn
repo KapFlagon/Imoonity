@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/obstacles/ObstaclePathFollower.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/scenes/game_objects/obstacles/ObstaclePathFollower_DefaultPath.tres" type="Curve2D" id=2]
+[ext_resource path="res://src/scenes/game_objects/obstacles/obstacle_paths/ObstaclePathFollower_DefaultPath.tres" type="Curve2D" id=2]
 [ext_resource path="res://src/scenes/game_objects/obstacles/scripts/PathObstacle.gd" type="Script" id=3]
 
 [node name="PathObstacle" type="Path2D"]
