@@ -52,3 +52,19 @@ func _on_Button_Room_02_Exit_button_just_pressed():
 
 func _on_Room_02_Exit_Area2D_area_entered(area):
 	get_node("BridgeContainer/Bridge_Room_02_Exit").rotateBridge()
+
+
+func _on_Button_Room_03_Puzzle_button_pressed():
+	var puzzle_bridge = get_node("BridgeContainer/Bridge_Room_03_Puzzle")
+	if not puzzle_bridge.is_bridge_open():
+		puzzle_bridge.rotateBridge()
+
+
+func _on_Button_Room_03_Puzzle_button_unpressed():
+	var puzzle_bridge = get_node("BridgeContainer/Bridge_Room_03_Puzzle")
+	if puzzle_bridge.is_bridge_open():
+		puzzle_bridge.rotateBridge()
+
+
+func _on_Button_Room_03_Exit_button_just_pressed():
+	get_node("BridgeContainer/Bridge_Room_03_Exit").rotateBridge()
