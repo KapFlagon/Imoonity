@@ -24,16 +24,18 @@ func pause_game() -> void:
 	
 func un_pause_game() -> void:
 	get_tree().paused = false
+	hide()
 	
 	
 
 
 func _on_resetLevel_button_up():
-	pass # Replace with function body.
+	get_tree().reload_current_scene()
 
 
 func _on_mainMenu_button_up():
-	ScreenManager.next_screen(Enums.SCREENS.INTRO)
+	ScreenManager.next_screen(Enums.SCREENS.MAIN_MENU)
+	MusicManager.music_player.stop()
 	
 func _on_cancel_button_up():
 	un_pause_game()

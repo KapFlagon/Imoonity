@@ -3,6 +3,7 @@
 [ext_resource path="res://src/scenes/ui/popups/scripts/pauseMenu.gd" type="Script" id=1]
 
 [node name="pauseMenu" type="PopupDialog"]
+pause_mode = 2
 margin_right = 144.0
 margin_bottom = 104.0
 mouse_filter = 2
