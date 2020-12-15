@@ -158,5 +158,4 @@ func _respawn_player():
 func pause_game():
 	var camera_center = $Camera2D.get_camera_screen_center()
 	var pauseMenu = $Camera2D.get_node("pauseMenu")
-	pauseMenu.update_display_location(camera_center)
-	pauseMenu.popup()
+	pauseMenu.show_interface(camera_center)
