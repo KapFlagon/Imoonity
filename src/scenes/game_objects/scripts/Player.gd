@@ -44,6 +44,9 @@ func _physics_process(delta: float) -> void:
 			# Check if player is colliding with object
 			if get_slide_count() > 0:
 				check_box_collision(velocity)
+	if Input.is_action_just_pressed("pause"):
+		pause_game()
+		
 	
 
 func update_player_velocity(delta: float) -> void:
@@ -151,3 +154,9 @@ func _respawn_player():
 	movementEnabled = true
 	$DeathAnimation/DeathAudio.stop()
 	get_tree().reload_current_scene()  # Reset level
+	
+func pause_game():
+	var camera_center = $Camera2D.get_camera_screen_center()
+	var pauseMenu = $Camera2D.get_node("pauseMenu")
+	pauseMenu.update_display_location(camera_center)
+	pauseMenu.popup()
