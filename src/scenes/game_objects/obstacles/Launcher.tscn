@@ -58,7 +58,7 @@ physics_process_parent = true
 [node name="launcherAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -18.367
-attenuation = 16.0
+attenuation = 27.8576
 
 [node name="Path2D" type="Path2D" parent="."]
 self_modulate = Color( 0.54902, 0, 0.0901961, 0.701961 )
