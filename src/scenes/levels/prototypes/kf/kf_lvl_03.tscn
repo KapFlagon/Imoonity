@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
+[ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/levels/prototypes/kf/scripts/kf_lvl_03.gd" type="Script" id=3]
+[ext_resource path="res://src/scenes/game_objects/BackgroundsTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/scenes/game_objects/HintBox.tscn" type="PackedScene" id=10]
+
+[node name="kf_lvl_03" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="TileMapContainer" type="Node" parent="."]
+
+[node name="Background" type="TextureRect" parent="TileMapContainer"]
+visible = false
+margin_left = -40.0
+margin_top = -72.0
+margin_right = 1144.0
+margin_bottom = 232.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundsTileMap" parent="TileMapContainer" instance=ExtResource( 4 )]
+
+[node name="WallsTileMap" parent="TileMapContainer" instance=ExtResource( 8 )]
+tile_data = PoolIntArray( -458738, 1, 65536, -393202, 1, 65536, -327666, 1, 65536, -262136, 1, 65536, -262135, 1, 65536, -262134, 1, 65536, -262133, 1, 65536, -262132, 1, 65536, -262131, 1, 65536, -262130, 1, 65536, -131073, 0, 0, -196608, 0, 0, -196594, 1, 65536, -131058, 1, 65536, -1, 0, 0, -65536, 0, 0, -65522, 1, 65536, 14, 1, 65536, 65550, 1, 65536, 65596, 0, 0, 65597, 0, 0, 131086, 1, 65536, 131132, 0, 0, 131133, 0, 0, 196622, 1, 65536, 196668, 0, 0, 196669, 0, 0, 327656, 1, 65536, 327657, 1, 65536, 262158, 1, 65536, 262204, 0, 0, 262205, 0, 0, 393192, 1, 65536, 393193, 1, 65536, 327694, 1, 65536, 327740, 0, 0, 327741, 0, 0, 458728, 1, 65536, 458729, 1, 65536, 458730, 1, 65536, 458731, 1, 65536, 458732, 1, 65536, 393230, 1, 65536, 393276, 0, 0, 393277, 0, 0, 524264, 1, 65536, 524265, 1, 65536, 524266, 1, 65536, 524267, 1, 65536, 524268, 1, 65536, 458766, 1, 65536, 458812, 0, 0, 458813, 0, 0, 589800, 1, 65536, 589801, 1, 65536, 589802, 1, 65536, 589803, 1, 65536, 589804, 1, 65536, 524302, 1, 65536, 524348, 0, 0, 524349, 0, 0, 655315, 1, 65536, 655316, 1, 65536, 655317, 1, 65536, 655318, 1, 65536, 655319, 1, 65536, 655320, 1, 65536, 655321, 1, 65536, 655322, 1, 65536, 655323, 1, 65536, 655324, 1, 65536, 655325, 1, 65536, 655326, 1, 65536, 655327, 1, 65536, 655328, 1, 65536, 655329, 1, 65536, 655330, 1, 65536, 655331, 1, 65536, 655332, 1, 65536, 655333, 1, 65536, 655334, 1, 65536, 655335, 1, 65536, 655336, 1, 65536, 655337, 1, 65536, 655338, 1, 65536, 655339, 1, 65536, 655340, 1, 65536, 655341, 1, 65536, 655342, 1, 65536, 655343, 1, 65536, 655344, 1, 65536, 655345, 1, 65536, 655346, 1, 65536, 655347, 1, 65536, 655348, 1, 65536, 655349, 1, 65536, 655350, 1, 65536, 655351, 1, 65536, 655352, 1, 65536, 655353, 1, 65536, 655354, 1, 65536, 655355, 1, 65536, 655356, 1, 65536, 655357, 1, 65536, 655358, 1, 65536, 655359, 1, 65536, 589824, 1, 65536, 589825, 1, 65536, 589826, 1, 65536, 589827, 1, 65536, 589828, 1, 65536, 589829, 1, 65536, 589830, 1, 65536, 589831, 1, 65536, 589832, 1, 65536, 589833, 1, 65536, 589834, 1, 65536, 589835, 1, 65536, 589836, 1, 65536, 589837, 1, 65536, 589838, 1, 65536, 589884, 0, 0, 589885, 0, 0, 655420, 0, 0, 655421, 0, 0, 720897, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720927, 0, 0, 720928, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786441, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0 )
+
+[node name="SpikeContainer" type="Node" parent="."]
+
+[node name="Spike" parent="SpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( -48, 72 )
+
+[node name="LauncherContainer" type="Node" parent="."]
+
+[node name="Launcher" parent="LauncherContainer" instance=ExtResource( 9 )]
+position = Vector2( -288, -8 )
+rotation = 3.14159
+firing_interval = 0.5
+firing_direction = 2
+
+[node name="ButtonContainer" type="Node" parent="."]
+
+[node name="BridgeContainer" type="Node" parent="."]
+
+[node name="HomingObstContainer" type="Node" parent="."]
+
+[node name="PathObstContainer" type="Node" parent="."]
+
+[node name="GrabableObjsContainer" type="Node" parent="."]
+
+[node name="PhaseObstContainer" type="Node" parent="."]
+
+[node name="HintBoxContainer" type="Node" parent="."]
+
+[node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 10 )]
+position = Vector2( 56, 8 )
+hint_text = "You'd better get moving! 
+<-"
+
+[node name="DeadZoneContainer" type="Node" parent="."]
+
+[node name="CheckpointContainer" type="Node" parent="."]
+
+[node name="SpinnerContainer" type="Node" parent="."]
+
+[node name="MovingSpikeContainer" type="Node2D" parent="."]
+position = Vector2( 216, 80 )
+
+[node name="Spike" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, 0 )
+rotation = -1.5708
+
+[node name="Spike2" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -8 )
+rotation = -1.5708
+
+[node name="Spike3" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -16 )
+rotation = -1.5708
+
+[node name="Spike4" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -24 )
+rotation = -1.5708
+
+[node name="Spike5" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -32 )
+rotation = -1.5708
+
+[node name="Spike6" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -40 )
+rotation = -1.5708
+
+[node name="Spike7" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -48 )
+rotation = -1.5708
+
+[node name="Spike8" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -56 )
+rotation = -1.5708
+
+[node name="Spike9" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -64 )
+rotation = -1.5708
+
+[node name="Spike10" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -72 )
+rotation = -1.5708
+
+[node name="Spike11" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -80 )
+rotation = -1.5708
+
+[node name="Spike12" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -88 )
+rotation = -1.5708
+
+[node name="Spike13" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -96 )
+rotation = -1.5708
+
+[node name="Spike14" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -104 )
+rotation = -1.5708
+
+[node name="Spike15" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -112 )
+rotation = -1.5708
+
+[node name="Spike16" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -120 )
+rotation = -1.5708
+
+[node name="Spike17" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -128 )
+rotation = -1.5708
+
+[node name="Spike18" parent="MovingSpikeContainer" instance=ExtResource( 6 )]
+position = Vector2( 0, -128 )
+rotation = -1.5708
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8, 61.5453 )
+collision_mask = 15
+
+[node name="Transitions" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2035.01, -3856.93 )
+z_index = 10
