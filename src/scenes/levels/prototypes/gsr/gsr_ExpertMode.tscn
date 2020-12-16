@@ -11,7 +11,6 @@
 [ext_resource path="res://src/scenes/game_objects/phaseAbility/PhaseAreaMaterial.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=13]
 
-
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
 0/texture = ExtResource( 11 )
@@ -759,65 +758,70 @@ rotation = 3.14159
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 163.629, 155.87 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 131.874, 155.585 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 196.108, 155.66 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 227.357, 155.446 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 259.68, 155.124 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 292.109, 155.446 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher7" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 147.736, 180.032 )
-firing_interval = 2
-firing_direction = 0
+firing_interval = 2.0
 
 [node name="Launcher8" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 179.736, 180.139 )
-firing_interval = 2
-firing_direction = 0
+firing_interval = 2.0
 
 [node name="Launcher9" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 211.844, 179.817 )
-firing_interval = 2
-firing_direction = 0
+firing_interval = 2.0
 
 [node name="Launcher10" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 244.167, 179.817 )
-firing_interval = 2
-firing_direction = 0
+firing_interval = 2.0
 
 [node name="Launcher11" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 275.952, 179.709 )
-firing_interval = 2
-firing_direction = 0
+firing_interval = 2.0
 
 [node name="Launcher12" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 388.011, 219.709 )
+rotation = 1.5708
 firing_direction = 1
 
 [node name="Launcher13" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 419.92, 259.595 )
-firing_interval = 2
+rotation = 1.5708
+firing_interval = 2.0
 firing_direction = 1
 
 [node name="Launcher14" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 491.806, 259.78 )
-firing_interval = 2
+rotation = 4.71239
+firing_interval = 2.0
+firing_direction = 3
 
 [node name="BridgeContainer" type="Node" parent="."]
 

@@ -11,12 +11,11 @@
 [ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sprites/01/tiles.png" type="Texture" id=11]
-[ext_resource path="res://src/scenes/game_objects/obstacles/pathFollowObstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/scenes/game_objects/obstacles/PathObstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://World/Props/Bridge.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scenes/levels/prototypes/gsr/gsr_EasyDeadLevel.gd" type="Script" id=17]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=18]
-
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -631,30 +630,33 @@ position = Vector2( 614.66, -99.7295 )
 [node name="Bridge" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 291.043, 93.5944 )
 openedPosition = 1
-isOpen = false
+_bridge_open = false
 
 [node name="Bridge2" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 672, -40 )
 openedPosition = 1
-isOpen = false
+_bridge_open = false
 
 [node name="Bridge3" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 752, 18.3316 )
+rotation = 3.14159
 closedPosition = 2
 openedPosition = 3
-isOpen = false
+_bridge_open = false
 
 [node name="Bridge4" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 672, -112 )
+rotation = 3.14159
 closedPosition = 2
 openedPosition = 1
-isOpen = false
+_bridge_open = false
 
 [node name="Bridge5" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 760, -74.6684 )
+rotation = 3.14159
 closedPosition = 2
 openedPosition = 3
-isOpen = false
+_bridge_open = false
 
 [node name="GrabableObjsContainer" type="Node" parent="."]
 
@@ -716,11 +718,12 @@ rotation = 1.5708
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 354.323, 145.683 )
-firing_direction = 0
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 259.519, 144.147 )
-firing_interval = 3
+rotation = 4.71239
+firing_interval = 3.0
+firing_direction = 3
 
 [node name="DeadZoneContainer" type="Node" parent="."]
 
@@ -770,6 +773,6 @@ position = Vector2( 32.7464, 165.18 )
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
-[connection signal="pressed" from="ButtonContainer/BridgeButton" to="." method="_on_BridgeButton_pressed"]
-[connection signal="pressed" from="ButtonContainer/BridgeButton2" to="." method="_on_BridgeButton2_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/BridgeButton" to="." method="_on_BridgeButton_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/BridgeButton2" to="." method="_on_BridgeButton2_button_just_pressed"]
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]

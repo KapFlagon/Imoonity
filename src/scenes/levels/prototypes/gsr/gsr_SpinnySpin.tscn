@@ -12,7 +12,6 @@
 [ext_resource path="res://World/Props/Spinner.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=18]
 
-
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
 0/texture = ExtResource( 11 )
@@ -656,10 +655,13 @@ __meta__ = {
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 177.641, 171.95 )
+rotation = 4.71239
+firing_direction = 3
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 186.115, 172.184 )
-firing_interval = 3
+rotation = 1.5708
+firing_interval = 3.0
 firing_direction = 1
 
 [node name="DeadZoneContainer" type="Node" parent="."]
@@ -680,19 +682,15 @@ position = Vector2( 103.619, 201.519 )
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 261.035, 201.194 )
 rotation = 2.15723
-physics_material_override = null
 
 [node name="Spinner3" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 182.816, 201.519 )
 rotation = 0.951204
-physics_material_override = null
 
 [node name="Spinner4" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 607.764, 125.636 )
 rotation = 0.951204
 scale = Vector2( 0.8, 0.8 )
-physics_material_override = null
-speed = 2
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 641.491, 202.371 )
