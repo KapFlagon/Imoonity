@@ -33,22 +33,22 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="TopHBoxContainer"]
-margin_left = 14.0
+margin_left = 63.0
 margin_top = 16.0
-margin_right = 242.0
+margin_right = 192.0
 margin_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme = ExtResource( 3 )
-text = "TBD Game Title"
+text = "Imoonity"
 align = 1
 valign = 1
 
 [node name="SubHBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 72.0
-margin_top = 80.0
+margin_top = 64.0
 margin_right = 248.0
-margin_bottom = 184.0
+margin_bottom = 190.0
 theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
