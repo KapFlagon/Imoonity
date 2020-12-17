@@ -2,6 +2,7 @@ extends SwitchableObstacle
 
 
 export var _speed: int = 1 setget set_speed, get_speed
+export var _rotate_clockwise: bool = true
 
 var _default_speed: int 
 var _visible_by_player: bool = false setget set_visible_by_player, is_visible_by_player
@@ -13,8 +14,10 @@ func _ready():
 
 func _physics_process(delta):
 	if is_obstacle_active() and is_visible_by_player():
-		rotation_degrees = rotation_degrees + _speed
-
+		if _rotate_clockwise:
+			rotation_degrees = rotation_degrees + _speed
+		else:
+			rotation_degrees = rotation_degrees - _speed
 
 func set_speed(new_value: int) -> void: 
 	_speed = new_value
@@ -46,3 +49,4 @@ func _on_VisibilityEnabler2D_screen_entered():
 
 func _on_VisibilityEnabler2D_screen_exited():
 	set_visible_by_player(false)
+
