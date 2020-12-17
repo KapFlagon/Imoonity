@@ -3,10 +3,14 @@ extends BaseLevel
 
 var _moving_spikes_visibility_enabled: bool
 var _moving_spikes_enabled: bool = false
-var _level_building = true
+var _level_building = false
+var _master_button_pressed = false
 
 
 onready var moving_spikes = get_node("MovingSpikeContainer")
+onready var bridge_01 = get_node("BridgeContainer/Bridge")
+onready var bridge_02 = get_node("BridgeContainer/Bridge2")
+onready var bridge_03 = get_node("BridgeContainer/Bridge3")
 
 
 func _process(delta):
@@ -47,3 +51,25 @@ func is_moving_spikes_start_point_passed():
 	if player.position.x < hint_box.position.x:
 		activate_moving_spikes()
 	pass
+
+
+func _on_MasterButton_button_just_pressed():
+	bridge_01.rotateBridge()
+	bridge_02.rotateBridge()
+	bridge_03.rotateBridge()
+	_master_button_pressed = true
+
+
+func _on_Button2_button_just_pressed():
+	if not _master_button_pressed:
+		bridge_01.rotateBridge()
+
+
+func _on_Button3_button_just_pressed():
+	if not _master_button_pressed:
+		bridge_02.rotateBridge()
+
+
+func _on_Button4_button_just_pressed():
+	if not _master_button_pressed:
+		bridge_03.rotateBridge()
