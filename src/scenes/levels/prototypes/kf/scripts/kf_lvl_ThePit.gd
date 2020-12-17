@@ -13,7 +13,8 @@ func _on_Button_Room_01_Exit_button_just_pressed():
 
 
 func _on_Room_01_Exit_Area2D_area_entered(area):
-	get_node("BridgeContainer/Bridge_Room_01").rotateBridge()
+	if area.get_parent().name == "Player":
+		get_node("BridgeContainer/Bridge_Room_01").rotateBridge()
 
 
 
@@ -51,7 +52,8 @@ func _on_Button_Room_02_Exit_button_just_pressed():
 
 
 func _on_Room_02_Exit_Area2D_area_entered(area):
-	get_node("BridgeContainer/Bridge_Room_02_Exit").rotateBridge()
+	if area.get_parent().name == "Player":
+		get_node("BridgeContainer/Bridge_Room_02_Exit").rotateBridge()
 
 
 func _on_Button_Room_03_Puzzle_button_pressed():
@@ -63,7 +65,9 @@ func _on_Button_Room_03_Puzzle_button_pressed():
 func _on_Button_Room_03_Puzzle_button_unpressed():
 	var puzzle_bridge = get_node("BridgeContainer/Bridge_Room_03_Puzzle")
 	if puzzle_bridge.is_bridge_open():
-		puzzle_bridge.rotateBridge()
+		puzzle_bridge._anim_player.stop(false)
+		puzzle_bridge._anim_player.play_backwards()
+		puzzle_bridge.set_bridge_open(false)
 
 
 func _on_Button_Room_03_Exit_button_just_pressed():
