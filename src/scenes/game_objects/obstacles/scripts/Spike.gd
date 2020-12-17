@@ -9,7 +9,10 @@ onready var _audio = get_node("SpikeAudio")
 
 
 func _ready():
-	_connect_visibility_enabler_signals()
+	if is_obstacle_active():
+		_enable_spike()
+	else: 
+		_disable_spike()
 
 
 func _on_VisibilityEnabler2D_screen_entered() -> void:
@@ -34,15 +37,23 @@ func _disconnect_visibility_enabler_signals() -> void:
 
 func flip_active_state() -> void:
 	if is_obstacle_active():
-		_disconnect_visibility_enabler_signals()
-		_tip_sprite.hide()
-		_shape.set_deferred("disabled", true)
-		_animation_player.stop()
-		_audio.stop()
+		_disable_spike()
 	else:
-		_tip_sprite.show()
-		_shape.set_deferred("disabled", false)
-		_animation_player.play("flash")
-		_audio.play()
-		_connect_visibility_enabler_signals()
+		_enable_spike()
 	.flip_active_state()
+
+
+func _enable_spike():
+	_tip_sprite.show()
+	_shape.set_deferred("disabled", false)
+	_animation_player.play("flash")
+	_audio.play()
+	_connect_visibility_enabler_signals()
+
+
+func _disable_spike():
+	_disconnect_visibility_enabler_signals()
+	_tip_sprite.hide()
+	_shape.set_deferred("disabled", true)
+	_animation_player.stop()
+	_audio.stop()
