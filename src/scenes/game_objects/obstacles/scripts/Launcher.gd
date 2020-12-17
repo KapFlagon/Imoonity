@@ -21,7 +21,8 @@ var _projectile_instance
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_initialise_launcher()
+	if not Engine.editor_hint:
+		_initialise_launcher()
 
 
 func _process(delta):
