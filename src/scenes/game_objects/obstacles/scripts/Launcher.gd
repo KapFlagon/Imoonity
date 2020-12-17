@@ -11,7 +11,7 @@ export(Enums.FIRING_DIRECTIONS) var firing_direction
 # onready variables for child nodes
 onready var _timer = get_node("Timer")
 onready var _animation_player = get_node("AnimationPlayer")
-onready var _launcer_audio = get_node("launcherAudio")
+onready var _launcher_audio = get_node("launcherAudio")
 onready var _visibility_enabler = get_node("VisibilityEnabler2D")
 
 
@@ -31,6 +31,10 @@ func _process(delta):
 
 func _initialise_launcher() -> void:
 	_timer.wait_time = firing_interval
+	if not is_obstacle_active():
+		_disable_launcher()
+	else:
+		_enable_launcher()
 	_rotate_for_facing()
 	_update_animation_speed()
 
@@ -39,7 +43,7 @@ func _fireNewProjectile():
 	var b_projectile_instance = projectile.instance()
 	b_projectile_instance.set_firing_direction(firing_direction)
 	add_child(b_projectile_instance)
-	_launcer_audio.play()
+	_launcher_audio.play()
 
 
 func _on_Timer_timeout() -> void:
@@ -89,18 +93,27 @@ func _is_rotation_mismatched(target_rotation: float) -> bool:
 
 
 func _on_VisibilityEnabler2D_screen_entered() -> void:
-	_timer.start()
+	if is_obstacle_active():
+		_timer.start()
 
 
 func _on_VisibilityEnabler2D_screen_exited() -> void:
-	_timer.stop()
+	if is_obstacle_active():
+		_timer.stop()
 
 
 func flip_active_state(): 
 	if is_obstacle_active():
-		_timer.stop()
-		_animation_player.stop()
+		_disable_launcher()
 	else: 
-		_timer.start()
+		_enable_launcher()
 	.flip_active_state()
 
+
+func _enable_launcher():
+	_timer.start()
+
+
+func _disable_launcher():
+	_timer.stop()
+	_animation_player.stop()
