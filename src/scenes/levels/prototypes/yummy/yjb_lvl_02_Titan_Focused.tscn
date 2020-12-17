@@ -10,17 +10,54 @@
 [ext_resource path="res://src/scenes/game_objects/WallsTileMap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/scenes/game_objects/obstacles/pathFollowObstacle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/scenes/game_objects/obstacles/PathObstacle.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 128, 0, 0, 0, 0, 0, 271.961, 64.5523, 64.0975, 0, -64.0975, 0, 128, 128, -0.529732, 0, 0.529732, 0, -16.3934, 68.2981, -61.4489, 0.529732, 61.4489, -0.529732, 128, 0 )
+"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 127.969, -44.2194, 0, 0, 0, 0, 271.339, 41.259, 64.0975, 0, -64.0975, 0, 129.783, 167.562, -0.529732, 0, 0.529732, 0, -2.03627, 36.9531, -61.4489, 0.529732, 61.4489, -0.529732, 127.969, -44.2194 )
 }
 
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 128, 0, 0, 0, 0, 0, 271.961, 64.5523, 64.0975, 0, -64.0975, 0, 128, 128, -0.529732, 0, 0.529732, 0, -16.3934, 68.2981, -61.4489, 0.529732, 61.4489, -0.529732, 128, 0 )
-}
+[sub_resource type="GDScript" id=2]
+script/source = "extends SwitchableObstacle
+
+var _default_speed: int setget , get_default_speed
+
+
+export var movement_speed: int = 100 setget set_movement_speed, get_movement_speed
+
+
+onready var path_follow_2d: PathFollow2D = get_node(\"PathFollow2D\")
+onready var obstacle_path_follower: Node2D = get_node(\"PathFollow2D/ObstaclePathFollower\") setget , get_path_follower
+
+
+func _ready():
+	_default_speed = get_movement_speed()
+	obstacle_path_follower.set_speed(movement_speed)
+	obstacle_path_follower.set_path_follow(path_follow_2d)
+
+
+func set_movement_speed(new_value: int) -> void:
+	movement_speed = new_value
+	if obstacle_path_follower != null:
+		obstacle_path_follower.set_speed(movement_speed)
+
+
+func get_movement_speed() -> int:
+	return movement_speed
+
+
+func get_path_follower() -> Node2D: 
+	return obstacle_path_follower
+
+
+func get_default_speed() -> int:
+	return _default_speed
+
+
+func reset_speed() -> void:
+	set_movement_speed(_default_speed)
+
+"
 
 [node name="yjb_lvl_02" type="Node2D"]
 
@@ -52,22 +89,27 @@ tile_data = PoolIntArray( -4784111, 1, 0, -4784110, 1, 0, -4784109, 1, 0, -47841
 
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 84, 116.044 )
+rotation = 1.5708
 firing_direction = 1
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 148, -572.794 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 155.592, -572.794 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 179.784, -572.794 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 187.376, -572.794 )
+rotation = 3.14159
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 3 )]
@@ -84,13 +126,17 @@ position = Vector2( 167.808, -84.1847 )
 
 [node name="PathObstContainer" type="Node" parent="."]
 
-[node name="pathFollowObstacle" parent="PathObstContainer" instance=ExtResource( 11 )]
-position = Vector2( 106.96, -266.759 )
+[node name="PathObstacle" parent="PathObstContainer" instance=ExtResource( 11 )]
+position = Vector2( 98.5884, -245.986 )
+scale = Vector2( 0.500121, 0.260982 )
 curve = SubResource( 1 )
+script = SubResource( 2 )
 
-[node name="pathFollowObstacle2" parent="PathObstContainer" instance=ExtResource( 11 )]
-position = Vector2( 105.877, -342.356 )
-curve = SubResource( 2 )
+[node name="PathObstacle2" parent="PathObstContainer" instance=ExtResource( 11 )]
+position = Vector2( 98.3262, -322.234 )
+scale = Vector2( 0.500121, 0.29105 )
+curve = SubResource( 1 )
+script = SubResource( 2 )
 
 [node name="GrabableObjsContainer" type="Node" parent="."]
 
