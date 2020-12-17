@@ -4,6 +4,7 @@ extends Node
 var current_screen: int = -1 setget set_current_screen, get_current_screen
 var current_screen_scene = null
 var player_start_coordinates: Vector2 = Vector2.ZERO setget set_player_start_coordinates, get_player_start_coordinates
+var level_dict = {}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -103,3 +104,12 @@ func set_player_start_coordinates(new_value: Vector2) -> void:
 
 func get_player_start_coordinates() -> Vector2: 
 	return player_start_coordinates
+
+
+func get_dict():
+	return level_dict
+
+
+func update_dict(latest_dict):
+	level_dict.clear()
+	level_dict = latest_dict.duplicate()

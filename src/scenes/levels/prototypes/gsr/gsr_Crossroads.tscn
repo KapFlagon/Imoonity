@@ -678,18 +678,18 @@ closedPosition = 2
 openedPosition = 1
 _bridge_open = false
 
+[node name="Bridge2" parent="BridgeContainer" instance=ExtResource( 13 )]
+position = Vector2( 524, 236 )
+scale = Vector2( 0.3, 0.3 )
+openedPosition = 1
+_bridge_open = false
+
 [node name="Bridge3" parent="BridgeContainer" instance=ExtResource( 13 )]
 position = Vector2( 464, 196 )
 rotation = 1.5708
 scale = Vector2( 0.3, 0.3 )
 closedPosition = 1
 openedPosition = 3
-_bridge_open = false
-
-[node name="Bridge2" parent="BridgeContainer" instance=ExtResource( 13 )]
-position = Vector2( 524, 236 )
-scale = Vector2( 0.3, 0.3 )
-openedPosition = 1
 _bridge_open = false
 
 [node name="Bridge4" parent="BridgeContainer" instance=ExtResource( 13 )]
@@ -843,7 +843,7 @@ position = Vector2( 503.822, 562.968 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 318.617, 109.519 )
+position = Vector2( 320.409, 110.187 )
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )
