@@ -85,11 +85,11 @@ rotation = 3.14159
 position = Vector2( 176.026, 247.881 )
 
 [node name="wall_right_button" parent="ButtonContainer" instance=ExtResource( 5 )]
-position = Vector2( 199.404, 169.352 )
+position = Vector2( 199.007, 160.621 )
 rotation = -1.5708
 
 [node name="wall_left_button" parent="ButtonContainer" instance=ExtResource( 5 )]
-position = Vector2( -55.392, 175.663 )
+position = Vector2( -55.7888, 159.789 )
 rotation = 1.5708
 
 [node name="BridgeContainer" type="Node" parent="."]
@@ -134,9 +134,12 @@ scale = Vector2( 0.1, 1 )
 [node name="SpinnerContainer" type="Node" parent="."]
 
 [node name="Spinner" parent="SpinnerContainer" instance=ExtResource( 13 )]
+visible = false
 position = Vector2( 6.10674, 178.775 )
+_rotate_clockwise = false
 
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 13 )]
+visible = false
 position = Vector2( 137.537, 180.506 )
 
 [node name="CheckpointContainer" type="Node" parent="."]
