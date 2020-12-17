@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=1]
 [ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/scenes/game_objects/obstacles/HomingObstacle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/scenes/game_objects/obstacles/PathObstacle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/scenes/levels/prototypes/yummy/yjb_lvl_02_Titan_Focused.gd" type="Script" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -60,6 +61,7 @@ func reset_speed() -> void:
 "
 
 [node name="yjb_lvl_02" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource( 2 )

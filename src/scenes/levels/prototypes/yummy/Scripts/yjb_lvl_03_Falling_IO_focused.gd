@@ -16,7 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Button_pressed():
-	var bridge = get_node("BridgeContainer/Bridge")
-	if !bridge.animPlayer.is_playing():
-		bridge.rotateBridge()
+func _on_Button_button_just_pressed():
+	$BridgeContainer/Bridge.rotateBridge()

@@ -136,9 +136,10 @@ position = Vector2( 664, 520 )
 
 [node name="Bridge" parent="BridgeContainer" instance=ExtResource( 10 )]
 position = Vector2( 304, 520 )
-rotation = 3.14159
+rotation = 1.5708
 closedPosition = 1
 openedPosition = 2
+_bridge_open = false
 
 [node name="HomingObstContainer" type="Node" parent="."]
 
@@ -356,9 +357,10 @@ position = Vector2( 460.547, 824.892 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 344.098, 684.356 )
+position = Vector2( 47.1359, 182.093 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
+[connection signal="button_just_pressed" from="ButtonContainer/Button" to="." method="_on_Button_button_just_pressed"]

@@ -2,9 +2,9 @@ extends BaseLevel
 
 
 func _on_Button_button_just_pressed():
-	flip_all_spikes()
-	get_node("TimerContainer/SpikeTimer").start()
-
+	if not get_node("TimerContainer/SpikeTimer").time_left > 0:
+		flip_all_spikes()
+		get_node("TimerContainer/SpikeTimer").start()
 
 func _on_SpikeTimer_timeout():
 	flip_all_spikes()
