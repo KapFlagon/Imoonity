@@ -1,10 +1,10 @@
 extends SwitchableObstacle
 
 
-export var _speed: int = 1 setget set_speed, get_speed
+export var _speed: float = 1 setget set_speed, get_speed
 export var _rotate_clockwise: bool = true
 
-var _default_speed: int 
+var _default_speed: float 
 var _visible_by_player: bool = false setget set_visible_by_player, is_visible_by_player
 
 
@@ -19,11 +19,11 @@ func _physics_process(delta):
 		else:
 			rotation_degrees = rotation_degrees - _speed
 
-func set_speed(new_value: int) -> void: 
+func set_speed(new_value: float) -> void: 
 	_speed = new_value
 
 
-func get_speed() -> int:
+func get_speed() -> float:
 	return _speed
 
 

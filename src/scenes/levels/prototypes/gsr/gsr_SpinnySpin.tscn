@@ -1,7 +1,8 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/levels/prototypes/gsr/gsr_SpinnySpin.gd" type="Script" id=2]
+[ext_resource path="res://World/Props/DeadZone_Particles.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/scenes/game_objects/LevelExit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=7]
@@ -677,20 +678,25 @@ position = Vector2( 428.986, 231.429 )
 [node name="SpinnerContainer" type="Node" parent="."]
 
 [node name="Spinner" parent="SpinnerContainer" instance=ExtResource( 12 )]
-position = Vector2( 103.619, 201.519 )
+position = Vector2( 104, 201.519 )
+_speed = 0.8
 
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 261.035, 201.194 )
 rotation = 2.15723
+_speed = 0.8
 
 [node name="Spinner3" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 182.816, 201.519 )
 rotation = 0.951204
+_speed = 0.8
 
 [node name="Spinner4" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 607.764, 125.636 )
 rotation = 0.951204
 scale = Vector2( 0.8, 0.8 )
+
+[node name="CPUParticles2D" parent="." instance=ExtResource( 3 )]
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 641.491, 202.371 )
