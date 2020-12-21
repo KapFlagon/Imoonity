@@ -299,7 +299,7 @@ position = Vector2( 36.7247, 0.629963 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 168, 216 )
+position = Vector2( 35.0845, -7.63568 )
 
 [node name="Transitions" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2035.01, -3856.93 )

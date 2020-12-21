@@ -771,7 +771,7 @@ position = Vector2( 762.698, -174.111 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 579.862, 66.4049 )
+position = Vector2( 26.3952, 152.778 )
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )

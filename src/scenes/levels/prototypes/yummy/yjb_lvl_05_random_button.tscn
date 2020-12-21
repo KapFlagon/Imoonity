@@ -134,12 +134,10 @@ scale = Vector2( 0.1, 1 )
 [node name="SpinnerContainer" type="Node" parent="."]
 
 [node name="Spinner" parent="SpinnerContainer" instance=ExtResource( 13 )]
-visible = false
 position = Vector2( 6.10674, 178.775 )
 _rotate_clockwise = false
 
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 13 )]
-visible = false
 position = Vector2( 137.537, 180.506 )
 
 [node name="CheckpointContainer" type="Node" parent="."]

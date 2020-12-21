@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Props/Button.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/levels/Transitions.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/BigDirtyBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Spike.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/images/sprites/Placeholder_Background.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/sprites/01/tiles.png" type="Texture" id=11]
@@ -576,10 +575,6 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
 [node name="gsr_BridgeFunLevel" type="Node2D"]
 script = ExtResource( 14 )
-
-[node name="BigDirtyBackground" parent="." instance=ExtResource( 8 )]
-scale = Vector2( 1, 0 )
-transform = Transform2D( 1, 0, 0, 0, 0, 0 )
 
 [node name="GrabableObjsContainer" type="Node" parent="."]
 

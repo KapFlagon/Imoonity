@@ -796,8 +796,9 @@ position = Vector2( 275.952, 179.709 )
 firing_interval = 2.0
 
 [node name="Launcher12" parent="LauncherContainer" instance=ExtResource( 6 )]
-position = Vector2( 388.011, 219.709 )
+position = Vector2( 388.011, 219.993 )
 rotation = 1.5708
+firing_interval = 1.3
 firing_direction = 1
 
 [node name="Launcher13" parent="LauncherContainer" instance=ExtResource( 6 )]
@@ -830,7 +831,7 @@ position = Vector2( 426.49, 338.375 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 369.937, 160.739 )
+position = Vector2( 19.579, 171.253 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]

@@ -15,7 +15,7 @@ motion_mirroring = Vector2( 264, 0 )
 
 [node name="DarkBackground" type="Sprite" parent="ParallaxBackground/Back"]
 position = Vector2( -95.5467, -27.4153 )
-scale = Vector2( 1, 0.4 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1056, 1056 )
@@ -29,7 +29,8 @@ motion_mirroring = Vector2( 1056, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/FartherAwayAgain"]
 modulate = Color( 0.776471, 0.776471, 0.776471, 1 )
-position = Vector2( 1.59027, -6.41542 )
+position = Vector2( -167.558, -49.3212 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1056, 64 )
@@ -42,7 +43,8 @@ motion_mirroring = Vector2( 1056, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/FartherAway"]
 modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-position = Vector2( 0.48291, -5.68707 )
+position = Vector2( -44.8983, 22.5043 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1056, 65 )
@@ -54,7 +56,8 @@ motion_mirroring = Vector2( 1056, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Closer"]
 modulate = Color( 0.625, 0.625, 0.625, 1 )
-position = Vector2( 0, -5.92272 )
+position = Vector2( 2.03223, 106.528 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1056, 65 )
