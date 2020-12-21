@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/images/sprites/parallax-mountain-bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/sprites/parallax-mountain-montain-far.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/sprites/parallax-mountain-mountains.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/sprites/parallax-mountain-foreground-trees.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/sprites/parallax-mountain-trees.png" type="Texture" id=5]
+
+[node name="ParallaxBackground_1" type="CanvasLayer"]
+follow_viewport_enable = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 1.2, 1.2 )
+transform = Transform2D( 1.2, 0, 0, 1.2, 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+position = Vector2( -0.458984, -160.175 )
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 103.967, -25.8398 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 0, -1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource( 4 )
+centered = false

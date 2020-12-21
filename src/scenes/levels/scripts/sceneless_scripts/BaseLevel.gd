@@ -6,10 +6,16 @@ class_name BaseLevel
 
 var player_spawn_coordinates: Vector2 = Vector2.ZERO setget set_player_spawn_coordinates, get_player_spawn_coordinates
 var level_screen_value: int = -1 setget set_level_screen_value, get_level_screen_value
-
+var background
 
 func _ready() -> void:
 	initialize_level()
+	background = preload("res://World/BackgroundParent.tscn").instance()
+	add_child(background)
+
+
+func _process(delta):
+	background.position = $Player/Camera2D.get_camera_screen_center()
 
 
 func set_player_spawn_coordinates(new_value: Vector2) -> void:

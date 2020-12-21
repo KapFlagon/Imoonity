@@ -1,19 +1,7 @@
 extends BaseLevel
 
-func _ready():
-	pass#MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.wav")
-
-#
-#func _on_BridgeButton2_pressed():
-#	var bridge = get_node("BridgeContainer/Bridge2")
-#	if !bridge.animPlayer.is_playing():
-#		bridge.rotateBridge()
-#
-#
-#func _on_BridgeButton3_pressed():
-#	var bridge = get_node("BridgeContainer/Bridge3")
-#	if !bridge.animPlayer.is_playing():
-#		bridge.rotateBridge()
+func _process(delta):
+	pass#$BackgroundParent.position = $Player/Camera2D.get_camera_screen_center()
 
 
 func _on_BridgeButton_button_just_pressed():
