@@ -8,6 +8,7 @@ var player_spawn_coordinates: Vector2 = Vector2.ZERO setget set_player_spawn_coo
 var level_screen_value: int = -1 setget set_level_screen_value, get_level_screen_value
 var background
 
+
 func _ready() -> void:
 	initialize_level()
 	background = preload("res://World/BackgroundParent.tscn").instance()

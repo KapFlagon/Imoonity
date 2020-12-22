@@ -588,6 +588,12 @@ position = Vector2( 368, -136 )
 [node name="GrabbyBox4" parent="GrabableObjsContainer" instance=ExtResource( 3 )]
 position = Vector2( 349.409, -208 )
 
+[node name="GrabbyBox5" parent="GrabableObjsContainer" instance=ExtResource( 3 )]
+position = Vector2( 378.616, -111.566 )
+
+[node name="GrabbyBox6" parent="GrabableObjsContainer" instance=ExtResource( 3 )]
+position = Vector2( 262.48, -147.34 )
+
 [node name="TileMapContainer" type="Node" parent="."]
 
 [node name="BackgroundsTileMap" type="TileMap" parent="TileMapContainer"]
@@ -730,13 +736,29 @@ closedPosition = 2
 openedPosition = 3
 _bridge_open = false
 
+[node name="Bridge7" parent="BridgeContainer" instance=ExtResource( 16 )]
+position = Vector2( 342.703, 73.3948 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+closedPosition = 1
+openedPosition = 3
+_bridge_open = false
+
+[node name="Bridge8" parent="BridgeContainer" instance=ExtResource( 16 )]
+position = Vector2( 304.51, 86.702 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+closedPosition = 2
+openedPosition = 3
+_bridge_open = false
+
 [node name="ButtonContainer" type="Node" parent="."]
 
-[node name="BridgeButton" parent="ButtonContainer" instance=ExtResource( 2 )]
-position = Vector2( 312.333, 175.493 )
+[node name="Button" parent="ButtonContainer" instance=ExtResource( 2 )]
+position = Vector2( 311.917, 174.321 )
 
-[node name="BridgeButton2" parent="ButtonContainer" instance=ExtResource( 2 )]
-position = Vector2( 332, 176 )
+[node name="Button2" parent="ButtonContainer" instance=ExtResource( 2 )]
+position = Vector2( 330.725, 174.345 )
 
 [node name="DeadZoneContainer" type="Node2D" parent="."]
 position = Vector2( 352, 121.858 )
@@ -756,11 +778,11 @@ position = Vector2( 419.787, 128 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 89.9756, 176.029 )
+position = Vector2( 78.1776, 184.126 )
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
-[connection signal="button_just_pressed" from="ButtonContainer/BridgeButton" to="." method="_on_BridgeButton_button_just_pressed"]
-[connection signal="button_just_pressed" from="ButtonContainer/BridgeButton2" to="." method="_on_BridgeButton2_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button" to="." method="_on_Button_button_just_pressed"]
+[connection signal="button_just_pressed" from="ButtonContainer/Button2" to="." method="_on_Button2_button_just_pressed"]
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]

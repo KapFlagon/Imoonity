@@ -149,7 +149,7 @@ hint_text = "Equip Puck using the checkpoint"
 
 [node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 11 )]
 position = Vector2( 64, 128 )
-hint_text = "Use Puck to dash short distances"
+hint_text = "'J' to puck dash short distances"
 
 [node name="DeadZoneContainer" type="Node" parent="."]
 
@@ -167,7 +167,7 @@ rotation = -1.5708
 script = null
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 226.074, 162.929 )
+position = Vector2( -89.614, 167.983 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 1 )]

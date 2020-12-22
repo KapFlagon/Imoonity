@@ -198,6 +198,9 @@ position = Vector2( 499.865, 265.619 )
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 8 )]
 position = Vector2( 998.041, 191.236 )
 
+[node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 8 )]
+position = Vector2( 96.7914, 190.956 )
+
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 72.1163, 189.11 )
 collision_mask = 15

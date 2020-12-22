@@ -8,7 +8,7 @@ var titan_equipped: bool = false setget set_titan_equipped, is_titan_equipped
 
 
 func _ready() -> void:
-	level_development(true)
+	level_development(false)
 
 
 func reset_all_equippment() -> void:

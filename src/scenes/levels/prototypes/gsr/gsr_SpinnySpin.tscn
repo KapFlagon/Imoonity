@@ -841,7 +841,7 @@ _speed = 0.8
 [node name="Spinner4" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 607.764, 125.636 )
 rotation = 0.951204
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.3, 0.5 )
 
 [node name="Spinner5" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 711.14, 186.006 )

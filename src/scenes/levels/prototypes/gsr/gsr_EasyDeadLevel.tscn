@@ -741,11 +741,13 @@ position = Vector2( 155.914, 37.8267 )
 [node name="HintBoxContainer" type="Node" parent="."]
 
 [node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 55.206, 125.275 )
 scale = Vector2( 0.752625, 0.753353 )
 hint_text = "Get comfy..."
 
 [node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 206.191, 107.891 )
 scale = Vector2( 0.752625, 0.753353 )
 hint_text = "...cause you're gonna die a lot"

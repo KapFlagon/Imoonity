@@ -24,7 +24,9 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.65796, 8.64509 )
 
-[node name="Launcher_projectile" type="KinematicBody2D"]
+[node name="Launcher_projectile" type="KinematicBody2D" groups=[
+"lethal",
+]]
 scale = Vector2( 0.3, 0.3 )
 collision_layer = 16
 collision_mask = 30
