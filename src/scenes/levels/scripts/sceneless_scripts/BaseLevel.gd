@@ -7,17 +7,24 @@ class_name BaseLevel
 var player_spawn_coordinates: Vector2 = Vector2.ZERO setget set_player_spawn_coordinates, get_player_spawn_coordinates
 var level_screen_value: int = -1 setget set_level_screen_value, get_level_screen_value
 var background
+var background2
 
 
 func _ready() -> void:
 	initialize_level()
 	background = preload("res://World/BackgroundParent.tscn").instance()
+	#background = preload("res://World/BackgroundParent_v2.tscn").instance()
+	#background2 = preload("res://World/MyParallaxBackground.tscn").instance()
 	add_child(background)
+	#add_child(background2)
+	#background2.position.y = background2.position.y + 39
 
 
 func _process(delta):
 	background.position = $Player/Camera2D.get_camera_screen_center()
-
+	#background2.position.x = background.position.x
+	#background2.position.y = background.position.y + 39
+	
 
 func set_player_spawn_coordinates(new_value: Vector2) -> void:
 	player_spawn_coordinates = new_value
