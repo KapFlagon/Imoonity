@@ -2,7 +2,7 @@ extends PopupDialog
 
 
 export var max_active_powers = 2
-var active_power_count = 0
+var active_power_count
 var signals_established: bool = false
 var show_puck_dash: bool setget set_show_puck_dash
 var show_io_phase: bool setget set_show_io_phase
@@ -45,6 +45,7 @@ func _on_CancelBtn_button_up() -> void:
 
 
 func update_display_content() -> void:
+	active_power_count = 0
 	update_puck_display()
 	update_io_display()
 	update_phobos_display()
