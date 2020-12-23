@@ -701,6 +701,7 @@ rotation = 3.14159
 position = Vector2( 83.4756, 168.105 )
 rotation = 1.0472
 _obstacle_active = false
+_speed = 2.0
 
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 2 )]
 position = Vector2( 100.873, 454.103 )
@@ -781,7 +782,7 @@ position = Vector2( 13.768, 171.975 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 297.484, 558.021 )
+position = Vector2( 457.836, 168.498 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]

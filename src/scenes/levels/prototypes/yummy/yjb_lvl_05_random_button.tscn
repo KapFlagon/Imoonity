@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/sceneless_scripts/autoload/MusicManager.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/game_objects/BackgroundsTileMap.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/scenes/levels/prototypes/yummy/Scripts/yjb_lvl_05_random_button.gd" type="Script" id=12]
 [ext_resource path="res://World/Props/Spinner.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=15]
 
 [node name="yjb_lvl_05_random_button" type="Node2D"]
 script = ExtResource( 12 )
@@ -115,7 +116,7 @@ _bridge_open = false
 [node name="GrabableObjsContainer" type="Node" parent="."]
 
 [node name="GrabbyBox" parent="GrabableObjsContainer" instance=ExtResource( 6 )]
-position = Vector2( 73.0205, 223.427 )
+position = Vector2( 106.251, 226.281 )
 
 [node name="PhaseObstContainer" type="Node" parent="."]
 
@@ -141,6 +142,9 @@ _rotate_clockwise = false
 position = Vector2( 137.537, 180.506 )
 
 [node name="CheckpointContainer" type="Node" parent="."]
+
+[node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 15 )]
+position = Vector2( 71.9656, 226.498 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 85.6092, 224.827 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://src/scenes/game_objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scenes/levels/prototypes/gsr/gsr_Puzzle.gd" type="Script" id=2]
@@ -577,6 +577,53 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 } ]
 1/z_index = 0
 
+[sub_resource type="Curve2D" id=59]
+_data = {
+"points": PoolVector2Array( -63.0381, 0, 63.0381, 0, 127.969, -44.2194, 0, 0, 0, 0, 179.374, 48.3911, 0, 0, 0, 0, 179.056, 82.2968, 64.0975, 0, -64.0975, 0, 131.906, 181.372, -0.529732, 0, 0.529732, 0, 82.5272, 47.0701, -61.4489, 0.529732, 61.4489, -0.529732, 127.969, -44.2194 )
+}
+
+[sub_resource type="GDScript" id=60]
+script/source = "extends SwitchableObstacle
+
+var _default_speed: int setget , get_default_speed
+
+
+export var movement_speed: int = 100 setget set_movement_speed, get_movement_speed
+
+
+onready var path_follow_2d: PathFollow2D = get_node(\"PathFollow2D\")
+onready var obstacle_path_follower: Node2D = get_node(\"PathFollow2D/ObstaclePathFollower\") setget , get_path_follower
+
+
+func _ready():
+	_default_speed = get_movement_speed()
+	obstacle_path_follower.set_speed(movement_speed)
+	obstacle_path_follower.set_path_follow(path_follow_2d)
+
+
+func set_movement_speed(new_value: int) -> void:
+	movement_speed = new_value
+	if obstacle_path_follower != null:
+		obstacle_path_follower.set_speed(movement_speed)
+
+
+func get_movement_speed() -> int:
+	return movement_speed
+
+
+func get_path_follower() -> Node2D: 
+	return obstacle_path_follower
+
+
+func get_default_speed() -> int:
+	return _default_speed
+
+
+func reset_speed() -> void:
+	set_movement_speed(_default_speed)
+
+"
+
 [node name="gsr_Puzzle" type="Node2D"]
 position = Vector2( -0.151329, 0 )
 script = ExtResource( 2 )
@@ -776,6 +823,12 @@ position = Vector2( 411.051, 62.5253 )
 curve = ExtResource( 16 )
 movement_speed = 500
 
+[node name="PathObstacle3" parent="PathObstContainer" instance=ExtResource( 15 )]
+position = Vector2( 410.573, 115.422 )
+curve = SubResource( 59 )
+script = SubResource( 60 )
+movement_speed = 500
+
 [node name="DeadZoneContainer" type="Node" parent="."]
 
 [node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 5 )]
@@ -785,6 +838,9 @@ position = Vector2( 296.458, 286.41 )
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 18 )]
 position = Vector2( 476.508, 230.855 )
+
+[node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 18 )]
+position = Vector2( 39.5197, 150.285 )
 
 [node name="SpinnerContainer" type="Node" parent="."]
 
