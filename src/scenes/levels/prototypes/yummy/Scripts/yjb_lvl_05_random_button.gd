@@ -4,7 +4,7 @@ var chosenButton
 
 
 func _ready():
-	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+#	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
 	var listOfButtons = []
 	listOfButtons.push_back(get_node("ButtonContainer/bot_left_button")) 
 	listOfButtons.push_back(get_node("ButtonContainer/top_left_button"))

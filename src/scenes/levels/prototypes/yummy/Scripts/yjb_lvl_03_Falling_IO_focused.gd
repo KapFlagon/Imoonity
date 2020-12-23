@@ -8,7 +8,8 @@ extends BaseLevel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+#	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.s

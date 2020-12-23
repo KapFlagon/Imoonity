@@ -1,7 +1,8 @@
 extends BaseLevel
 
 func _ready():
-	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+#	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+	pass
 	
 	
 

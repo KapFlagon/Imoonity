@@ -26,7 +26,7 @@ func _on_resetLevel_button_up():
 
 func _on_mainMenu_button_up():
 	ScreenManager.next_screen(Enums.SCREENS.MAIN_MENU)
-	MusicManager.music_player.stop()
+#	MusicManager.music_player.stop()
 
 
 func _on_cancel_button_up():

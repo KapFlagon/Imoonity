@@ -4,6 +4,7 @@ extends BaseScreen
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	poll_screen_manager(Enums.SCREENS.MAIN_MENU)
+	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
 	pass # Replace with function body.
 
 
