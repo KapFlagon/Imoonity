@@ -88,6 +88,10 @@ hint_text = "Reach the level exit to progress"
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 10 )]
 position = Vector2( 408, 200 )
+puck_dash_available = false
+phobos_strength_available = false
+io_phasing_available = false
+titan_platforms_available = false
 
 [node name="LevelExit" parent="." instance=ExtResource( 6 )]
 position = Vector2( 688, 192 )
