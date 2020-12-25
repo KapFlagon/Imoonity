@@ -11,7 +11,7 @@
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/game_objects/obstacles/Launcher.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/scenes/levels/prototypes/yummy/scripts/yjb_lvl_titan_Tutorial.gd" type="Script" id=12]
+[ext_resource path="res://src/scenes/levels/prototypes/yummy/Scripts/yjb_lvl_titan_Tutorial.gd" type="Script" id=12]
 
 [node name="yjb_lvl_titan_Tutorial" type="Node2D"]
 script = ExtResource( 12 )
@@ -147,12 +147,16 @@ firing_direction = 0
 [node name="HintBoxContainer" type="Node" parent="."]
 
 [node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 3 )]
-position = Vector2( 72, 112 )
+position = Vector2( 122.773, 113.933 )
 hint_text = "Press 'L' to fire a projectile"
 
 [node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 3 )]
-position = Vector2( 168, 112 )
+position = Vector2( 199.443, 113.804 )
 hint_text = "Press 'L' again to spawn a platform"
+
+[node name="HintBox6" parent="HintBoxContainer" instance=ExtResource( 3 )]
+position = Vector2( 46.7377, 114.062 )
+hint_text = "Select 'Titan' from the powers menu"
 
 [node name="HintBox3" parent="HintBoxContainer" instance=ExtResource( 3 )]
 position = Vector2( 408, 112 )
@@ -178,6 +182,9 @@ position = Vector2( 48.7343, 183.473 )
 puck_dash_available = false
 phobos_strength_available = false
 io_phasing_available = false
+
+[node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 11 )]
+position = Vector2( 1040.77, 183.684 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 16, 168 )

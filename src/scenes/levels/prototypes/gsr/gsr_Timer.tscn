@@ -802,7 +802,7 @@ position = Vector2( 13.768, 171.975 )
 rotation = -1.5708
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 457.836, 168.498 )
+position = Vector2( 271.699, 560.259 )
 collision_mask = 15
 
 [node name="Transitions" parent="." instance=ExtResource( 7 )]
