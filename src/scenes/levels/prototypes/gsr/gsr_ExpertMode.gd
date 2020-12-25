@@ -1,9 +1,9 @@
 extends BaseLevel
 
 func _ready():
-	pass
-	#MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.wav")
-	# Hi everyone
+	set_level_screen_value(Enums.SCREENS.GSR_EXPERT_MODE)
+	._ready()
+	
 
 func _on_BridgeButton_pressed():
 	var bridge = get_node("BridgeContainer/Bridge")

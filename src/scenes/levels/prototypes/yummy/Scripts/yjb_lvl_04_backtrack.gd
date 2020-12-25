@@ -1,10 +1,8 @@
 extends BaseLevel
 
 func _ready():
-#	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
-	pass
-	
-	
+	set_level_screen_value(Enums.SCREENS.YJB_LVL_04_BACKTRACK)
+	._ready()
 
 
 func _on_Button_button_pressed():

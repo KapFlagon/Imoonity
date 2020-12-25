@@ -1,6 +1,11 @@
 extends BaseLevel
 
 
+func _ready():
+	set_level_screen_value(Enums.SCREENS.GSR_PHOBOS_TUTORIAL_LEVEL)
+	._ready()
+
+
 func _process(delta):
 	pass#$BackgroundParent.position = $Player/Camera2D.get_camera_screen_center()
 

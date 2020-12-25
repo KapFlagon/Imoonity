@@ -1,9 +1,11 @@
 extends BaseLevel
 
 func _ready():
+	set_level_screen_value(Enums.SCREENS.GSR_CONFUSING)
 	get_node("Player/Camera2D").zoom.x = 1
 	get_node("Player/Camera2D").zoom.y = 1
 	background.scale = Vector2(1.3,1.3)
+	._ready()
 
 
 func _on_Button_button_just_pressed():

@@ -15,10 +15,12 @@ func flip_all_launchers() -> void:
 
 
 func _ready():
+	set_level_screen_value(Enums.SCREENS.GSR_TIMER)
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process
 	timer.start() #to start
+	._ready()
 
 
 func _on_timer_timeout():

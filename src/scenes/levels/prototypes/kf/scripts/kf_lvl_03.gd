@@ -13,6 +13,11 @@ onready var bridge_02 = get_node("BridgeContainer/Bridge2")
 onready var bridge_03 = get_node("BridgeContainer/Bridge3")
 
 
+func _ready():
+	set_level_screen_value(Enums.SCREENS.KF_LVL_03)
+	._ready()
+
+
 func _process(delta):
 	if _moving_spikes_enabled and not _level_building:
 		update_moving_spikes() 
