@@ -834,14 +834,6 @@ movement_speed = 500
 [node name="DeadZone" parent="DeadZoneContainer" instance=ExtResource( 5 )]
 position = Vector2( 296.458, 286.41 )
 
-[node name="CheckpointContainer" type="Node" parent="."]
-
-[node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 18 )]
-position = Vector2( 476.508, 230.855 )
-
-[node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 18 )]
-position = Vector2( 39.5197, 150.285 )
-
 [node name="SpinnerContainer" type="Node" parent="."]
 
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 12 )]
@@ -872,6 +864,14 @@ scale = Vector2( 0.3, 0.5 )
 position = Vector2( 478, 60.0625 )
 rotation = 5.23599
 scale = Vector2( 0.3, 0.5 )
+
+[node name="CheckpointContainer" type="Node" parent="."]
+
+[node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 18 )]
+position = Vector2( 476.508, 230.855 )
+
+[node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 18 )]
+position = Vector2( 39.5197, 150.285 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 407.508, 170.325 )

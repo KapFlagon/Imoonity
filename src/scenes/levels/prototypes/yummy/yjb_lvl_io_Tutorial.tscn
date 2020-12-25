@@ -400,8 +400,15 @@ position = Vector2( 720, 175.831 )
 [node name="HintBoxContainer" type="Node" parent="."]
 
 [node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 9 )]
-position = Vector2( -116.908, 148.063 )
+position = Vector2( -47.7058, 148.5 )
 hint_text = "Press 'K' to activate phasing ability
+
+
+"
+
+[node name="HintBox6" parent="HintBoxContainer" instance=ExtResource( 9 )]
+position = Vector2( -140.364, 148.937 )
+hint_text = "Select 'IO' from the powers menu
 
 
 "

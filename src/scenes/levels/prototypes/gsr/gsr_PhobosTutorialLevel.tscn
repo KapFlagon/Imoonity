@@ -689,7 +689,7 @@ hint_text = "Step on a button to trigger an event!"
 position = Vector2( 51.4624, 123.364 )
 scale = Vector2( 0.752625, 0.753353 )
 z_index = -1
-hint_text = "'F' at checkpoint to select powers"
+hint_text = "Press 'F' at a checkpoint to select powers"
 
 [node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 6 )]
 position = Vector2( 386.799, 136.973 )
