@@ -4,7 +4,7 @@ extends BaseLevel
 func _ready():
 	PowerManager.reset_all_equippment()
 	set_level_screen_value(Enums.SCREENS.GSR_PHOBOS_TUTORIAL_LEVEL)
-	._ready()
+	.initialize_level()
 
 
 func _process(delta):

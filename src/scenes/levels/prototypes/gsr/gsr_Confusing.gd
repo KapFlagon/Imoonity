@@ -5,7 +5,8 @@ func _ready():
 	get_node("Player/Camera2D").zoom.x = 1
 	get_node("Player/Camera2D").zoom.y = 1
 	background.scale = Vector2(1.3,1.3)
-	._ready()
+	.initialize_level()
+
 
 
 func _on_Button_button_just_pressed():

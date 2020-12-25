@@ -1,6 +1,10 @@
 extends BaseLevel
 
 
+func _ready():
+	.initialize_level()
+
+
 func _on_Button_button_just_pressed():
 	$BridgeContainer/Bridge.rotateBridge()
 

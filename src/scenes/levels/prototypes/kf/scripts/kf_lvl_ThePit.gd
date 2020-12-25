@@ -10,7 +10,7 @@ onready var room_02_puzzle_bridge_e = get_node("BridgeContainer/Bridge_Room_02_P
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.KF_LVL_THE_PIT)
-	._ready()
+	.initialize_level()
 
 
 func _on_Button_Room_01_Exit_button_just_pressed():

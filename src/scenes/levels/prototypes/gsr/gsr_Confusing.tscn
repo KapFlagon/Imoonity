@@ -678,22 +678,16 @@ rotation = -0.404916
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 316.752, -75.8633 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 419.787, 28.3895 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 189.58, 16.2067 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="BridgeContainer" type="Node" parent="."]
@@ -709,14 +703,12 @@ _bridge_open = false
 [node name="Bridge2" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 287.095, -17.9004 )
 scale = Vector2( 0.5, 0.5 )
-closedPosition = 0
 openedPosition = 2
 _bridge_open = false
 
 [node name="Bridge6" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 344.972, -17.6743 )
 scale = Vector2( 0.5, 0.5 )
-closedPosition = 0
 openedPosition = 2
 _bridge_open = false
 

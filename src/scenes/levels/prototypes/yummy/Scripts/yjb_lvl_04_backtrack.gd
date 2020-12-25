@@ -2,7 +2,7 @@ extends BaseLevel
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.YJB_LVL_04_BACKTRACK)
-	._ready()
+	.initialize_level()
 
 
 func _on_Button_button_pressed():
