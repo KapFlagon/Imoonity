@@ -1,6 +1,11 @@
 extends BaseLevel
 
 
+func _ready():
+	set_level_screen_value(Enums.SCREENS.KF_LVL_02_PUCK_DASH)
+	._ready()
+
+
 func _on_Button_button_just_pressed():
 	if not get_node("TimerContainer/SpikeTimer").time_left > 0:
 		flip_all_spikes()

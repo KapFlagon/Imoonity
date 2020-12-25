@@ -20,6 +20,7 @@ func get_current_screen() -> int:
 func set_current_screen(new_current_screen: int) -> void:
 	if is_valid_passed_screen(new_current_screen):
 		current_screen = new_current_screen
+		determine_song(new_current_screen)
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -84,7 +85,6 @@ func determine_next_screen() -> String:
 		Enums.SCREENS.KF_LVL_02_PUCK_DASH:
 			new_level_path = "res://src/scenes/levels/prototypes/yummy/yjb_lvl_05_random_button.tscn"
 			set_current_screen(Enums.SCREENS.YJB_LVL_05_RANDOM_BUTTON)
-			MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.ogg")
 		Enums.SCREENS.YJB_LVL_05_RANDOM_BUTTON:
 			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_BridgeFunLevel.tscn"
 			set_current_screen(Enums.SCREENS.GSR_BRIDGE_FUN_LEVEL)
@@ -108,7 +108,6 @@ func determine_next_screen() -> String:
 		Enums.SCREENS.KF_LVL_03:
 			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_Confusing.tscn"
 			set_current_screen(Enums.SCREENS.GSR_CONFUSING)
-			MusicManager.play_song("res://assets/music/Godot_Escape_Master1.ogg")
 		Enums.SCREENS.GSR_CONFUSING:
 			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_Crossroads.tscn"
 			set_current_screen(Enums.SCREENS.GSR_CROSSROADS)
@@ -175,3 +174,12 @@ func get_dict():
 func update_dict(latest_dict):
 	level_dict.clear()
 	level_dict = latest_dict.duplicate()
+
+
+func determine_song(level_value: int) -> void:
+	if level_value < Enums.SCREENS.YJB_LVL_05_RANDOM_BUTTON: 
+		MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+	elif level_value >= Enums.SCREENS.YJB_LVL_05_RANDOM_BUTTON and level_value < Enums.SCREENS.GSR_CONFUSING:
+		MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.ogg")
+	else:
+		MusicManager.play_song("res://assets/music/Godot_Escape_Master1.ogg")

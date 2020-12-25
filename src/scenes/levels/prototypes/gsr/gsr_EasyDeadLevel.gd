@@ -2,7 +2,8 @@ extends BaseLevel
 
 
 func _ready():
-	pass#MusicManager.play_song("res://assets/music/Godot_Escape_Master1.wav")
+	set_level_screen_value(Enums.SCREENS.GSR_EASY_DEAD_LEVEL)
+	._ready()
 
 
 func _on_BridgeButton_button_just_pressed():

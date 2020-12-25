@@ -1,6 +1,11 @@
 extends BaseLevel
 
 
+func _ready():
+	set_level_screen_value(Enums.SCREENS.KF_LVL_01)
+	._ready()
+
+
 func _on_Button_pressed() -> void:
 	var bridge = get_node("BridgeContainer/Bridge")
 	if !bridge.animPlayer.is_playing():
