@@ -2,6 +2,7 @@ extends BaseLevel
 
 
 func _ready():
+	PowerManager.reset_all_equippment()
 	set_level_screen_value(Enums.SCREENS.KF_LVL_02_PUCK_DASH)
 	._ready()
 

@@ -175,6 +175,9 @@ position = Vector2( 784, 256 )
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 11 )]
 position = Vector2( 48.7343, 183.473 )
+puck_dash_available = false
+phobos_strength_available = false
+io_phasing_available = false
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 16, 168 )

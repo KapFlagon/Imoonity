@@ -162,14 +162,15 @@ hint_text = "'J' to puck dash short distances"
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 12 )]
 position = Vector2( -70.941, 176.177 )
+phobos_strength_available = false
+io_phasing_available = false
+titan_platforms_available = false
 
 [node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 12 )]
 position = Vector2( 200, 176 )
-
-[node name="LevelExit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 424.892, 170.108 )
-rotation = -1.5708
-script = null
+phobos_strength_available = false
+io_phasing_available = false
+titan_platforms_available = false
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -89.614, 167.983 )
@@ -178,5 +179,8 @@ collision_mask = 15
 [node name="Transitions" parent="." instance=ExtResource( 1 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
+
+[node name="LevelExit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 425.335, 170.67 )
 [connection signal="button_just_pressed" from="ButtonContainer/Button" to="." method="_on_Button_button_just_pressed"]
 [connection signal="timeout" from="TimerContainer/SpikeTimer" to="." method="_on_SpikeTimer_timeout"]
