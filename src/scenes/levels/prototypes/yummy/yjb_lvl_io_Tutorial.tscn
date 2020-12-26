@@ -11,7 +11,7 @@
 [ext_resource path="res://src/scenes/game_objects/HintBox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/game_objects/DeadZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/scenes/game_objects/Checkpoint.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/scenes/levels/prototypes/yummy/scripts/yjb_lvl_io_Tutorial.gd" type="Script" id=12]
+[ext_resource path="res://src/scenes/levels/prototypes/yummy/Scripts/yjb_lvl_io_Tutorial.gd" type="Script" id=12]
 
 [node name="yjb_lvl_io_Tutorial" type="Node2D"]
 script = ExtResource( 12 )
@@ -458,3 +458,4 @@ collision_mask = 15
 [node name="Transitions" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
+[connection signal="level_ended" from="LevelExit" to="." method="_on_LevelExit_level_ended"]

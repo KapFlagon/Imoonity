@@ -2,7 +2,6 @@ extends BaseLevel
 
 
 func _ready():
-	PowerManager.reset_all_equippment()
 	set_level_screen_value(Enums.SCREENS.KF_LVL_01)
 
 
@@ -11,3 +10,7 @@ func _on_Button_pressed() -> void:
 	if !bridge.animPlayer.is_playing():
 		bridge.rotateBridge()
 
+
+
+func _on_LevelExit_level_ended():
+	PowerManager.reset_all_equippment()

@@ -2,7 +2,6 @@ extends BaseLevel
 
 
 func _ready():
-	PowerManager.reset_all_equippment()
 	set_level_screen_value(Enums.SCREENS.GSR_PHOBOS_TUTORIAL_LEVEL)
 
 
@@ -32,3 +31,7 @@ func _on_BridgeButton4_button_unpressed():
 	if !$SpikeContainer/Spike.is_obstacle_active():
 		for spike in $SpikeContainer.get_children():
 			spike.flip_active_state()
+
+
+func _on_LevelExit_level_ended():
+	PowerManager.reset_all_equippment()

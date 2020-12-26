@@ -104,3 +104,4 @@ collision_mask = 15
 [node name="Transitions" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2035.01, -3856.93 )
 z_index = 10
+[connection signal="level_ended" from="LevelExit" to="." method="_on_LevelExit_level_ended"]

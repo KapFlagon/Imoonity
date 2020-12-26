@@ -2,5 +2,8 @@ extends BaseLevel
 
 
 func _ready():
-	PowerManager.reset_all_equippment()
 	set_level_screen_value(Enums.SCREENS.YJB_LVL_IO_TUTORIAL)
+
+
+func _on_LevelExit_level_ended():
+	PowerManager.reset_all_equippment()

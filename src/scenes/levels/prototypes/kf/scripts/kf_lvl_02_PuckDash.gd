@@ -2,7 +2,6 @@ extends BaseLevel
 
 
 func _ready():
-	PowerManager.reset_all_equippment()
 	set_level_screen_value(Enums.SCREENS.KF_LVL_02_PUCK_DASH)
 
 
@@ -20,3 +19,6 @@ func flip_all_spikes() -> void:
 	for each_spike in get_node("SpikeContainer").get_children():
 		each_spike.flip_active_state()
 
+
+func _on_LevelExit_level_ended():
+	PowerManager.reset_all_equippment()

@@ -76,6 +76,7 @@ position = Vector2( 472, 224 )
 position = Vector2( 104, 3.99426 )
 rotation = 1.5708
 closedPosition = 1
+openedPosition = 0
 _bridge_open = false
 
 [node name="Bridge_Room_02_Exit" parent="BridgeContainer" instance=ExtResource( 6 )]
@@ -89,36 +90,43 @@ _bridge_open = false
 position = Vector2( 104.088, 228.063 )
 rotation = 1.5708
 closedPosition = 1
+openedPosition = 0
 _bridge_open = false
 
 [node name="Bridge_Room_02_Puzzle_a" parent="BridgeContainer" instance=ExtResource( 6 )]
 position = Vector2( -264.183, 51.8919 )
 rotation = 1.5708
 closedPosition = 1
+openedPosition = 0
 _bridge_open = false
 
 [node name="Bridge_Room_02_Puzzle_b" parent="BridgeContainer" instance=ExtResource( 6 )]
 position = Vector2( -362.363, 51.8684 )
 rotation = 1.5708
+closedPosition = 0
 openedPosition = 1
+_bridge_open = true
 
 [node name="Bridge_Room_02_Puzzle_c" parent="BridgeContainer" instance=ExtResource( 6 )]
 position = Vector2( -260.017, -16.0047 )
 rotation = 4.71239
 closedPosition = 2
 openedPosition = 3
+_bridge_open = true
 
 [node name="Bridge_Room_02_Puzzle_d" parent="BridgeContainer" instance=ExtResource( 6 )]
 position = Vector2( -307.924, -16.0047 )
 rotation = 1.5708
 closedPosition = 2
 openedPosition = 1
+_bridge_open = true
 
 [node name="Bridge_Room_02_Puzzle_e" parent="BridgeContainer" instance=ExtResource( 6 )]
 position = Vector2( -307.924, -16.0047 )
 rotation = 1.5708
 closedPosition = 2
 openedPosition = 1
+_bridge_open = true
 
 [node name="Bridge_Room_03_Puzzle" parent="BridgeContainer" instance=ExtResource( 6 )]
 position = Vector2( 360, 165 )

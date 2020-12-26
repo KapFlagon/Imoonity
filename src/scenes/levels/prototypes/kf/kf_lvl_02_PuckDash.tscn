@@ -184,3 +184,4 @@ z_index = 10
 position = Vector2( 425.335, 170.67 )
 [connection signal="button_just_pressed" from="ButtonContainer/Button" to="." method="_on_Button_button_just_pressed"]
 [connection signal="timeout" from="TimerContainer/SpikeTimer" to="." method="_on_SpikeTimer_timeout"]
+[connection signal="level_ended" from="LevelExit" to="." method="_on_LevelExit_level_ended"]
