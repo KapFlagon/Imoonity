@@ -100,8 +100,9 @@ func determine_next_screen() -> String:
 			new_level_path = "res://src/scenes/levels/prototypes/yummy/yjb_lvl_04_backtrack.tscn"
 			set_current_screen(Enums.SCREENS.YJB_LVL_04_BACKTRACK)
 		Enums.SCREENS.YJB_LVL_04_BACKTRACK:
-#			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_Timer.tscn"
-#			new_level_path = "res://src/scenes/levels/prototypes/yummy/yjb_lvl_03_Falling_IO_focused.tscn"
+			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_Timer.tscn"
+			set_current_screen(Enums.SCREENS.GSR_TIMER)
+		Enums.SCREENS.GSR_TIMER:
 			new_level_path = "res://src/scenes/levels/prototypes/kf/kf_lvl_ThePit.tscn"
 			set_current_screen(Enums.SCREENS.KF_LVL_THE_PIT)
 		Enums.SCREENS.KF_LVL_THE_PIT:

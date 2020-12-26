@@ -60,10 +60,17 @@ margin_bottom = 28.0
 text = "Play"
 
 [node name="HowToPlayButton" type="Button" parent="SubHBoxContainer"]
+visible = false
 margin_top = 32.0
 margin_right = 176.0
 margin_bottom = 60.0
 text = "How to play?"
+
+[node name="LevelSelectButton" type="Button" parent="SubHBoxContainer"]
+margin_top = 32.0
+margin_right = 176.0
+margin_bottom = 60.0
+text = "Level Select"
 
 [node name="OptionsButton" type="Button" parent="SubHBoxContainer"]
 visible = false
@@ -86,5 +93,6 @@ theme = ExtResource( 4 )
 text = "Github project"
 [connection signal="button_up" from="SubHBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/HowToPlayButton" to="." method="_on_HowToPlayButton_button_up"]
+[connection signal="button_up" from="SubHBoxContainer/LevelSelectButton" to="." method="_on_LevelSelectButton_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/Credits" to="." method="_on_Credits_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/GithubLinkButton" to="." method="_on_GithubLinkButton_button_up"]

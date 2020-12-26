@@ -22,3 +22,8 @@ func _on_Credits_button_up() -> void:
 
 func _on_HowToPlayButton_button_up() -> void:
 	ScreenManager.next_screen(Enums.SCREENS.HOWTOPLAY)
+
+
+func _on_LevelSelectButton_button_up():
+#	ScreenManager.next_screen(Enums.SCREENS.LEVELSELECT)
+	pass # Replace with function body.

@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scenes/ui/scripts/LevelSelectionButton.gd" type="Script" id=3]
+
+[node name="LevelSelectionButton" type="VBoxContainer"]
+margin_right = 48.0
+margin_bottom = 46.0
+theme = ExtResource( 1 )
+alignment = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelContainer" type="HBoxContainer" parent="."]
+margin_top = 2.0
+margin_right = 48.0
+margin_bottom = 11.0
+alignment = 1
+
+[node name="LevelTitle" type="Label" parent="LevelContainer"]
+margin_left = 7.0
+margin_right = 37.0
+margin_bottom = 9.0
+text = "Level "
+align = 1
+valign = 1
+
+[node name="LevelNum" type="Label" parent="LevelContainer"]
+margin_left = 41.0
+margin_right = 41.0
+margin_bottom = 9.0
+align = 1
+valign = 1
+
+[node name="DeathsContainer" type="HBoxContainer" parent="."]
+margin_top = 15.0
+margin_right = 48.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="DeathDesc" type="Label" parent="DeathsContainer"]
+margin_left = 2.0
+margin_right = 41.0
+margin_bottom = 9.0
+text = "Deaths: "
+align = 1
+valign = 1
+
+[node name="DeathCount" type="Label" parent="DeathsContainer"]
+margin_left = 45.0
+margin_right = 45.0
+margin_bottom = 9.0
+align = 1
+valign = 1
+
+[node name="PlayButton" type="Button" parent="."]
+margin_top = 28.0
+margin_right = 48.0
+margin_bottom = 43.0
+text = "Play"
+[connection signal="button_up" from="PlayButton" to="." method="_on_PlayButton_button_up"]
