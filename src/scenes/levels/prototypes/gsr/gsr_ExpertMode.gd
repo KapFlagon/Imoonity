@@ -2,7 +2,6 @@ extends BaseLevel
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.GSR_EXPERT_MODE)
-	.initialize_level()
 	
 
 func _on_BridgeButton_pressed():

@@ -2,7 +2,7 @@ extends BaseLevel
 
 
 func _ready():
-	.initialize_level()
+	pass
 
 
 func _on_Button_button_just_pressed():

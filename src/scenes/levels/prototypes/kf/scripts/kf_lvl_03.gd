@@ -15,7 +15,6 @@ onready var bridge_03 = get_node("BridgeContainer/Bridge3")
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.KF_LVL_03)
-	.initialize_level()
 
 
 func _process(delta):

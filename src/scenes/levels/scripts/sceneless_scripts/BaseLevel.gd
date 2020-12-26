@@ -30,6 +30,7 @@ func get_player_spawn_coordinates() -> Vector2:
 
 func set_level_screen_value(new_value: int) -> void:
 	_level_screen_value = new_value
+	push_level_data_to_screen_manager()
 
 
 func get_level_screen_value() -> int:

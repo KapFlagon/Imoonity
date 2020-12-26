@@ -13,7 +13,6 @@ func _ready():
 	set_level_screen_value(Enums.SCREENS.GSR_CROSSROADS)
 	init_bridge_dict()
 	pull_dict_from_screen_manager()
-	.initialize_level()
 
 
 func init_bridge_dict():

@@ -20,7 +20,6 @@ func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process
 	timer.start() #to start
-	.initialize_level()
 
 
 func _on_timer_timeout():

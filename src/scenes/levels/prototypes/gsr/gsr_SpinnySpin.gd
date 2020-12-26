@@ -3,7 +3,6 @@ extends BaseLevel
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.GSR_SPINNY_SPIN)
-	.initialize_level()
 
 
 func _on_Button_button_pressed():

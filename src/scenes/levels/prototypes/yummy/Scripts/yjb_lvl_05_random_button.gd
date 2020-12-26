@@ -16,8 +16,7 @@ func _ready():
 
 	randomize()
 	chosenButton =  listOfButtons[randi() % listOfButtons.size()]
-	print(chosenButton.name)
-	.initialize_level()
+#	print(chosenButton.name)
 
 
 func rotate_bridges():
