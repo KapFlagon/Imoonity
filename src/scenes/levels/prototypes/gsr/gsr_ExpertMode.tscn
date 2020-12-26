@@ -748,93 +748,68 @@ position = Vector2( 335.523, 179.39 )
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 163.629, 155.87 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 131.874, 155.585 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 196.108, 155.66 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 227.357, 155.446 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 259.68, 155.124 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 292.109, 155.446 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher7" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 147.736, 180.032 )
-_obstacle_active = true
 firing_interval = 2.0
-firing_direction = 0
 
 [node name="Launcher8" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 179.736, 180.139 )
-_obstacle_active = true
 firing_interval = 2.0
-firing_direction = 0
 
 [node name="Launcher9" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 211.844, 179.817 )
-_obstacle_active = true
 firing_interval = 2.0
-firing_direction = 0
 
 [node name="Launcher10" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 244.167, 179.817 )
-_obstacle_active = true
 firing_interval = 2.0
-firing_direction = 0
 
 [node name="Launcher11" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 275.952, 179.709 )
-_obstacle_active = true
 firing_interval = 2.0
-firing_direction = 0
 
 [node name="Launcher12" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 388.011, 219.993 )
 rotation = 1.5708
-_obstacle_active = true
 firing_interval = 1.3
 firing_direction = 1
 
 [node name="Launcher13" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 419.92, 259.595 )
 rotation = 1.5708
-_obstacle_active = true
 firing_interval = 1.6
 firing_direction = 1
 
 [node name="Launcher14" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 491.806, 259.78 )
 rotation = 4.71239
-_obstacle_active = true
 firing_interval = 1.6
 firing_direction = 3
 
