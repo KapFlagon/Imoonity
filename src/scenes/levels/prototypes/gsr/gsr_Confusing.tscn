@@ -694,11 +694,10 @@ firing_direction = 2
 
 [node name="Bridge" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 252.262, 16.4842 )
-rotation = 3.14159
+rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 closedPosition = 2
 openedPosition = 1
-_bridge_open = false
 
 [node name="Bridge2" parent="BridgeContainer" instance=ExtResource( 16 )]
 position = Vector2( 287.095, -17.9004 )
