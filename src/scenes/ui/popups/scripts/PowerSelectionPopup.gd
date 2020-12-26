@@ -134,7 +134,10 @@ func update_titan_visibility() -> void:
 
 func _on_CheckBox_toggled(button_pressed: bool) -> void:
 	upcate_active_power_count(button_pressed)
-	
+	update_checkbox_state()
+
+
+func update_checkbox_state() -> void:
 	if active_power_count < max_active_powers:
 		enable_all_checkboxes()
 	else:
@@ -166,6 +169,7 @@ func update_display_location(camera_center: Vector2) -> void:
 func ready_interface(camera_center: Vector2) -> void:
 	get_tree().paused = true
 	update_display_content()
+	update_checkbox_state()
 	update_display_location(camera_center)
 
 
