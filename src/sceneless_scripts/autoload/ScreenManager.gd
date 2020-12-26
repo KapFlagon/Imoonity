@@ -9,6 +9,10 @@ var level_dict = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_update_current_screen_scene()
+
+
+func _update_current_screen_scene() -> void:
 	var root = get_tree().get_root()
 	current_screen_scene = root.get_child(root.get_child_count() - 1)
 
@@ -21,6 +25,7 @@ func set_current_screen(new_current_screen: int) -> void:
 	if is_valid_passed_screen(new_current_screen):
 		current_screen = new_current_screen
 		determine_song(new_current_screen)
+		_update_current_screen_scene()
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -181,5 +186,5 @@ func determine_song(level_value: int) -> void:
 		MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
 	elif level_value >= Enums.SCREENS.YJB_LVL_05_RANDOM_BUTTON and level_value < Enums.SCREENS.GSR_CONFUSING:
 		MusicManager.play_song("res://assets/music/Godot_QuantisedFunk_Master1.ogg")
-	else:
+	elif level_value >= Enums.SCREENS.GSR_CONFUSING:
 		MusicManager.play_song("res://assets/music/Godot_Escape_Master1.ogg")
