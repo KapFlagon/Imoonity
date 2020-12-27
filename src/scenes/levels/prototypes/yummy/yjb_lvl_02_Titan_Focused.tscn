@@ -92,43 +92,31 @@ tile_data = PoolIntArray( -4784111, 1, 0, -4784110, 1, 0, -4784109, 1, 0, -47841
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 84, 116.044 )
 rotation = 1.5708
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 1
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 148, -572.794 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 155.592, -572.794 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 179.784, -572.794 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 187.376, -572.794 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 3 )]
 position = Vector2( 252.184, 60.3339 )
 rotation = 4.71239
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 3
 
 [node name="ButtonContainer" type="Node" parent="."]
