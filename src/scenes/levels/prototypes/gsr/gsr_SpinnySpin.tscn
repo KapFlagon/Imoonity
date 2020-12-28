@@ -688,6 +688,7 @@ script = ExtResource( 2 )
 [node name="HintboxContainer" type="Node" parent="."]
 
 [node name="HintBox" parent="HintboxContainer" instance=ExtResource( 15 )]
+visible = false
 position = Vector2( 42.0095, 129.529 )
 hint_text = "To Jack: no checkpoint here please!"
 
