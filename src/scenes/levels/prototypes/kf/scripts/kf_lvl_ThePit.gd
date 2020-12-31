@@ -13,7 +13,8 @@ func _ready():
 
 
 func _on_Button_Room_01_Exit_button_just_pressed():
-	get_node("BridgeContainer/Bridge_Room_01").rotateBridge()
+	if !get_node("BridgeContainer/Bridge_Room_01").is_bridge_open():
+		get_node("BridgeContainer/Bridge_Room_01").rotateBridge()
 
 
 func _on_Room_01_Exit_Area2D_area_entered(area):
