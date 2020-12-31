@@ -24,3 +24,7 @@ frame = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.3, 0.3 )
 shape = SubResource( 1 )
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
