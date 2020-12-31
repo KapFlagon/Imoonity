@@ -21,16 +21,12 @@ func un_pause_game() -> void:
 
 
 func _on_resetLevel_button_up():
+	ScreenManager.set_player_start_coordinates(Vector2.ZERO)
 	get_tree().reload_current_scene()
 
 
 func _on_mainMenu_button_up():
 	ScreenManager.next_screen(Enums.SCREENS.MAIN_MENU)
-#	MusicManager.music_player.stop()
-
-
-func _on_cancel_button_up():
-	un_pause_game()
 
 
 func _on_pauseMenu_about_to_show():
@@ -43,3 +39,11 @@ func _on_pauseMenu_popup_hide():
 func show_interface(camera_center: Vector2) -> void:
 	pause_game()
 	update_display_location(camera_center)
+
+
+func _on_CheckpointBtn_button_up():
+	get_tree().reload_current_scene()
+
+
+func _on_ResumeBtn_button_up():
+	un_pause_game()
