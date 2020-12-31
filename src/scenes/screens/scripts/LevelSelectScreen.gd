@@ -2,8 +2,10 @@ extends BaseScreen
 
 
 func _ready():
+	poll_screen_manager(Enums.SCREENS.LEVELSELECT)
 	update_buttons_with_levels()
 	update_buttons_with_level_paths()
+	update_button_availability(GameData.get_highest_level_progress())
 
 
 func update_buttons_with_levels():
@@ -63,7 +65,7 @@ func update_buttons_with_level_paths():
 	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton8").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_SpinnySpin.tscn")
 	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton9").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_04_backtrack.tscn")
 	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton10").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Timer.tscn")
-	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton11").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Puzzle.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton11").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Puzzle.tscn")
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton12").set_level_path("res://src/scenes/levels/prototypes/kf/kf_lvl_ThePit.tscn")
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton13").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_03_Falling_IO_focused.tscn")
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton14").set_level_path("res://src/scenes/levels/prototypes/kf/kf_lvl_03.tscn")
@@ -80,14 +82,20 @@ func get_amount_of_deaths_from_save():
 
 
 func update_button_availability(highest_level: int):
+	print("highest value for level select " + str(highest_level))
+	highest_level -= 5
 	for button_a in get_node("TabContainer/Tab1/GridContainer").get_children():
-		if button_a.get_level_number() >= highest_level:
+		if button_a.get_level_number() <= highest_level:
 			button_a.show()
 		else: 
 			button_a.hide()
 			
 	for button_b in get_node("TabContainer/Tab2/GridContainer2").get_children():
-		if button_b.get_level_number() >= highest_level:
+		if button_b.get_level_number() <= highest_level:
 			button_b.show()
 		else: 
 			button_b.hide()
+
+
+func _on_MainMenuBtn_button_up():
+	ScreenManager.next_screen(Enums.SCREENS.MAIN_MENU)

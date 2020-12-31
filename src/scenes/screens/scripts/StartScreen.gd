@@ -25,5 +25,4 @@ func _on_HowToPlayButton_button_up() -> void:
 
 
 func _on_LevelSelectButton_button_up():
-#	ScreenManager.next_screen(Enums.SCREENS.LEVELSELECT)
-	pass # Replace with function body.
+	ScreenManager.next_screen(Enums.SCREENS.LEVELSELECT)

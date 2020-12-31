@@ -26,6 +26,7 @@ func set_current_screen(new_current_screen: int) -> void:
 		current_screen = new_current_screen
 		determine_song(new_current_screen)
 		_update_current_screen_scene()
+		GameData.set_highest_level_progress(new_current_screen)
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -148,14 +149,16 @@ func select_next_screen(target_screen: int) -> String:
 			Enums.SCREENS.MAIN_MENU: 
 				new_level_path = "res://src/scenes/screens/StartScreen.tscn"
 				MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
+			Enums.SCREENS.LEVELSELECT:
+				new_level_path = "res://src/scenes/screens/LevelSelectScreen.tscn"
 			Enums.SCREENS.INTRO: 
 				new_level_path = "res://src/scenes/screens/IntroCutSceneScreen.tscn"
 			Enums.SCREENS.CREDITS:
 				new_level_path = "res://src/scenes/screens/CreditsScreen.tscn"
 			Enums.SCREENS.HOWTOPLAY:
 				new_level_path = "res://src/scenes/screens/HowToPlayScreen.tscn"
-			Enums.SCREENS.TEMPLATE: 
-				new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
+#			Enums.SCREENS.TEMPLATE: 
+#				new_level_path = "res://src/scenes/levels/prototypes/TemplateLevel.tscn"
 	return new_level_path
 
 
