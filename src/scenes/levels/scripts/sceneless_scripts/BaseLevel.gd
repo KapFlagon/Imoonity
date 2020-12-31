@@ -48,8 +48,8 @@ func pull_player_start_coords_from_level() -> void:
 
 
 func push_level_data_to_screen_manager() -> void:
-	if ScreenManager.get_current_screen() == -1:
-		ScreenManager.set_current_screen(_level_screen_value)
+#	if ScreenManager.get_current_screen() == -1:
+	ScreenManager.set_current_screen(_level_screen_value)
 
 
 func update_player_coords_from_screen_manager() -> void:
