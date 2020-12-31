@@ -2,7 +2,7 @@ extends BaseLevel
 
 
 func _ready():
-	pass
+	set_level_screen_value(Enums.SCREENS.GSR_PUZZLE)
 
 
 func _on_Button_button_just_pressed():

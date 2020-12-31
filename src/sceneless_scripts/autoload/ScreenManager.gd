@@ -103,6 +103,9 @@ func determine_next_screen() -> String:
 			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_Timer.tscn"
 			set_current_screen(Enums.SCREENS.GSR_TIMER)
 		Enums.SCREENS.GSR_TIMER:
+			new_level_path = "res://src/scenes/levels/prototypes/gsr/gsr_Puzzle.tscn"
+			set_current_screen(Enums.SCREENS.GSR_PUZZLE)
+		Enums.SCREENS.GSR_PUZZLE:
 			new_level_path = "res://src/scenes/levels/prototypes/kf/kf_lvl_ThePit.tscn"
 			set_current_screen(Enums.SCREENS.KF_LVL_THE_PIT)
 		Enums.SCREENS.KF_LVL_THE_PIT:

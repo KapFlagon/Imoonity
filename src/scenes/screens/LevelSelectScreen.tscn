@@ -212,6 +212,13 @@ margin_right = 184.0
 margin_bottom = 86.0
 _level_number = 19
 
+[node name="LevelSelectionButton20" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+margin_left = 141.0
+margin_top = 45.0
+margin_right = 184.0
+margin_bottom = 86.0
+_level_number = 20
+
 [node name="ButtonHBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0

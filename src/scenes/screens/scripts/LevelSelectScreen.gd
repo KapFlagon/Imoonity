@@ -26,6 +26,7 @@ func update_buttons_with_levels():
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton17").set_level_number(17)
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton18").set_level_number(18)
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton19").set_level_number(19)
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton20").set_level_number(20)
 
 
 func update_buttons_with_amount_of_deaths():
@@ -48,6 +49,7 @@ func update_buttons_with_amount_of_deaths():
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton17").set_amount_of_deaths()
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton18").set_amount_of_deaths()
 	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton19").set_amount_of_deaths()
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton20").set_amount_of_deaths()
 
 
 func update_buttons_with_level_paths():
@@ -61,15 +63,16 @@ func update_buttons_with_level_paths():
 	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton8").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_SpinnySpin.tscn")
 	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton9").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_04_backtrack.tscn")
 	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton10").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Timer.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton11").set_level_path("res://src/scenes/levels/prototypes/kf/kf_lvl_ThePit.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton12").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_03_Falling_IO_focused.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton13").set_level_path("res://src/scenes/levels/prototypes/kf/kf_lvl_03.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton14").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Confusing.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton15").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Crossroads.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton16").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_01_IO_Focused.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton17").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_ExpertMode.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton18").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_02_Titan_Focused.tscn")
-	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton19").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_EasyDeadLevel.tscn")
+	get_node("TabContainer/Tab1/GridContainer/LevelSelectionButton11").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Puzzle.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton12").set_level_path("res://src/scenes/levels/prototypes/kf/kf_lvl_ThePit.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton13").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_03_Falling_IO_focused.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton14").set_level_path("res://src/scenes/levels/prototypes/kf/kf_lvl_03.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton15").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Confusing.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton16").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_Crossroads.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton17").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_01_IO_Focused.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton18").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_ExpertMode.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton19").set_level_path("res://src/scenes/levels/prototypes/yummy/yjb_lvl_02_Titan_Focused.tscn")
+	get_node("TabContainer/Tab2/GridContainer2/LevelSelectionButton20").set_level_path("res://src/scenes/levels/prototypes/gsr/gsr_EasyDeadLevel.tscn")
 
 
 func get_amount_of_deaths_from_save():
