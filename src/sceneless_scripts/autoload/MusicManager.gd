@@ -5,6 +5,7 @@ var song_path: String
 
 
 func _ready():
+	set_pause_mode(Node.PAUSE_MODE_PROCESS)
 	music_player = AudioStreamPlayer.new()
 	var music_bus_id = AudioServer.get_bus_count()
 	AudioServer.add_bus()
