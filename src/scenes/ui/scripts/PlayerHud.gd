@@ -1,35 +1,41 @@
 extends CanvasLayer
 
 
+onready var puck_dash = get_node("TopHBoxContainer/PowersHBoxContainer/PuckDashPanelContainer/VBox/PuckDash")
+onready var io_phase = get_node("TopHBoxContainer/PowersHBoxContainer/IoPhasePanelContainer/VBox/IoPhase")
+onready var phobos_strength = get_node("TopHBoxContainer/PowersHBoxContainer/PhobosStrengthPanelContainer/VBox/PhobosStrength")
+onready var titan_platform = get_node("TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer/VBox/TitanPlat")
+
+
 func _ready() -> void:
 	initialize_hud()
 	update_all_hud_icons()
 
 
 func update_puck_dash_progress(progress_value: float) -> void:
-	$TopHBoxContainer/PowersHBoxContainer/PuckDash.set_value(progress_value)
+	puck_dash.set_value(progress_value)
 
 
 func update_phase_progress(progress_value: float) -> void:
-	$TopHBoxContainer/PowersHBoxContainer/IoPhase.set_value(progress_value)
+	io_phase.set_value(progress_value)
 
 
 func update_Io_status_icon(power_active: bool) -> void: 
 	if power_active:
-		$TopHBoxContainer/PowersHBoxContainer/IoPhase.set_modulate(Color(0.93,15.7,100))
+		io_phase.set_modulate(Color(0.93,15.7,100))
 	else: 
-		$TopHBoxContainer/PowersHBoxContainer/IoPhase.set_modulate(Color(0.93,0.4,0.26))
+		io_phase.set_modulate(Color(0.93,0.4,0.26))
 
 
 func update_phobos_status_icon(power_active: bool) -> void: 
 	if power_active:
-		$TopHBoxContainer/PowersHBoxContainer/PhobosStrength.set_modulate(Color(1,0,0))
+		phobos_strength.set_modulate(Color(1,0,0))
 	else: 
-		$TopHBoxContainer/PowersHBoxContainer/PhobosStrength.set_modulate(Color(0.34,0.34,0.34))
+		phobos_strength.set_modulate(Color(0.34,0.34,0.34))
 
 
 func update_titan_status_icon(currentAmmo: int) -> void:
-	$TopHBoxContainer/PowersHBoxContainer/TitanPlat.set_value(currentAmmo)
+	titan_platform.set_value(currentAmmo)
 
 
 func initialize_hud() -> void:
@@ -67,28 +73,28 @@ func update_all_hud_icons() -> void:
 
 func update_PuckDash_HudIcon() -> void:
 	if PowerManager.is_puck_equipped():
-		$TopHBoxContainer/PowersHBoxContainer/PuckDash.show()
+		$TopHBoxContainer/PowersHBoxContainer/PuckDashPanelContainer.show()
 	else:
-		$TopHBoxContainer/PowersHBoxContainer/PuckDash.hide()
+		$TopHBoxContainer/PowersHBoxContainer/PuckDashPanelContainer.hide()
 
 
 func update_IoPhase_HudIcon() -> void:
 	if PowerManager.is_io_equipped():
-		$TopHBoxContainer/PowersHBoxContainer/IoPhase.show()
+		$TopHBoxContainer/PowersHBoxContainer/IoPhasePanelContainer.show()
 	else:
-		$TopHBoxContainer/PowersHBoxContainer/IoPhase.hide()
+		$TopHBoxContainer/PowersHBoxContainer/IoPhasePanelContainer.hide()
 
 
 func update_PhobosStrength_HudIcon():
 	if PowerManager.is_phobos_equipped():
-		$TopHBoxContainer/PowersHBoxContainer/PhobosStrength.show()
+		$TopHBoxContainer/PowersHBoxContainer/PhobosStrengthPanelContainer.show()
 	else:
-		$TopHBoxContainer/PowersHBoxContainer/PhobosStrength.hide()
+		$TopHBoxContainer/PowersHBoxContainer/PhobosStrengthPanelContainer.hide()
 
 
 func update_TitanPlat_HudIcon():
 	if PowerManager.is_titan_equipped():
-		$TopHBoxContainer/PowersHBoxContainer/TitanPlat.show()
+		$TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer.show()
 	else:
-		$TopHBoxContainer/PowersHBoxContainer/TitanPlat.hide()
+		$TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer.hide()
 

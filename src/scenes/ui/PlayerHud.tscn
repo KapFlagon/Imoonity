@@ -65,42 +65,115 @@ align = 1
 valign = 1
 
 [node name="PowersHBoxContainer" type="HBoxContainer" parent="TopHBoxContainer"]
-margin_right = 76.0
-margin_bottom = 24.0
+margin_right = 132.0
+margin_bottom = 43.0
+theme = ExtResource( 1 )
 alignment = 1
 
-[node name="PuckDash" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
+[node name="PuckDashPanelContainer" type="PanelContainer" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_right = 30.0
+margin_bottom = 43.0
+
+[node name="VBox" type="VBoxContainer" parent="TopHBoxContainer/PowersHBoxContainer/PuckDashPanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 23.0
+margin_bottom = 36.0
+
+[node name="PuckDash" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer/PuckDashPanelContainer/VBox"]
 margin_right = 16.0
-margin_bottom = 24.0
+margin_bottom = 16.0
 value = 100.0
 rounded = true
 texture_progress = ExtResource( 2 )
 fill_mode = 4
 
-[node name="IoPhase" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
-margin_left = 20.0
-margin_right = 36.0
-margin_bottom = 24.0
+[node name="PowerBtn" type="Label" parent="TopHBoxContainer/PowersHBoxContainer/PuckDashPanelContainer/VBox"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 29.0
+text = "J"
+align = 1
+valign = 1
+
+[node name="IoPhasePanelContainer" type="PanelContainer" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 34.0
+margin_right = 64.0
+margin_bottom = 43.0
+
+[node name="VBox" type="VBoxContainer" parent="TopHBoxContainer/PowersHBoxContainer/IoPhasePanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 23.0
+margin_bottom = 36.0
+
+[node name="IoPhase" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer/IoPhasePanelContainer/VBox"]
+margin_right = 16.0
+margin_bottom = 16.0
 value = 100.0
 rounded = true
 texture_progress = ExtResource( 4 )
 fill_mode = 4
 
-[node name="PhobosStrength" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
-margin_left = 40.0
-margin_right = 56.0
-margin_bottom = 24.0
+[node name="PowerBtn" type="Label" parent="TopHBoxContainer/PowersHBoxContainer/IoPhasePanelContainer/VBox"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 29.0
+text = "K"
+align = 1
+valign = 1
+
+[node name="PhobosStrengthPanelContainer" type="PanelContainer" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 68.0
+margin_right = 98.0
+margin_bottom = 43.0
+
+[node name="VBox" type="VBoxContainer" parent="TopHBoxContainer/PowersHBoxContainer/PhobosStrengthPanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 23.0
+margin_bottom = 36.0
+
+[node name="PhobosStrength" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer/PhobosStrengthPanelContainer/VBox"]
+margin_right = 16.0
+margin_bottom = 16.0
 value = 100.0
 rounded = true
 texture_progress = ExtResource( 5 )
 fill_mode = 4
 
-[node name="TitanPlat" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer"]
-margin_left = 60.0
-margin_right = 76.0
-margin_bottom = 24.0
+[node name="PowerBtn" type="Label" parent="TopHBoxContainer/PowersHBoxContainer/PhobosStrengthPanelContainer/VBox"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 29.0
+text = "I"
+align = 1
+valign = 1
+
+[node name="TitanPlatPanelContainer" type="PanelContainer" parent="TopHBoxContainer/PowersHBoxContainer"]
+margin_left = 102.0
+margin_right = 132.0
+margin_bottom = 43.0
+
+[node name="VBox" type="VBoxContainer" parent="TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 23.0
+margin_bottom = 36.0
+
+[node name="TitanPlat" type="TextureProgress" parent="TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer/VBox"]
+margin_right = 16.0
+margin_bottom = 16.0
 max_value = 3.0
 value = 3.0
 rounded = true
 texture_progress = ExtResource( 6 )
 fill_mode = 4
+
+[node name="PowerBtn" type="Label" parent="TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer/VBox"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 29.0
+text = "L"
+align = 1
+valign = 1
