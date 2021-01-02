@@ -21,4 +21,5 @@ func flip_all_spikes() -> void:
 
 
 func _on_LevelExit_level_ended():
-	PowerManager.reset_all_equippment()
+#	PowerManager.reset_all_equippment()
+	pass

@@ -162,15 +162,9 @@ hint_text = "'J' to puck dash short distances"
 
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 12 )]
 position = Vector2( -70.941, 176.177 )
-phobos_strength_available = false
-io_phasing_available = false
-titan_platforms_available = false
 
 [node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 12 )]
 position = Vector2( 200, 176 )
-phobos_strength_available = false
-io_phasing_available = false
-titan_platforms_available = false
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -89.614, 167.983 )
