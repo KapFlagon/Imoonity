@@ -767,7 +767,7 @@ z_index = 10
 [connection signal="button_just_pressed" from="ButtonContainer/BridgeButton3" to="." method="_on_BridgeButton3_button_just_pressed"]
 [connection signal="button_pressed" from="ButtonContainer/BridgeButton4" to="." method="_on_BridgeButton4_button_pressed"]
 [connection signal="button_unpressed" from="ButtonContainer/BridgeButton4" to="." method="_on_BridgeButton4_button_unpressed"]
-[connection signal="level_ended" from="LevelExit" to="." method="_on_LevelExit_level_ended"]
 [connection signal="level_ended" from="LevelExit" to="Transitions" method="_on_LevelExit_level_ended"]
+[connection signal="level_ended" from="LevelExit" to="." method="_on_LevelExit_level_ended"]
 
 [editable path="DeadZone"]

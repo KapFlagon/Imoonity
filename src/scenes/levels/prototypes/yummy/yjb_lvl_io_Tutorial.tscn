@@ -402,7 +402,7 @@ position = Vector2( 720, 175.831 )
 [node name="HintBoxContainer" type="Node" parent="."]
 
 [node name="HintBox" parent="HintBoxContainer" instance=ExtResource( 9 )]
-position = Vector2( -47.7058, 148.5 )
+position = Vector2( 61.4188, 148.5 )
 hint_text = "Press 'K' to activate phasing ability
 
 
@@ -410,17 +410,13 @@ hint_text = "Press 'K' to activate phasing ability
 
 [node name="HintBox6" parent="HintBoxContainer" instance=ExtResource( 9 )]
 position = Vector2( -140.364, 148.937 )
-hint_text = "Select 'IO' from the powers menu
-
+hint_text = "Select 'IO' using the checkpoint
 
 "
 
 [node name="HintBox5" parent="HintBoxContainer" instance=ExtResource( 9 )]
-position = Vector2( 48, 148.063 )
-hint_text = "It can be used to pass through red Material
-
-
-"
+position = Vector2( -55.8273, 148.063 )
+hint_text = "You can pass through Black grids using IO"
 
 [node name="HintBox2" parent="HintBoxContainer" instance=ExtResource( 9 )]
 position = Vector2( 184, 148.063 )
@@ -432,7 +428,7 @@ hint_text = "So timing is important"
 
 [node name="HintBox4" parent="HintBoxContainer" instance=ExtResource( 9 )]
 position = Vector2( 512, 132.063 )
-hint_text = "Very Important!"
+hint_text = "Remember, timing is very important!"
 
 [node name="DeadZoneContainer" type="Node" parent="."]
 
@@ -444,7 +440,6 @@ position = Vector2( 616, 264 )
 [node name="CheckPoint" parent="CheckpointContainer" instance=ExtResource( 11 )]
 position = Vector2( -119.409, 191.694 )
 puck_dash_available = false
-phobos_strength_available = false
 titan_platforms_available = false
 
 [node name="LevelExit" parent="." instance=ExtResource( 6 )]

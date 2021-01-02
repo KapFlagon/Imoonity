@@ -34,4 +34,5 @@ func _on_BridgeButton4_button_unpressed():
 
 
 func _on_LevelExit_level_ended():
-	PowerManager.reset_all_equippment()
+#	PowerManager.reset_all_equippment()
+	pass
