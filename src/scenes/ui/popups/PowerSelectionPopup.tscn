@@ -1,16 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/images/sprites/02/Baren_16x16.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/sprites/02/Ice_16x16.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/ui/themes/H4_Theme.tres" type="Theme" id=3]
-[ext_resource path="res://src/scenes/ui/themes/TitleTheme.tres" type="Theme" id=4]
+[ext_resource path="res://src/scenes/ui/themes/H3_Theme.tres" type="Theme" id=4]
 [ext_resource path="res://assets/images/sprites/02/Lava_16x16.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/sprites/02/Terran_16x16.png" type="Texture" id=6]
 [ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=7]
 [ext_resource path="res://src/scenes/ui/popups/scripts/PowerSelectionPopup.gd" type="Script" id=8]
+[ext_resource path="res://src/scenes/ui/themes/H2_Theme.tres" type="Theme" id=9]
 
 [node name="PowerSelectionPopup" type="PopupDialog"]
 pause_mode = 2
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 24.0
@@ -26,11 +28,23 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="."]
 margin_left = 16.0
-margin_top = 8.0
 margin_right = 256.0
-margin_bottom = 40.0
+margin_bottom = 32.0
+theme = ExtResource( 9 )
+text = "Power Selection"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 256.0
+margin_bottom = 48.0
 theme = ExtResource( 4 )
-text = "Power Select"
+text = "Select up to 2 powers"
 align = 1
 valign = 1
 __meta__ = {
