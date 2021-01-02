@@ -70,28 +70,20 @@ func _on_JibblyCGitHubLinkBtn_button_up() -> int:
 	return OS.shell_open("https://github.com/JibblyC")
 
 
-func _on_JibblyCItchLinkBtn_button_up() -> void:
-	# TODO: update with the correct Itch.io link
-	pass # Replace with function body.
+func _on_JibblyCItchLinkBtn_button_up() -> int:
+	return OS.shell_open("https://yummyjibblybits.itch.io/")
 
 
 func _on_GiantSpaceRobotGitHubLinkBtn_button_up() -> int:
 	return OS.shell_open("https://github.com/GiantSpaceRobot")
 
 
-func _on_GiantSpaceRobotItchLinkBtn_button_up() -> void:
-	# TODO: update with the correct Itch.io link
-	pass # Replace with function body.
-
+func _on_GiantSpaceRobotItchLinkBtn_button_up() -> int:
+	return OS.shell_open("https://giantspacerobot.itch.io/")
 
 
 func _on_DexyodGitHubLinkBtn_button_up() -> int:
 	return OS.shell_open("https://github.com/Dexyod")
-
-
-func _on_DexyodItchLinkBtn_button_up() -> void:
-	# TODO: update with the correct Itch.io link
-	pass # Replace with function body.
 
 
 func _on_GiantSpaceRobotSoundcloudLinkBtn_button_up() -> int:
@@ -117,3 +109,6 @@ func _on_SudospectiveSrcLnkBtn_button_up() -> int:
 func _on_HelianthusGamesSrcLnkBtn_button_up() -> int:
 	return OS.shell_open("https://helianthus-games.itch.io/pixel-art-planets")
 
+
+func _on_ansimuzGamesSrcLnkBtn_button_up():
+	return OS.shell_open("https://ansimuz.itch.io/mountain-dusk-parallax-background")
