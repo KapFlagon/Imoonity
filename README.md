@@ -18,6 +18,6 @@ Will be playable at this Itch.io link: [Imoonity] ()
 ### Open source, creative commons, or free resources and assets
 - Art asset pack from AdamAtomic on [Itch.io](https://adamatomic.itch.io/abandonauts)
 - Art asset pack from Helianthus Games on [Itch.io](https://helianthus-games.itch.io/pixel-art-planets)
-- Parallax background from ansimuz on [Itch.io] (https://ansimuz.itch.io/mountain-dusk-parallax-background)
+- Parallax background from ansimuz on [Itch.io](https://ansimuz.itch.io/mountain-dusk-parallax-background)
 - Font from Pixel Sagas on [fontspace.com](https://www.fontspace.com/pixel-coleco-font-f21542)
 - Syndibox Text Engine plugin for Godot on [Github](https://github.com/Sudospective/syndibox)
