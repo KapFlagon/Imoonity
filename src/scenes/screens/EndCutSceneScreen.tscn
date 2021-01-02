@@ -24,10 +24,10 @@ __meta__ = {
 }
 
 [node name="SyndiBox" type="ReferenceRect" parent="."]
-margin_left = 16.0
+margin_left = 32.0
 margin_top = 88.0
-margin_right = 304.0
-margin_bottom = 184.0
+margin_right = 288.0
+margin_bottom = 168.0
 border_color = Color( 0.545098, 0.0509804, 0.0509804, 1 )
 editor_only = false
 script = ExtResource( 1 )
@@ -36,8 +36,35 @@ __meta__ = {
 }
 DIALOG = "Glad to see you! Took you long enough.
 Let's get out of here, to our next adventure."
+CHARACTER_NAME = ""
 CHARACTER_PROFILE = "res://assets/images/sprites/01/portrait.png"
+AUTO_ADVANCE = false
+AUTO_ADVANCE_SPEED = 120
+ENABLE_SCROLLBAR = true
+SCROLLBAR_FOLLOW = true
 FONT = "res://src/scenes/ui/themes/PixelFont.tres"
+ALTERNATE_FONTS = [  ]
+PADDING = 3
+TEXT_VOICE = ""
+PLAY_VOICE_ONCE = false
+COLOR = Color( 1, 1, 1, 1 )
+TEXT_SPEED = 0.03
+ADVANCE_ACTION = "ui_accept"
+PAUSE_AT_PUNCTUATION = false
+PUNCTUATION_PAUSE_LENGTH = 0.0
+INSTANT_PRINT = false
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 224.0
+margin_top = 168.0
+margin_right = 306.0
+margin_bottom = 189.0
+theme = ExtResource( 3 )
+text = "Press 'space' to 
+go to next line"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="SkipButton" to="." method="_on_SkipButton_button_up"]
 [connection signal="text_finished" from="SyndiBox" to="." method="_on_SyndiBox_text_finished"]

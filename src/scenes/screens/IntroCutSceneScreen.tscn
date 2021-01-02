@@ -24,18 +24,17 @@ __meta__ = {
 }
 
 [node name="SyndiBox" type="ReferenceRect" parent="."]
-margin_left = 8.0
+margin_left = 32.0
 margin_top = 88.0
-margin_right = 312.0
-margin_bottom = 184.0
+margin_right = 288.0
+margin_bottom = 168.0
 border_color = Color( 0.545098, 0.0509804, 0.0509804, 1 )
 editor_only = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "[*3]......
-The last clone is awake, splendid! 
+DIALOG = "[*3]The last clone is awake, splendid! 
 It's time to leave this planet.
 We need another pair of hands to operate the rocket, hence your existence!
 Normally we would clone you nearby, but the mainframe computer network is completely down. 
@@ -65,5 +64,17 @@ PAUSE_AT_PUNCTUATION = false
 PUNCTUATION_PAUSE_LENGTH = 0.0
 INSTANT_PRINT = false
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 224.0
+margin_top = 168.0
+margin_right = 313.0
+margin_bottom = 189.0
+theme = ExtResource( 3 )
+text = "Press 'space' to 
+go to next line"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="SkipButton" to="." method="_on_SkipButton_button_up"]
 [connection signal="text_finished" from="SyndiBox" to="." method="_on_SyndiBox_text_finished"]
