@@ -25,6 +25,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	_update_prompt()
 	check_for_input()
 
 
@@ -47,3 +48,10 @@ func _on_CheckPoint_body_exited(body: Node) -> void:
 
 func _on_PowerSelectionPopup_popup_hide() -> void:
 	emit_signal("powers_updated")
+
+
+func _update_prompt():
+	if player_overlap:
+		$PromptContainer.show()
+	else:
+		$PromptContainer.hide()
