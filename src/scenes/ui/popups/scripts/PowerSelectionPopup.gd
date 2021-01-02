@@ -175,18 +175,22 @@ func ready_interface(camera_center: Vector2) -> void:
 
 func set_show_puck_dash(new_value: bool) -> void: 
 	show_puck_dash = new_value
+	update_titles()
 
 
 func set_show_io_phase(new_value: bool) -> void: 
 	show_io_phase = new_value
+	update_titles()
 
 
 func set_show_phobos_strength(new_value: bool) -> void: 
 	show_phobos_strength = new_value
+	update_titles()
 
 
 func set_show_titan_plat(new_value: bool) -> void: 
 	show_titan_plat = new_value
+	update_titles()
 
 
 func connect_signals() -> void:
@@ -208,3 +212,28 @@ func enable_all_checkboxes() -> void:
 	io_checkbox.set_disabled(false)
 	phobos_checkbox.set_disabled(false)
 	titan_checkbox.set_disabled(false)
+	update_titles()
+
+
+func update_titles():
+	var count = 0
+	if show_puck_dash:
+		count += 1
+	if show_io_phase:
+		count += 1
+	if show_titan_plat:
+		count += 1
+	if show_phobos_strength:
+		count += 1
+		
+	if count < 3:
+		$Instruction.hide()
+	else: 
+		$Instruction.show()
+		
+	if count > 0:
+		$Title.show()
+		$BtnHBox/AcceptBtn.show()
+	else:
+		$Title.hide()
+		$BtnHBox/AcceptBtn.hide() 
