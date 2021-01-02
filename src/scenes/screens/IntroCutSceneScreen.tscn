@@ -24,9 +24,9 @@ __meta__ = {
 }
 
 [node name="SyndiBox" type="ReferenceRect" parent="."]
-margin_left = 16.0
+margin_left = 8.0
 margin_top = 88.0
-margin_right = 304.0
+margin_right = 312.0
 margin_bottom = 184.0
 border_color = Color( 0.545098, 0.0509804, 0.0509804, 1 )
 editor_only = false
@@ -37,18 +37,33 @@ __meta__ = {
 DIALOG = "[*3]......
 The last clone is awake, splendid! 
 It's time to leave this planet.
-We need another pair of hands to operate the rocket.
-The mainframe computer network is completely down. 
-We can`t access a [`e]cloning station[`r] closer to the [`4]launchpad[`r] to flash clone you nearby. 
-You`ll need to navigate through the base by yourself to reach the [`4]launchpad[`r]. 
+We need another pair of hands to operate the rocket, hence your existence!
+Normally we would clone you nearby, but the mainframe computer network is completely down. 
+So we can`t access a [`e]cloning station[`r] closer to the [`4]launchpad[`r] to flash clone you nearby. 
+That means you`ll need to navigate through the base by yourself to reach the [`4]launchpad[`r]. 
 We also can`t disable the [`d]base defenses[`0] without the mainframe computer network. 
 But there`s some [`a]good news[`r]!
 Some of the [`3]moon-shot[`r] power injections are still left in their canisters. 
 Collect them and you`ll be able to get past all of the [`d]base defenses[`r] with ease.
 You can activate the [`e]cloning stations[`r] in the base so you can auto-flash clone if you[*5]... [*3]expire.
 We`re waiting for you, good luck! "
+CHARACTER_NAME = ""
 CHARACTER_PROFILE = "res://assets/images/sprites/01/portrait.png"
+AUTO_ADVANCE = false
+AUTO_ADVANCE_SPEED = 120
+ENABLE_SCROLLBAR = true
+SCROLLBAR_FOLLOW = true
 FONT = "res://src/scenes/ui/themes/PixelFont.tres"
+ALTERNATE_FONTS = [  ]
+PADDING = 1
+TEXT_VOICE = ""
+PLAY_VOICE_ONCE = false
+COLOR = Color( 1, 1, 1, 1 )
+TEXT_SPEED = 0.03
+ADVANCE_ACTION = "ui_accept"
+PAUSE_AT_PUNCTUATION = false
+PUNCTUATION_PAUSE_LENGTH = 0.0
+INSTANT_PRINT = false
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
 [connection signal="button_up" from="SkipButton" to="." method="_on_SkipButton_button_up"]
 [connection signal="text_finished" from="SyndiBox" to="." method="_on_SyndiBox_text_finished"]
