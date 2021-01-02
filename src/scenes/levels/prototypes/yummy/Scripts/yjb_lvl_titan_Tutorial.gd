@@ -6,4 +6,5 @@ func _ready():
 
 
 func _on_LevelExit_level_ended():
-	PowerManager.reset_all_equippment()
+#	PowerManager.reset_all_equippment()
+	pass
