@@ -18,10 +18,12 @@ func _ready():
 
 
 func play_song(new_song_path: String):
-	if IsValidAudioPath(new_song_path) and new_song_path != song_path:
+	print("song path: " + str(new_song_path))
+	if new_song_path != song_path:
 		song_path = new_song_path
 	else:
 		return  # If invalid path given, exit without updating audio
+		
 	if !music_player.is_playing():
 		updateMusicPlayer()
 	else:
