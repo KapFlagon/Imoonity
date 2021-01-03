@@ -26,6 +26,7 @@ func _on_resetLevel_button_up():
 
 
 func _on_mainMenu_button_up():
+	ScreenManager.set_player_start_coordinates(Vector2.ZERO)
 	ScreenManager.next_screen(Enums.SCREENS.MAIN_MENU)
 
 
