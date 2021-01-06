@@ -8,6 +8,7 @@ extents = Vector2( 5.00608, 4.70676 )
 
 [node name="PlanetProjectile" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
+z_index = -1
 collision_layer = 16
 collision_mask = 30
 script = ExtResource( 1 )
