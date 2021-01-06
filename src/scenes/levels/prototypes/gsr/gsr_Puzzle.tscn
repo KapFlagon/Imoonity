@@ -759,6 +759,7 @@ format = 1
 tile_data = PoolIntArray( 65580, 0, 0, 65581, 0, 0, 131116, 0, 0, 196652, 0, 0, 262188, 0, 0, 327724, 0, 0, 393260, 0, 0, 458796, 0, 0, 524332, 0, 0, 589868, 0, 0, 655404, 0, 0 )
 
 [node name="wallsTileMap" type="TileMap" parent="TileMapContainer"]
+z_index = -2
 tile_set = SubResource( 58 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8

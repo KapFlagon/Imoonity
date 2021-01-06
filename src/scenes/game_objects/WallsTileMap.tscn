@@ -513,6 +513,7 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 1/z_index = 0
 
 [node name="WallsTileMap" type="TileMap"]
+z_index = -2
 tile_set = SubResource( 55 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
