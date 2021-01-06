@@ -632,70 +632,87 @@ __meta__ = {
 [node name="Spike" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 195.643, 291.95 )
 rotation = 1.5708
+z_index = -1
 
 [node name="Spike2" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 195.643, 283.95 )
 rotation = 1.5708
+z_index = -1
 
 [node name="Spike7" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 196.018, 260.475 )
 rotation = 1.5708
+z_index = -1
 
 [node name="Spike8" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 196.018, 252.475 )
 rotation = 1.5708
+z_index = -1
 
 [node name="Spike3" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 210.957, 275.978 )
 rotation = -1.5708
+z_index = -1
 
 [node name="Spike4" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 210.957, 267.978 )
 rotation = -1.5708
+z_index = -1
 
 [node name="Spike5" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 211.521, 308.204 )
 rotation = -1.5708
+z_index = -1
 
 [node name="Spike6" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 211.521, 300.204 )
 rotation = -1.5708
+z_index = -1
 
 [node name="Spike9" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 156.154, 379.552 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike10" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 172.557, 395.347 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike11" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 187.744, 403.852 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike12" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 203.842, 411.597 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike13" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 220.016, 419.722 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike14" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 235.963, 427.695 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike15" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 251.757, 435.669 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike16" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 267.932, 451.919 )
 rotation = 3.14159
+z_index = -1
 
 [node name="Spike17" parent="SpikeContainer" instance=ExtResource( 9 )]
 position = Vector2( 283.65, 467.486 )
 rotation = 3.14159
+z_index = -1
 
 [node name="SpinnerContainer" type="Node" parent="."]
 
@@ -724,54 +741,34 @@ _rotate_clockwise = false
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 362.81, 155.23 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 331.055, 154.945 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 395.289, 155.02 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 426.538, 154.806 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher7" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 346.917, 179.392 )
-_obstacle_active = true
-firing_interval = 1.0
-firing_direction = 0
 
 [node name="Launcher8" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 378.917, 179.499 )
-_obstacle_active = true
-firing_interval = 1.0
-firing_direction = 0
 
 [node name="Launcher9" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 411.025, 179.177 )
-_obstacle_active = true
-firing_interval = 1.0
-firing_direction = 0
 
 [node name="Launcher10" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 443.348, 179.177 )
-_obstacle_active = true
-firing_interval = 1.0
-firing_direction = 0
 
 [node name="BridgeContainer" type="Node" parent="."]
 
