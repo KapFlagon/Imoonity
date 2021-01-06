@@ -785,43 +785,31 @@ __meta__ = {
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 92.1039, 171.443 )
 rotation = 1.5708
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 1
 
 [node name="Launcher5" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 372.012, 219.953 )
 rotation = 4.71239
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 3
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 660.19, 171.383 )
 rotation = 1.5708
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 1
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 668.157, 195.461 )
 rotation = 4.71239
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 3
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 716.268, 155.559 )
 rotation = 3.14159
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 731.722, 203.586 )
 rotation = 4.71239
-_obstacle_active = true
-firing_interval = 1.0
 firing_direction = 3
 
 [node name="PathObstContainer" type="Node" parent="."]
@@ -852,31 +840,37 @@ position = Vector2( 296.458, 286.41 )
 [node name="Spinner2" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 198.063 )
 scale = Vector2( 0.3, 0.5 )
+z_index = -1
 
 [node name="Spinner5" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 171.063 )
 rotation = 1.0472
 scale = Vector2( 0.3, 0.5 )
+z_index = -1
 
 [node name="Spinner4" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 144.062 )
 rotation = 2.0944
 scale = Vector2( 0.3, 0.5 )
+z_index = -1
 
 [node name="Spinner3" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 117.062 )
 rotation = 3.14159
 scale = Vector2( 0.3, 0.5 )
+z_index = -1
 
 [node name="Spinner6" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 90.0625 )
 rotation = 4.18879
 scale = Vector2( 0.3, 0.5 )
+z_index = -1
 
 [node name="Spinner7" parent="SpinnerContainer" instance=ExtResource( 12 )]
 position = Vector2( 478, 60.0625 )
 rotation = 5.23599
 scale = Vector2( 0.3, 0.5 )
+z_index = -1
 
 [node name="CheckpointContainer" type="Node" parent="."]
 
@@ -884,7 +878,7 @@ scale = Vector2( 0.3, 0.5 )
 position = Vector2( 476.508, 230.855 )
 
 [node name="CheckPoint2" parent="CheckpointContainer" instance=ExtResource( 18 )]
-position = Vector2( 39.5197, 150.285 )
+position = Vector2( 335.88, 159.795 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 407.508, 170.325 )
