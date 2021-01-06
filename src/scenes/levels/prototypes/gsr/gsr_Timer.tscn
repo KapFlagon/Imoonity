@@ -604,6 +604,7 @@ format = 1
 tile_data = PoolIntArray( 65580, 0, 0, 65581, 0, 0, 131116, 0, 0, 196652, 0, 0, 262188, 0, 0, 327724, 0, 0, 393260, 0, 0, 458796, 0, 0, 524332, 0, 0, 589868, 0, 0, 655404, 0, 0 )
 
 [node name="wallsTileMap" type="TileMap" parent="TileMapContainer"]
+z_index = -2
 tile_set = SubResource( 58 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
@@ -723,34 +724,54 @@ _rotate_clockwise = false
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 362.81, 155.23 )
 rotation = 3.14159
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 331.055, 154.945 )
 rotation = 3.14159
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 395.289, 155.02 )
 rotation = 3.14159
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 426.538, 154.806 )
 rotation = 3.14159
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher7" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 346.917, 179.392 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher8" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 378.917, 179.499 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher9" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 411.025, 179.177 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher10" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 443.348, 179.177 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="BridgeContainer" type="Node" parent="."]
 
