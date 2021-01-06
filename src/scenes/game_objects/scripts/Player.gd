@@ -3,8 +3,8 @@ extends KinematicBody2D
 # Exported variables
 export var facing: int = 1
 export var gravity: int = 200
-export var ground_friction: int = 0.25
-export var air_friction: int = 0.02
+export var ground_friction: float = 0.25
+export var air_friction: float = 0.02
 export var base_movement_speed: int = 300
 export var max_movement_speed: int = 100
 export var jump_force: int = 100
@@ -92,24 +92,20 @@ func update_facing(horizontal_input: float) -> void:
 
 
 func update_player_vertical_velocity(delta: float, current_vertical_velocity: float) -> float: 
-	# TODO Need to redesing the jump and on floor logic, for smoother platforming. 
 	var vertical_velocity = current_vertical_velocity + (delta * gravity)
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_jump"):
 			vertical_velocity = -jump_force
 			$PlayerSFX/JumpAudio.play()
-			#$PlayerSFX/JumpAudio.stop()
 		else: 
-			vertical_velocity = lerp(current_vertical_velocity, 0, ground_friction)
+			vertical_velocity = lerp(current_vertical_velocity, 0, air_friction)
 	else:
 		if Input.is_action_just_released("move_jump") and current_vertical_velocity < (-jump_force/2):
 			vertical_velocity = current_vertical_velocity + (jump_force/2)
-	#$PlayerSFX/JumpAudio.stop()
 	return vertical_velocity
 
 
 func update_state(velocity_x: float, old_y: float, new_y: float) -> void: 
-#	print("old_x: " + str(old_x) + " new_y: " + str(new_x) + " old_y: " + str(old_y) + " new_y: " + str(new_y))
 	var temp_y = old_y - (new_y * -1)
 	if is_on_floor() and velocity_x == 0:
 		current_state = Enums.PLAYER_STATE.IDLE
