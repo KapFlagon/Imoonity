@@ -54,10 +54,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="SubHBoxContainer"]
+[node name="NewGameButton" type="Button" parent="SubHBoxContainer"]
 margin_right = 176.0
 margin_bottom = 28.0
-text = "Play"
+text = "New Game"
 
 [node name="HowToPlayButton" type="Button" parent="SubHBoxContainer"]
 visible = false
@@ -91,7 +91,7 @@ margin_right = 176.0
 margin_bottom = 110.0
 theme = ExtResource( 4 )
 text = "Github project"
-[connection signal="button_up" from="SubHBoxContainer/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="SubHBoxContainer/NewGameButton" to="." method="_on_NewGameButton_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/HowToPlayButton" to="." method="_on_HowToPlayButton_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/LevelSelectButton" to="." method="_on_LevelSelectButton_button_up"]
 [connection signal="button_up" from="SubHBoxContainer/Credits" to="." method="_on_Credits_button_up"]
