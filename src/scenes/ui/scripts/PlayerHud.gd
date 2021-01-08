@@ -10,6 +10,7 @@ onready var titan_platform = get_node("TopHBoxContainer/PowersHBoxContainer/Tita
 func _ready() -> void:
 	initialize_hud()
 	update_all_hud_icons()
+	update_level_text()
 
 
 func update_puck_dash_progress(progress_value: float) -> void:
@@ -98,3 +99,17 @@ func update_TitanPlat_HudIcon():
 	else:
 		$TopHBoxContainer/PowersHBoxContainer/TitanPlatPanelContainer.hide()
 
+
+func update_level_text(): 
+	var level_num = ScreenManager.get_current_screen() - 5
+	var level_text = parse_number_to_text(level_num)
+	get_node("LevelPanelContainer/LevelHBox/LevelNumLabel").text = level_text
+
+
+func parse_number_to_text(new_value: int) -> String:
+	var text_num = ""
+	if new_value < 10:
+		text_num = "0" + str(new_value)
+	else: 
+		text_num = str(new_value)
+	return text_num
