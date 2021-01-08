@@ -816,11 +816,14 @@ __meta__ = {
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 177.641, 171.95 )
 rotation = 4.71239
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 3
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 186.115, 172.184 )
 rotation = 1.5708
+_obstacle_active = true
 firing_interval = 3.0
 firing_direction = 1
 

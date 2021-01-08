@@ -15,6 +15,7 @@ onready var bridge_03 = get_node("BridgeContainer/Bridge3")
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.KF_LVL_03)
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 
 
 func _process(delta):

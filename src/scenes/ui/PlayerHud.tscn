@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/scenes/ui/themes/BodyTheme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/images/sprites/02/Baren_16x16.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/images/sprites/02/Terran_16x16.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/sprites/02/Lava_16x16.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/sprites/02/Ice_16x16.png" type="Texture" id=6]
+[ext_resource path="res://src/scenes/ui/themes/BabyBodyTheme.tres" type="Theme" id=7]
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -179,10 +180,10 @@ align = 1
 valign = 1
 
 [node name="LevelPanelContainer" type="PanelContainer" parent="."]
-margin_left = 264.0
+margin_left = 272.0
 margin_top = 8.0
 margin_right = 317.0
-margin_bottom = 32.0
+margin_bottom = 29.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -190,17 +191,17 @@ __meta__ = {
 [node name="LevelHBox" type="HBoxContainer" parent="LevelPanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 46.0
-margin_bottom = 17.0
-theme = ExtResource( 1 )
+margin_right = 38.0
+margin_bottom = 14.0
+theme = ExtResource( 7 )
 
 [node name="LevelTitleLabel" type="Label" parent="LevelPanelContainer/LevelHBox"]
-margin_right = 25.0
-margin_bottom = 9.0
+margin_right = 19.0
+margin_bottom = 7.0
 text = "Level"
 
 [node name="LevelNumLabel" type="Label" parent="LevelPanelContainer/LevelHBox"]
-margin_left = 29.0
-margin_right = 39.0
-margin_bottom = 9.0
+margin_left = 23.0
+margin_right = 31.0
+margin_bottom = 7.0
 text = "00"

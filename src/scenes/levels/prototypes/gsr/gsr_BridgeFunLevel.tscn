@@ -662,16 +662,22 @@ rotation = 3.14159
 [node name="Launcher" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 19.6838, 21.786 )
 rotation = 3.14159
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 2
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 244, 156 )
 rotation = 4.71239
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 3
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 6 )]
 position = Vector2( 226.94, 84 )
 rotation = 3.14159
+_obstacle_active = true
+firing_interval = 1.0
 firing_direction = 2
 
 [node name="BridgeContainer" type="Node" parent="."]

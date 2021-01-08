@@ -6,6 +6,7 @@ var chosenButton
 func _ready():
 #	MusicManager.play_song("res://assets/music/Godot_Slurp_Master1.ogg")
 	set_level_screen_value(Enums.SCREENS.YJB_LVL_05_RANDOM_BUTTON)
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 	var listOfButtons = []
 	listOfButtons.push_back(get_node("ButtonContainer/bot_left_button")) 
 	listOfButtons.push_back(get_node("ButtonContainer/top_left_button"))

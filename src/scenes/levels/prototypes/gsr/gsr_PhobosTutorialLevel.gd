@@ -3,6 +3,7 @@ extends BaseLevel
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.GSR_PHOBOS_TUTORIAL_LEVEL)
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 
 
 func _process(delta):

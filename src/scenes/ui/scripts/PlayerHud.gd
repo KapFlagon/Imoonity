@@ -10,7 +10,7 @@ onready var titan_platform = get_node("TopHBoxContainer/PowersHBoxContainer/Tita
 func _ready() -> void:
 	initialize_hud()
 	update_all_hud_icons()
-	update_level_text()
+#	update_level_text()
 
 
 func update_puck_dash_progress(progress_value: float) -> void:

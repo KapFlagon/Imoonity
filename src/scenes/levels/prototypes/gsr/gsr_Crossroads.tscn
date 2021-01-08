@@ -695,6 +695,7 @@ _bridge_open = false
 position = Vector2( 524, 236 )
 scale = Vector2( 0.3, 0.3 )
 z_index = -2
+closedPosition = 0
 openedPosition = 1
 _bridge_open = false
 
@@ -784,63 +785,123 @@ __meta__ = {
 
 [node name="Launcher2" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 684, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher3" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 692, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher4" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 700, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher6" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 707.84, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher7" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 716, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher8" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 644, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher9" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 652, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher10" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 660, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher11" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 667.84, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher12" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 676, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher13" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 604, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher14" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 612, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher15" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 620, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher16" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 627.84, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher17" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 636, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher18" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 563.546, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher19" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 571.546, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher20" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 579.546, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher21" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 587.386, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="Launcher22" parent="LauncherContainer" instance=ExtResource( 9 )]
 position = Vector2( 595.546, 236 )
+_obstacle_active = true
+firing_interval = 1.0
+firing_direction = 0
 
 [node name="PathObstContainer" type="Node" parent="."]
 

@@ -16,6 +16,7 @@ func flip_all_launchers() -> void:
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.GSR_TIMER)
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process

@@ -9,6 +9,7 @@ extends BaseLevel
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_level_screen_value(Enums.SCREENS.YJB_LVL_03_FALLING_IO_FOCUSED)
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.s

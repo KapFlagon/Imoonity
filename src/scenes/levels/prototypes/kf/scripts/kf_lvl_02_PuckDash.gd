@@ -3,6 +3,7 @@ extends BaseLevel
 
 func _ready():
 	set_level_screen_value(Enums.SCREENS.KF_LVL_02_PUCK_DASH)
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 
 
 func _on_Button_button_just_pressed():

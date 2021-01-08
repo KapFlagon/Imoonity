@@ -13,6 +13,7 @@ func _ready():
 	set_level_screen_value(Enums.SCREENS.GSR_CROSSROADS)
 	init_bridge_dict()
 	pull_dict_from_screen_manager()
+	get_node("Player/Camera2D/PlayerHud").update_level_text()
 
 
 func init_bridge_dict():
