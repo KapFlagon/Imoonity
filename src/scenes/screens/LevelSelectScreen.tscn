@@ -46,15 +46,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tab1" type="Tabs" parent="TabContainer"]
+[node name="1" type="Tabs" parent="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 27.0
 margin_right = -4.0
 margin_bottom = -4.0
+scrolling_enabled = false
 
-[node name="GridContainer" type="GridContainer" parent="TabContainer/Tab1"]
+[node name="GridContainer" type="GridContainer" parent="TabContainer/1"]
 anchor_left = 0.108
 anchor_top = 0.052
 anchor_right = 0.889
@@ -66,75 +67,76 @@ margin_bottom = 0.0230026
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
+custom_constants/vseparation = 6
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelSelectionButton1" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton1" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_right = 34.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 1
 
-[node name="LevelSelectionButton2" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton2" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 38.0
 margin_right = 72.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 2
 
-[node name="LevelSelectionButton3" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton3" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 76.0
 margin_right = 110.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 3
 
-[node name="LevelSelectionButton4" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton4" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 114.0
 margin_right = 148.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 4
 
-[node name="LevelSelectionButton5" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton5" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 152.0
 margin_right = 186.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 5
 
-[node name="LevelSelectionButton6" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
-margin_top = 32.0
+[node name="LevelSelectionButton6" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
+margin_top = 47.0
 margin_right = 34.0
-margin_bottom = 60.0
+margin_bottom = 88.0
 _level_number = 6
 
-[node name="LevelSelectionButton7" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton7" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 38.0
-margin_top = 32.0
+margin_top = 47.0
 margin_right = 72.0
-margin_bottom = 60.0
+margin_bottom = 88.0
 _level_number = 7
 
-[node name="LevelSelectionButton8" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton8" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 76.0
-margin_top = 32.0
+margin_top = 47.0
 margin_right = 110.0
-margin_bottom = 60.0
+margin_bottom = 88.0
 _level_number = 8
 
-[node name="LevelSelectionButton9" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton9" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 114.0
-margin_top = 32.0
+margin_top = 47.0
 margin_right = 148.0
-margin_bottom = 60.0
+margin_bottom = 88.0
 _level_number = 9
 
-[node name="LevelSelectionButton10" parent="TabContainer/Tab1/GridContainer" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton10" parent="TabContainer/1/GridContainer" instance=ExtResource( 4 )]
 margin_left = 152.0
-margin_top = 32.0
+margin_top = 47.0
 margin_right = 186.0
-margin_bottom = 60.0
+margin_bottom = 88.0
 _level_number = 10
 
-[node name="Tab2" type="Tabs" parent="TabContainer"]
+[node name="2" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -143,7 +145,7 @@ margin_top = 27.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="GridContainer2" type="GridContainer" parent="TabContainer/Tab2"]
+[node name="GridContainer2" type="GridContainer" parent="TabContainer/2"]
 margin_left = 32.0
 margin_top = 5.0
 margin_right = 263.0
@@ -151,72 +153,73 @@ margin_bottom = 101.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
+custom_constants/vseparation = 6
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelSelectionButton11" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton11" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_right = 34.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 11
 
-[node name="LevelSelectionButton12" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton12" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 38.0
 margin_right = 72.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 12
 
-[node name="LevelSelectionButton13" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton13" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 76.0
 margin_right = 110.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 13
 
-[node name="LevelSelectionButton14" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton14" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 114.0
 margin_right = 148.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 14
 
-[node name="LevelSelectionButton15" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton15" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 152.0
 margin_right = 186.0
-margin_bottom = 28.0
+margin_bottom = 41.0
 _level_number = 15
 
-[node name="LevelSelectionButton16" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
-margin_top = 32.0
+[node name="LevelSelectionButton16" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
+margin_top = 45.0
 margin_right = 34.0
-margin_bottom = 60.0
+margin_bottom = 86.0
 _level_number = 16
 
-[node name="LevelSelectionButton17" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton17" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 38.0
-margin_top = 32.0
+margin_top = 45.0
 margin_right = 72.0
-margin_bottom = 60.0
+margin_bottom = 86.0
 _level_number = 17
 
-[node name="LevelSelectionButton18" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton18" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 76.0
-margin_top = 32.0
+margin_top = 45.0
 margin_right = 110.0
-margin_bottom = 60.0
+margin_bottom = 86.0
 _level_number = 18
 
-[node name="LevelSelectionButton19" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton19" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 114.0
-margin_top = 32.0
+margin_top = 45.0
 margin_right = 148.0
-margin_bottom = 60.0
+margin_bottom = 86.0
 _level_number = 19
 
-[node name="LevelSelectionButton20" parent="TabContainer/Tab2/GridContainer2" instance=ExtResource( 4 )]
+[node name="LevelSelectionButton20" parent="TabContainer/2/GridContainer2" instance=ExtResource( 4 )]
 margin_left = 152.0
-margin_top = 32.0
+margin_top = 45.0
 margin_right = 186.0
-margin_bottom = 60.0
+margin_bottom = 86.0
 _level_number = 20
 
 [node name="ButtonHBoxContainer" type="HBoxContainer" parent="."]
