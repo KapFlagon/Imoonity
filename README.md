@@ -2,7 +2,7 @@
 A Godot engine game, initially intended for the Github Game Off 2020. 
 We decided to miss that submission deadline, and instead work on the game with a bit less time pressure. 
 We want to finish the project to at least a version that we are pleased with for release. 
-Will be playable at this Itch.io link: [Imoonity] ()
+Will be playable at this Itch.io link: [Imoonity](https://kapflagon.itch.io/imoonity)
 
 ## Contributers 
 ### Programming and design
